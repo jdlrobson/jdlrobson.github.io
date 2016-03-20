@@ -419,7 +419,7 @@ there.
 
 /* My modifications */
 .header {
-  background-image: url(static/images/jonrobson_small.png);
+  background-image: url(/serviceworkerimagelazyloader/static/images/jonrobson_small.png);
   background-repeat: no-repeat;
   background-size: auto 5em;
   background-position: right top;
