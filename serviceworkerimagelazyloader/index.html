@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="static/styles.css" type="text/css"/>
+	<title>Lazy load your images with a Service Worker</title>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Lazy load your images with a Service Worker</h1>
+			<div>by <a href="//jonrobson.me.uk">Jon Robson</a></div>
+			<div class="timestamp">September 23rd, 2015</div>
+		</div>
+		<p>I wanted to show a novel use-case for Service Workers - a modern method for <a rel="nofollow" class="external text" href="//css-tricks.com/snippets/javascript/lazy-loading-images/">lazy loaded images</a> spurred on by <a href="//christianheilmann.com/2015/09/08/quick-trick-using-template-to-delay-loading-of-images/">Christian Heilmann's nice trick with the HTML template element</a>. Service Workers are the most exciting thing to come to the web since geolocation in my opinion. In a nutshell they are bits of JavaScript that run in the background and let you do neat things such as intercept network requests. Jake Archibald quite rightly points out you can do some "<a href="https://jakearchibald.com/2014/using-serviceworker-today/">cool shit</a>" with them now and I think this is pretty neat. I'm still not sure whether what I am doing counts as breaking the web... I can still curl the page and get the HTML complete with all the nice image urls. "If it doesn't load through curl, it's broken" doesn't seem to apply with a Service Worker... I think!</p>
+		<h2>The problem</h2>
+		<p>I'm pretty surprised about the amount of people I talk to who believe that images not seen on a page are never loaded. Browsers are clever these days, they tell me. If an image is below the fold on a mobile device, it's not downloaded. That's simply not true.</p>
+		
+<p><a href="//en.wikipedia.org/wiki/If_a_tree_falls_in_a_forest">If a tree falls in a forest...</a> Images are a big problem in the developing world. When we load too many images, we are not only making our sites slower, but we are inflicting <a href="//whatdoesmysitecost.com/">large data charges</a> for the people that use our sites. We have a responsibility. The Barack Obama article on English Wikipedia has over one hundred images on the page. These image requests compete for network requests for render-blocking resources that can impact the first paint. We need to do something!</p>
+		<h2>A solution</h2>
+		<p>I've implemented a <a href="worker.js">super simple Service Worker</a> that <a href="static/lazyload.js">lazy loads images</a> without rendering the page useless for non-js users.</p>
+		<p>This page installs a script that on first-load will register a ServiceWorker which intercepts all page network requests and using a regular expression substitutes all `src` attributes (you may also want to apply it to srcset too) with data- equivalents that can be loaded via JavaScript. Thanks to the <a href="https://jakearchibald.com/2015/thats-so-fetch/">beautiful Fetch API</a> this was pretty easy to get setup.</p>
+		
+		<p>With those images out of the way, we now need to show them to the user in a more clever fashion. We can rely on the user having JavaScript at this point if we detect a src data attribute - as it means the user has the Service Worker installed. The script will then only load images when you scroll to them. The code for this is rather simple thanks to <a href="http://ejohn.org/blog/getboundingclientrect-is-awesome/">the awesome getBoundingClientRect</a>. Right now I'm keeping it super simple and only loading when they appear in the viewport. In the future, I think we can be more clever about this by only loading images when the image is (say) two viewports away or after render blocking resources have fully loaded. I've ironically been very lazy and used jQuery.</p>
+		<h2>Limitations</h2>
+		<p>Right now you'll need Chrome to make use of this part of the Service Workers API, but our friends in Mozilla are <a href="//bugzilla.mozilla.org/show_bug.cgi?id=903441">working on it</a> and it's only a matter of time before it lands there too</a>. As web developers we have a responsibility to adopt things to speed up and help prioritise their implementation in browsers. <a href="//www.bbc.com/news/technology-12737013">Remember what happened</a> when geolocation and other friends became cool? You'll also <a href="https://konklone.com/post/switch-to-https-now-for-free">need HTTPS</a> - this is a requirement of a Service Worker.</p>
+		<h2>Practical uses</h2>
+		<p>I work for the <a href="//wikimediafoundation.org">Wikimedia Foundation</a>. Right now I'm interested in how this can be used to improve the Wikipedia experience on 2G connections. Early investigations show 2G connections <a class="external text" href="//phabricator.wikimedia.org/T110615">take fifty seconds to load Barack Obama</a>! Just by lazy loading images using this Service Worker, we reckon we can get that down to twenty seconds. We don't plan on stopping there, though -- we have plans to get it down below <a href="//phabricator.wikimedia.org/T113066">the fifteen second mark</a>.</p>
+		<h2>Other solutions</h2>
+		<p>An alternative to HTML parsing is to simply hijack image requests. To do this instead of rewriting your HTML with regular expressions you simply check whether the request is for a file in the image directory and intercept it. The downside of this is right now there is no way to tell the <a href="//fetch.spec.whatwg.org/#request-class">type of the request</a>, so this means if you try and access the image resources outside the page and the ServiceWorker intercepts you'll have to hard refresh to overcome the ServiceWorker. I played around with this idea and was able to block image requests on a certain query string parameter.</p> 
+		<code>
+			&lt;img src="image/foo.jpg?sw=true"<br>
+				alt="any requests with the sw=true parameter would be returned by the Service Worker"&gt;<br>
+			&lt;img src="image/foo.jpg"<br>
+				alt="A requests for an image without the sw=true parameter
+					would return the transparent gif"&gt;
+		</code>
+		<h2>Demo</h2>
+		<div style="display:none" class="poop-browser">
+		<img src="static/images/poop.jpeg" alt="your browser is not shiny enough" width="200px"><br>
+		Your browser sadly doesn't support ServiceWorkers.
+		</div>
+		<div style="display:none" class="error">
+		<img src="static/images/poop.jpeg" alt="your browser is not shiny enough" width="200px"><br>
+		Something went wrong installing the ServiceWorker. Let me know what's in your developer console and I'll get that fixed asap.
+		</div>
+		<noscript>
+		<img src="static/images/poop.jpeg" alt="your browser is not shiny enough" width="200px"><br>
+		Your browser sadly doesn't support ServiceWorkers.
+		</noscript>
+		<div style="display:none" class="good-browser">
+			<img src="static/images/html5.png" alt="your browser is shiny!">
+			<p>Your browser rocks! Refresh this page or let's jump to the <a href="demo.html">30MB gallery demo</a>!</p>
+		</div>
+		<h2>Your thoughts</h2>
+		<p>Feedback welcomed on <a rel="nofollow" class="external text" href="//twitter.com/rakugojon">my Twitter post</a> or any of the Phabricator projects linked above. We're an open source project, so come help us make this happen!&nbsp;:-)</p>
+		<p>
+			I remain your humble and obedient servant.<br>
+			Sincerely yours,<br>
+			<a href="//jonrobson.me.uk">Jon Robson</a></p>
+	</div>
+	<script src="static/jquery.js"></script>
+	<script src="static/lazyload.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-7040645-4']);
+	  _gaq.push(['_trackPageview']);
+      
+	  (function() { 
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</body>
+</html>

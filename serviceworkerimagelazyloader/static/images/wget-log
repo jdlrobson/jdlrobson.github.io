@@ -1,0 +1,6 @@
+--2015-09-22 14:33:21--  https://commons.wikimedia.org/w/thumb.php?w=600px&f=Oreo_Outside_Rolling_Around.gif
+Resolving commons.wikimedia.org... 198.35.26.96, 2620:0:863:ed1a::1
+Connecting to commons.wikimedia.org|198.35.26.96|:443... connected.
+HTTP request sent, awaiting response... 500 'wget-log'
+2015-09-22 14:34:12 ERROR 500: Internal Server Error.
+

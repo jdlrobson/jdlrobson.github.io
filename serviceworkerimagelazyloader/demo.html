@@ -1,0 +1,910 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="static/styles.css" type="text/css"/>
+	<title>Lazy load your images with a ServiceWorker</title>
+</head>
+<body>
+<div class="container">
+	<h1>I know a page that will use up your data... use up your data...</h1>
+	<p>The web can be a scary place. If you followed a link here you might want to think about bouncing <a href="index.html">here</a> first to make sure you install the service worker. This page will download 30MB of data and fire off 438 requests without it. Eek. With the worker installed however, this page will demonstrate how you can use the new shiny ServiceWorker technology to lazy load images.
+	</p>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:ACD_Silverbarn%27s_Mayumi.jpg" class="image"><img alt="ACD Silverbarn's Mayumi.jpg" src="static/images/800px-ACD_Silverbarn's_Mayumi.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:ACD_Silverbarn%27s_Mayumi.jpg" title="File:ACD Silverbarn's Mayumi.jpg">ACD Silverbarn's Mayumi.jpg</a><br>
+	
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Akita_playing.jpg" class="image"><img alt="Akita playing.jpg" src="static/images/800px-Akita_playing.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Akita_playing.jpg" title="File:Akita playing.jpg">Akita playing.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:American_Foxhound_and_Labrador_Retriever_playing.jpg" class="image"><img alt="American Foxhound and Labrador Retriever playing.jpg" src="static/images/800px-American_Foxhound_and_Labrador_Retriever_playing.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:American_Foxhound_and_Labrador_Retriever_playing.jpg" title="File:American Foxhound and Labrador Retriever playing.jpg">American Foxhound and Labrador Retriever playing.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Anatolian_shepherds_playing_with_an_alaskan_malamute_and_huskamute.jpg" class="image"><img alt="Anatolian shepherds playing with an alaskan malamute and huskamute.jpg" src="static/images/800px-Anatolian_shepherds_playing_with_an_alaskan_malamute_and_huskamute.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Anatolian_shepherds_playing_with_an_alaskan_malamute_and_huskamute.jpg" title="File:Anatolian shepherds playing with an alaskan malamute and huskamute.jpg">Anatolian shepherds playing with an alaskan malamute and huskamute.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Angel2.JPG" class="image"><img alt="Angel2.JPG" src="static/images/800px-Angel2.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Angel2.JPG" title="File:Angel2.JPG">Angel2.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:AustralianShepardFrisbee.jpg" class="image"><img alt="AustralianShepardFrisbee.jpg" src="static/images/800px-AustralianShepardFrisbee.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:AustralianShepardFrisbee.jpg" title="File:AustralianShepardFrisbee.jpg">AustralianShepardFrisbee.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Beach_Dog_58.JPG" class="image"><img alt="Beach Dog 58.JPG" src="static/images/800px-Beach_Dog_58.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Beach_Dog_58.JPG" title="File:Beach Dog 58.JPG">Beach Dog 58.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Border_collie_(662716).jpg" class="image"><img alt="Border collie (662716).jpg" src="static/images/800px-Border_collie_%28662716%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Border_collie_(662716).jpg" title="File:Border collie (662716).jpg">Border collie (662716).jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Bronxville_dog_playing_near_river.jpg" class="image"><img alt="Bronxville dog playing near river.jpg" src="static/images/800px-Bronxville_dog_playing_near_river.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Bronxville_dog_playing_near_river.jpg" title="File:Bronxville dog playing near river.jpg">Bronxville dog playing near river.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Chonchote.JPG" class="image"><img alt="Chonchote.JPG" src="static/images/800px-Chonchote.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Chonchote.JPG" title="File:Chonchote.JPG">Chonchote.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Cocker_spaniel_tearing_at_a_monkey_doll,_2015-01-02_01.jpg" class="image"><img alt="Cocker spaniel tearing at a monkey doll, 2015-01-02 01.jpg" src="static/images/800px-Cocker_spaniel_tearing_at_a_monkey_doll.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Cocker_spaniel_tearing_at_a_monkey_doll,_2015-01-02_01.jpg" title="File:Cocker spaniel tearing at a monkey doll2.jpg">Cocker spaniel tearing at a monkey doll, 2015-01-02 01.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Cocker_spaniel_tearing_at_a_monkey_doll,_2015-01-02_02.jpg" class="image"><img alt="Cocker spaniel tearing at a monkey doll, 2015-01-02 02.jpg" src="static/images/800px-Cocker_spaniel_tearing_at_a_monkey_doll2.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Cocker_spaniel_tearing_at_a_monkey_doll,_2015-01-02_02.jpg" title="File:Cocker spaniel tearing at a monkey doll, 2015-01-02 02.jpg">Cocker spaniel tearing at a monkey doll, 2015-01-02 02.jpg</a><br>
+</div><div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog_fetching_ball_in_pool.jpg" class="image"><img alt="Dog fetching ball in pool.jpg" src="static/images/800px-Dog_fetching_ball_in_pool.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_fetching_ball_in_pool.jpg" title="File:Dog fetching ball in pool.jpg">Dog fetching ball in pool.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Dog_Playing_Ball.jpg" class="image"><img alt="Dog Playing Ball.jpg" src="static/images/800px-Dog_Playing_Ball.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_Playing_Ball.jpg" title="File:Dog Playing Ball.jpg">Dog Playing Ball.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Dog.png" class="image"><img alt="Dog.png" src="static/images/800px-Dog.png" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog.png" title="File:Dog.png">Dog.png</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Dogs_in_Grange_Park.jpg" class="image"><img alt="Dogs in Grange Park.jpg" src="static/images/800px-Dogs_in_Grange_Park.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dogs_in_Grange_Park.jpg" title="File:Dogs in Grange Park.jpg">Dogs in Grange Park.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Dogs_playing_in_snow.jpg" class="image"><img alt="Dogs playing in snow.jpg" src="static/images/800px-Dogs_playing_in_snow.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dogs_playing_in_snow.jpg" title="File:Dogs playing in snow.jpg">Dogs playing in snow.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dogs_playing_on_the_beach_in_the_sand.jpg" class="image"><img alt="Dogs playing on the beach in the sand.jpg" src="static/images/800px-Dogs_playing_on_the_beach_in_the_sand.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dogs_playing_on_the_beach_in_the_sand.jpg" title="File:Dogs playing on the beach in the sand.jpg">Dogs playing on the beach in the sand.jpg</a><br>
+	</div><div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Gefleckter_Packesel.jpg" class="image"><img alt="Gefleckter Packesel.jpg" src="static/images/800px-Gefleckter_Packesel.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Gefleckter_Packesel.jpg" title="File:Gefleckter Packesel.jpg">Gefleckter Packesel.jpg</a><br>
+</div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Gorinchem_008.jpg" title="File:Gorinchem 008.jpg">Gorinchem 008.jpg</a><br>
+</div><div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Growling_at_the_staffy_pup.JPG" class="image"><img alt="Growling at the staffy pup.JPG" src="static/images/800px-Growling_at_the_staffy_pup.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Growling_at_the_staffy_pup.JPG" title="File:Growling at the staffy pup.JPG">Growling at the staffy pup.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2807.jpg" class="image"><img alt="Hunde 2013-05-05-2807.jpg" src="static/images/800px-Hunde_2013-05-05-2807.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2807.jpg" title="File:Hunde 2013-05-05-2807.jpg">Hunde 2013-05-05-2807.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2808.jpg" class="image"><img alt="Hunde 2013-05-05-2808.jpg" src="static/images/800px-Hunde_2013-05-05-2808.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2808.jpg" title="File:Hunde 2013-05-05-2808.jpg">Hunde 2013-05-05-2808.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2809_(crop).jpg" class="image"><img alt="Hunde 2013-05-05-2809 (crop).jpg" src="static/images/800px-Hunde_2013-05-05-2809_%28crop%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2809_(crop).jpg" title="File:Hunde 2013-05-05-2809 (crop).jpg">Hunde 2013-05-05-2809 (crop).jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2809.jpg" class="image"><img alt="Hunde 2013-05-05-2809.jpg" src="static/images/800px-Hunde_2013-05-05-2809.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2809.jpg" title="File:Hunde 2013-05-05-2809.jpg">Hunde 2013-05-05-2809.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2822.jpg" class="image"><img alt="Hunde 2013-05-05-2822.jpg" src="static/images/800px-Hunde_2013-05-05-2822.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Hunde_2013-05-05-2822.jpg" title="File:Hunde 2013-05-05-2822.jpg">Hunde 2013-05-05-2822.jpg</a><br>
+	17.</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Huskytail.jpg" class="image"><img alt="Huskytail.jpg" src="static/images/800px-Huskytail.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Huskytail.jpg" title="File:Huskytail.jpg">Huskytail.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:ItalienurlaubPinienzapfenfressen.jpg" class="image"><img alt="ItalienurlaubPinienzapfenfressen.jpg" src="static/images/800px-ItalienurlaubPinienzapfenfressen.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:ItalienurlaubPinienzapfenfressen.jpg" title="File:ItalienurlaubPinienzapfenfressen.jpg">ItalienurlaubPinienzapfenfressen.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Eddi_running_at_the_beach.JPG" class="image"><img alt="Jack Russell Terrier Eddi running at the beach.JPG" src="static/images/800px-Jack_Russell_Terrier_Eddi_running_at_the_beach.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Eddi_running_at_the_beach.JPG" title="File:Jack Russell Terrier Eddi running at the beach.JPG">Jack Russell Terrier Eddi running at the beach.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Eddi_with_ball.JPG" class="image"><img alt="Jack Russell Terrier Eddi with ball.JPG" src="static/images/800px-Jack_Russell_Terrier_Eddi_with_ball.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Eddi_with_ball.JPG" title="File:Jack Russell Terrier Eddi with ball.JPG">Jack Russell Terrier Eddi with ball.JPG</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Eddi.jpg" class="image"><img alt="Jack Russell Terrier Eddi.jpg" src="static/images/800px-Jack_Russell_Terrier_Eddi.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Eddi.jpg" title="File:Jack Russell Terrier Eddi.jpg">Jack Russell Terrier Eddi.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Jumping.JPG" class="image"><img alt="Jack Russell Terrier Jumping.JPG" src="static/images/800px-Jack_Russell_Terrier_Jumping.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Jumping.JPG" title="File:Jack Russell Terrier Jumping.JPG">Jack Russell Terrier Jumping.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Lola_at_the_Beach.jpg" class="image"><img alt="Jack Russell Terrier Lola at the Beach.jpg" src="static/images/800px-Jack_Russell_Terrier_Lola_at_the_Beach.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Terrier_Lola_at_the_Beach.jpg" title="File:Jack Russell Terrier Lola at the Beach.jpg">Jack Russell Terrier Lola at the Beach.jpg</a><br>
+	</div><div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Jalama_Beach_(6724166723)_(2).jpg" class="image"><img alt="Jalama Beach (6724166723) (2).jpg" src="static/images/800px-Jalama_Beach_%286724166723%29_%282%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jalama_Beach_(6724166723)_(2).jpg" title="File:Jalama Beach (6724166723) (2).jpg">Jalama Beach (6724166723) (2).jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:JapaneseSpitzMotchi3.JPG" class="image"><img alt="JapaneseSpitzMotchi3.JPG" src="static/images/800px-JapaneseSpitzMotchi3.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:JapaneseSpitzMotchi3.JPG" title="File:JapaneseSpitzMotchi3.JPG">JapaneseSpitzMotchi3.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Jenny_the_Hovawart_loves_playing_with_balls.jpg" class="image"><img alt="Jenny the Hovawart loves playing with balls.jpg" src="static/images/800px-Jenny_the_Hovawart_loves_playing_with_balls.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jenny_the_Hovawart_loves_playing_with_balls.jpg" title="File:Jenny the Hovawart loves playing with balls.jpg">Jenny the Hovawart loves playing with balls.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Jenny_the_Hovawart_with_her_ball.jpg" class="image"><img alt="Jenny the Hovawart with her ball.jpg" src="static/images/800px-Jenny_the_Hovawart_with_her_ball.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jenny_the_Hovawart_with_her_ball.jpg" title="File:Jenny the Hovawart with her ball.jpg">Jenny the Hovawart with her ball.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:JRT_with_Ball.jpg" class="image"><img alt="JRT with Ball.jpg" src="static/images/800px-JRT_with_Ball.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:JRT_with_Ball.jpg" title="File:JRT with Ball.jpg">JRT with Ball.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Kaveri_tuli_morjestamaan.jpg" class="image"><img alt="Kaveri tuli morjestamaan.jpg" src="static/images/800px-Kaveri_tuli_morjestamaan.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Kaveri_tuli_morjestamaan.jpg" title="File:Kaveri tuli morjestamaan.jpg">Kaveri tuli morjestamaan.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Labradors_love_to_play_with_water_Noddy_Dec_2006_gopal1035.jpg" class="image"><img alt="Labradors love to play with water Noddy Dec 2006 gopal1035.jpg" src="static/images/800px-Labradors_love_to_play_with_water_Noddy_Dec_2006_gopal1035.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Labradors_love_to_play_with_water_Noddy_Dec_2006_gopal1035.jpg" title="File:Labradors love to play with water Noddy Dec 2006 gopal1035.jpg">Labradors love to play with water Noddy Dec 2006 gopal1035.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Lagotto_romagnolo2.jpg" class="image"><img alt="Lagotto romagnolo2.jpg" src="static/images/800px-Lagotto_romagnolo2.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Lagotto_romagnolo2.jpg" title="File:Lagotto romagnolo2.jpg">Lagotto romagnolo2.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Lhasa_Apso_5328b.jpg" class="image"><img alt="Lhasa Apso 5328b.jpg" src="static/images/800px-Lhasa_Apso_5328b.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Lhasa_Apso_5328b.jpg" title="File:Lhasa Apso 5328b.jpg">Lhasa Apso 5328b.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Licking_the_staffy_pup.JPG" class="image"><img alt="Licking the staffy pup.JPG" src="static/images/800px-Licking_the_staffy_pup.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Licking_the_staffy_pup.JPG" title="File:Licking the staffy pup.JPG">Licking the staffy pup.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Low_Newton-by-the-Sea_MMB_09.jpg" class="image"><img alt="Low Newton-by-the-Sea MMB 09.jpg" src="static/images/800px-Low_Newton-by-the-Sea_MMB_09.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Low_Newton-by-the-Sea_MMB_09.jpg" title="File:Low Newton-by-the-Sea MMB 09.jpg">Low Newton-by-the-Sea MMB 09.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:LupoItaliano.jpg" class="image"><img alt="LupoItaliano.jpg" src="static/images/800px-LupoItaliano.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:LupoItaliano.jpg" title="File:LupoItaliano.jpg">LupoItaliano.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:More_wrestling_(6570529255).jpg" class="image"><img alt="More wrestling (6570529255).jpg" src="static/images/800px-More_wrestling_%286570529255%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:More_wrestling_(6570529255).jpg" title="File:More wrestling (6570529255).jpg">More wrestling (6570529255).jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Osila-Rex2.JPG" class="image"><img alt="Osila-Rex2.JPG" src="static/images/800px-Osila-Rex2.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Osila-Rex2.JPG" title="File:Osila-Rex2.JPG">Osila-Rex2.JPG</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Oval_Office_view_from_Rose_Garden.jpg" class="image"><img alt="Oval Office view from Rose Garden.jpg" src="static/images/800px-Oval_Office_view_from_Rose_Garden.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Oval_Office_view_from_Rose_Garden.jpg" title="File:Oval Office view from Rose Garden.jpg">Oval Office view from Rose Garden.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Pastoraleman.jpg" class="image"><img alt="Pastoraleman.jpg" src="static/images/800px-Pastoraleman.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Pastoraleman.jpg" title="File:Pastoraleman.jpg">Pastoraleman.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Pawliday_Inn_Dog_boarding_daycare_grooming_Dallas_3.JPG" class="image"><img alt="Pawliday Inn Dog boarding daycare grooming Dallas 3.JPG" src="static/images/800px-Pawliday_Inn_Dog_boarding_daycare_grooming_Dallas_3.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Pawliday_Inn_Dog_boarding_daycare_grooming_Dallas_3.JPG" title="File:Pawliday Inn Dog boarding daycare grooming Dallas 3.JPG">Pawliday Inn Dog boarding daycare grooming Dallas 3.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Pete_and_Gracy_Test.JPG" class="image"><img alt="Pete and Gracy Test.JPG" src="static/images/800px-Pete_and_Gracy_Test.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Pete_and_Gracy_Test.JPG" title="File:Pete and Gracy Test.JPG">Pete and Gracy Test.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Playful_Beagle.jpg" class="image"><img alt="Playful Beagle.jpg" src="static/images/800px-Playful_Beagle.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Playful_Beagle.jpg" title="File:Playful Beagle.jpg">Playful Beagle.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Playing_dogs_in_Lindenhof.JPG" class="image"><img alt="Playing dogs in Lindenhof.JPG" src="static/images/800px-Playing_dogs_in_Lindenhof.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Playing_dogs_in_Lindenhof.JPG" title="File:Playing dogs in Lindenhof.JPG">Playing dogs in Lindenhof.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Playingdogs.JPG" class="image"><img alt="Playingdogs.JPG" src="static/images/800px-Playingdogs.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Playingdogs.JPG" title="File:Playingdogs.JPG">Playingdogs.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Popped.jpg" class="image"><img alt="Popped.jpg" src="static/images/800px-Popped.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Popped.jpg" title="File:Popped.jpg">Popped.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Ray_y_Leo.jpg" class="image"><img alt="Ray y Leo.jpg" src="static/images/800px-Ray_y_Leo.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Ray_y_Leo.jpg" title="File:Ray y Leo.jpg">Ray y Leo.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:REX_COMPARTIENDO_EN_EL_MALECOM.jpg" class="image"><img alt="REX COMPARTIENDO EN EL MALECOM.jpg" src="static/images/800px-REX_COMPARTIENDO_EN_EL_MALECOM.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:REX_COMPARTIENDO_EN_EL_MALECOM.jpg" title="File:REX COMPARTIENDO EN EL MALECOM.jpg">REX COMPARTIENDO EN EL MALECOM.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Run_run_run.jpg" class="image"><img alt="Run run run.jpg" src="static/images/800px-Run_run_run.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Run_run_run.jpg" title="File:Run run run.jpg">Run run run.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Small_Dog_Playgroup_New_York.jpg" class="image"><img alt="Small Dog Playgroup New York.jpg" src="static/images/800px-Small_Dog_Playgroup_New_York.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Small_Dog_Playgroup_New_York.jpg" title="File:Small Dog Playgroup New York.jpg">Small Dog Playgroup New York.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Snarling_at_the_staffy_pup.JPG" class="image"><img alt="Snarling at the staffy pup.JPG" src="static/images/800px-Snarling_at_the_staffy_pup.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Snarling_at_the_staffy_pup.JPG" title="File:Snarling at the staffy pup.JPG">Snarling at the staffy pup.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Soap_bubble_game.jpg" class="image"><img alt="Soap bubble game.jpg" src="static/images/800px-Soap_bubble_game.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Soap_bubble_game.jpg" title="File:Soap bubble game.jpg">Soap bubble game.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Sommer_2012.JPG" class="image"><img alt="Sommer 2012.JPG" src="static/images/800px-Sommer_2012.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sommer_2012.JPG" title="File:Sommer 2012.JPG">Sommer 2012.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Spielende_Hunde_01.jpg" class="image"><img alt="Spielende Hunde 01.jpg" src="static/images/800px-Spielende_Hunde_01.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Spielende_Hunde_01.jpg" title="File:Spielende Hunde 01.jpg">Spielende Hunde 01.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Summer_Fun_(3625293091).jpg" class="image"><img alt="Summer Fun (3625293091).jpg" src="static/images/800px-Summer_Fun_%283625293091%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Summer_Fun_(3625293091).jpg" title="File:Summer Fun (3625293091).jpg">Summer Fun (3625293091).jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:The_Chase_is_on_(2785129008).jpg" class="image"><img alt="The Chase is on (2785129008).jpg" src="static/images/800px-The_Chase_is_on_%282785129008%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:The_Chase_is_on_(2785129008).jpg" title="File:The Chase is on (2785129008).jpg">The Chase is on (2785129008).jpg</a><br>
+	</div><div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Three-legged_dog_arp.jpg" class="image"><img alt="Three-legged dog arp.jpg" src="static/images/800px-Three-legged_dog_arp.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Three-legged_dog_arp.jpg" title="File:Three-legged dog arp.jpg">Three-legged dog arp.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Two_Borzois_playing_KABUKI.jpg" class="image"><img alt="Two Borzois playing KABUKI.jpg" src="static/images/800px-Two_Borzois_playing_KABUKI.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Two_Borzois_playing_KABUKI.jpg" title="File:Two Borzois playing KABUKI.jpg">Two Borzois playing KABUKI.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Two_dogs.jpg" class="image"><img alt="Two dogs.jpg" src="static/images/800px-Two_dogs.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Two_dogs.jpg" title="File:Two dogs.jpg">Two dogs.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:WiknicB009_ST_07.JPG" class="image"><img alt="WiknicB009 ST 07.JPG" src="static/images/800px-WiknicB009_ST_07.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:WiknicB009_ST_07.JPG" title="File:WiknicB009 ST 07.JPG">WiknicB009 ST 07.JPG</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:William_Hogarth_009.jpg" class="image"><img alt="William Hogarth 009.jpg" src="static/images/800px-William_Hogarth_009.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:William_Hogarth_009.jpg" title="File:William Hogarth 009.jpg">William Hogarth 009.jpg</a><br>
+	</div><div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:A_rottweiler_yawning.jpg" class="image"><img alt="A rottweiler yawning.jpg" src="static/images/800px-A_rottweiler_yawning.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:A_rottweiler_yawning.jpg" title="File:A rottweiler yawning.jpg">A rottweiler yawning.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Akubi_dog.JPG" class="image"><img alt="Akubi dog.JPG" src="static/images/800px-Akubi_dog.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Akubi_dog.JPG" title="File:Akubi dog.JPG">Akubi dog.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Chihua_%2B_Swiss_Shep_Friends.jpg" class="image"><img alt="Chihua + Swiss Shep Friends.jpg" src="static/images/800px-Chihua_%2B_Swiss_Shep_Friends.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Chihua_%2B_Swiss_Shep_Friends.jpg" title="File:Chihua + Swiss Shep Friends.jpg">Chihua + Swiss Shep Friends.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Chihuahua_Wassup%3F.jpg" class="image"><img alt="Chihuahua Wassup?.jpg" src="static/images/800px-Chihuahua_Wassup%3F.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Chihuahua_Wassup%3F.jpg" title="File:Chihuahua Wassup?.jpg">Chihuahua Wassup?.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Gjesp,_Karin_Beate_Nosterud.jpg" class="image"><img alt="Gjesp, Karin Beate Nosterud.jpg" src="static/images/800px-Gjesp%2C_Karin_Beate_Nosterud.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Gjesp,_Karin_Beate_Nosterud.jpg" title="File:Gjesp, Karin Beate Nosterud.jpg">Gjesp, Karin Beate Nosterud.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Paisible.JPG" class="image"><img alt="Paisible.JPG" src="static/images/800px-Paisible.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Paisible.JPG" title="File:Paisible.JPG">Paisible.JPG</a><br>
+</div><div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Puppy_Dodo_IMG_4601.JPG" class="image"><img alt="Puppy Dodo IMG 4601.JPG" src="static/images/800px-Puppy_Dodo_IMG_4601.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Puppy_Dodo_IMG_4601.JPG" title="File:Puppy Dodo IMG 4601.JPG">Puppy Dodo IMG 4601.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Untimely_Yawn_(9072112472).jpg" class="image"><img alt="Untimely Yawn (9072112472).jpg" src="static/images/800px-Untimely_Yawn_%289072112472%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Untimely_Yawn_(9072112472).jpg" title="File:Untimely Yawn (9072112472).jpg">Untimely Yawn (9072112472).jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Yawn.gif" class="image"><img alt="Yawn.gif" src="static/images/800px-Yawn.gif"></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Yawn.gif" title="File:Yawn.gif">Yawn.gif</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Yawning_basset_hound_(8107971045).jpg" class="image"><img alt="Yawning basset hound (8107971045).jpg" src="static/images/800px-Yawning_basset_hound_%288107971045%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Yawning_basset_hound_(8107971045).jpg" title="File:Yawning basset hound (8107971045).jpg">Yawning basset hound (8107971045).jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Yawning_German_Shepherd.JPG" class="image"><img alt="Yawning German Shepherd.JPG" src="static/images/800px-Yawning_German_Shepherd.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Yawning_German_Shepherd.JPG" title="File:Yawning German Shepherd.JPG">Yawning German Shepherd.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:2014_Dog_relaxing_on_a_hot_summer_day.jpg" class="image"><img alt="2014 Dog relaxing on a hot summer day.jpg" src="static/images/800px-2014_Dog_relaxing_on_a_hot_summer_day.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:2014_Dog_relaxing_on_a_hot_summer_day.jpg" title="File:2014 Dog relaxing on a hot summer day.jpg">2014 Dog relaxing on a hot summer day.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:3_dalmatian_dogs.jpg" class="image"><img alt="3 dalmatian dogs.jpg" src="static/images/800px-3_dalmatian_dogs.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:3_dalmatian_dogs.jpg" title="File:3 dalmatian dogs.jpg">3 dalmatian dogs.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:ACD_puppies_2_weeks.jpg" class="image"><img alt="ACD puppies 2 weeks.jpg" src="static/images/800px-ACD_puppies_2_weeks.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:ACD_puppies_2_weeks.jpg" title="File:ACD puppies 2 weeks.jpg">ACD puppies 2 weeks.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Alter_Zwergschnauzer.jpg" class="image"><img alt="Alter Zwergschnauzer.jpg" src="static/images/800px-Alter_Zwergschnauzer.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Alter_Zwergschnauzer.jpg" title="File:Alter Zwergschnauzer.jpg">Alter Zwergschnauzer.jpg</a><br>
+</div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Assistance_Dog_in_Training_(12123319706).jpg" title="File:Assistance Dog in Training (12123319706).jpg">Assistance Dog in Training (12123319706).jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Black-brown_mixed-breed_bitch_2.JPG" class="image"><img alt="Black-brown mixed-breed bitch 2.JPG" src="static/images/800px-Black-brown_mixed-breed_bitch_2.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Black-brown_mixed-breed_bitch_2.JPG" title="File:Black-brown mixed-breed bitch 2.JPG">Black-brown mixed-breed bitch 2.JPG</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Bonnie_Maggie_Snoozing.JPG" class="image"><img alt="Bonnie Maggie Snoozing.JPG" src="static/images/800px-Bonnie_Maggie_Snoozing.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Bonnie_Maggie_Snoozing.JPG" title="File:Bonnie Maggie Snoozing.JPG">Bonnie Maggie Snoozing.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Bordesholm_Kenotaph_Hund.jpg" class="image"><img alt="Bordesholm Kenotaph Hund.jpg" src="static/images/800px-Bordesholm_Kenotaph_Hund.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Bordesholm_Kenotaph_Hund.jpg" title="File:Bordesholm Kenotaph Hund.jpg">Bordesholm Kenotaph Hund.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Boxer_and_dachshund_asleep_in_a_chair.jpg" class="image"><img alt="Boxer and dachshund asleep in a chair.jpg" src="static/images/800px-Boxer_and_dachshund_asleep_in_a_chair.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Boxer_and_dachshund_asleep_in_a_chair.jpg" title="File:Boxer and dachshund asleep in a chair.jpg">Boxer and dachshund asleep in a chair.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Boxer_dog_Chloe-300.jpg" class="image"><img alt="Boxer dog Chloe-300.jpg" src="static/images/800px-Boxer_dog_Chloe-300.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Boxer_dog_Chloe-300.jpg" title="File:Boxer dog Chloe-300.jpg">Boxer dog Chloe-300.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Boxer_sleeping.JPG" class="image"><img alt="Boxer sleeping.JPG" src="static/images/800px-Boxer_sleeping.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Boxer_sleeping.JPG" title="File:Boxer sleeping.JPG">Boxer sleeping.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Bullmastiff_Sleeping.jpg" class="image"><img alt="Bullmastiff Sleeping.jpg" src="static/images/800px-Bullmastiff_Sleeping.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Bullmastiff_Sleeping.jpg" title="File:Bullmastiff Sleeping.jpg">Bullmastiff Sleeping.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Cachorro_mestizo.JPG" class="image"><img alt="Cachorro mestizo.JPG" src="static/images/800px-Cachorro_mestizo.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Cachorro_mestizo.JPG" title="File:Cachorro mestizo.JPG">Cachorro mestizo.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Cairn_Terrier_sleeping_on_the_beach.jpg" class="image"><img alt="Cairn Terrier sleeping on the beach.jpg" src="static/images/800px-Cairn_Terrier_sleeping_on_the_beach.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Cairn_Terrier_sleeping_on_the_beach.jpg" title="File:Cairn Terrier sleeping on the beach.jpg">Cairn Terrier sleeping on the beach.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Casa_da_Parra,_porta.jpg" class="image"><img alt="Casa da Parra, porta.jpg" src="static/images/800px-Casa_da_Parra%2C_porta.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Casa_da_Parra,_porta.jpg" title="File:Casa da Parra, porta.jpg">Casa da Parra, porta.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Cats_17_2835956a.jpg" class="image"><img alt="Cats 17 2835956a.jpg" src="static/images/800px-Cats_17_2835956a.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Cats_17_2835956a.jpg" title="File:Cats 17 2835956a.jpg">Cats 17 2835956a.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Cheek_to_Cheek_(9110990360).jpg" class="image"><img alt="Cheek to Cheek (9110990360).jpg" src="static/images/800px-Cheek_to_Cheek_%289110990360%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Cheek_to_Cheek_(9110990360).jpg" title="File:Cheek to Cheek (9110990360).jpg">Cheek to Cheek (9110990360).jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dalmatin.JPG" class="image"><img alt="Dalmatin.JPG" src="static/images/800px-Dalmatin.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dalmatin.JPG" title="File:Dalmatin.JPG">Dalmatin.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Demodectic_mange_2.jpg" class="image"><img alt="Demodectic mange 2.jpg" src="static/images/800px-Demodectic_mange_2.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Demodectic_mange_2.jpg" title="File:Demodectic mange 2.jpg">Demodectic mange 2.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dic_08_101.jpg" class="image"><img alt="Dic 08 101.jpg" src="static/images/800px-Dic_08_101.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dic_08_101.jpg" title="File:Dic 08 101.jpg">Dic 08 101.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog_and_Cart.jpg" class="image"><img alt="Dog and Cart.jpg" src="static/images/800px-Dog_and_Cart.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_and_Cart.jpg" title="File:Dog and Cart.jpg">Dog and Cart.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog_in_the_grass.jpg" class="image"><img alt="Dog in the grass.jpg" src="static/images/800px-Dog_in_the_grass.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_in_the_grass.jpg" title="File:Dog in the grass.jpg">Dog in the grass.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog_rest.JPG" class="image"><img alt="Dog rest.JPG" src="static/images/800px-Dog_rest.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_rest.JPG" title="File:Dog rest.JPG">Dog rest.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Dog_resting_sri-lanka.jpg" class="image"><img alt="Dog resting sri-lanka.jpg" src="static/images/800px-Dog_resting_sri-lanka.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_resting_sri-lanka.jpg" title="File:Dog resting sri-lanka.jpg">Dog resting sri-lanka.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog_sleeping_(1).jpg" class="image"><img alt="Dog sleeping (1).jpg" src="static/images/800px-Dog_sleeping_%281%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_sleeping_(1).jpg" title="File:Dog sleeping (1).jpg">Dog sleeping (1).jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog_sleeping_by_footbridge_in_Kibera.jpg" class="image"><img alt="Dog sleeping by footbridge in Kibera.jpg" src="static/images/800px-Dog_sleeping_by_footbridge_in_Kibera.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_sleeping_by_footbridge_in_Kibera.jpg" title="File:Dog sleeping by footbridge in Kibera.jpg">Dog sleeping by footbridge in Kibera.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Dog_sleeping_in_a_dog_bed.JPG" class="image"><img alt="Dog sleeping in a dog bed.JPG" src="static/images/800px-Dog_sleeping_in_a_dog_bed.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_sleeping_in_a_dog_bed.JPG" title="File:Dog sleeping in a dog bed.JPG">Dog sleeping in a dog bed.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog_tail_sri-lanka.jpg" class="image"><img alt="Dog tail sri-lanka.jpg" src="static/images/800px-Dog_tail_sri-lanka.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_tail_sri-lanka.jpg" title="File:Dog tail sri-lanka.jpg">Dog tail sri-lanka.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog.in.sleep.jpg" class="image"><img alt="Dog.in.sleep.jpg" src="static/images/800px-Dog.in.sleep.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog.in.sleep.jpg" title="File:Dog.in.sleep.jpg">Dog.in.sleep.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dogs_sleeping_in_the_floor.JPG" class="image"><img alt="Dogs sleeping in the floor.JPG" src="static/images/800px-Dogs_sleeping_in_the_floor.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dogs_sleeping_in_the_floor.JPG" title="File:Dogs sleeping in the floor.JPG">Dogs sleeping in the floor.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Don%27t_Bother_Me.jpg" class="image"><img alt="Don't Bother Me.jpg" src="static/images/800px-Don%27t_Bother_Me.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Don%27t_Bother_Me.jpg" title="File:Don't Bother Me.jpg">Don't Bother Me.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Drei_schlaefer.JPG" class="image"><img alt="Drei schlaefer.JPG" src="static/images/800px-Drei_schlaefer.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Drei_schlaefer.JPG" title="File:Drei schlaefer.JPG">Drei schlaefer.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:EN57-1389rb-091111-Misiek.jpg" class="image"><img alt="EN57-1389rb-091111-Misiek.jpg" src="static/images/800px-EN57-1389rb-091111-Misiek.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:EN57-1389rb-091111-Misiek.jpg" title="File:EN57-1389rb-091111-Misiek.jpg">EN57-1389rb-091111-Misiek.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:English_Bulldog.jpg" class="image"><img alt="English Bulldog.jpg" src="static/images/800px-English_Bulldog.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:English_Bulldog.jpg" title="File:English Bulldog.jpg">English Bulldog.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:EnglishMastiffSleeping.jpeg" class="image"><img alt="EnglishMastiffSleeping.jpeg" src="static/images/800px-EnglishMastiffSleeping.jpeg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:EnglishMastiffSleeping.jpeg" title="File:EnglishMastiffSleeping.jpeg">EnglishMastiffSleeping.jpeg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Francuski_buldog_Krk.jpg" class="image"><img alt="Francuski buldog Krk.jpg" src="static/images/800px-Francuski_buldog_Krk.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Francuski_buldog_Krk.jpg" title="File:Francuski buldog Krk.jpg">Francuski buldog Krk.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Girl_asleep_with_her_smooth_Collie.JPG" class="image"><img alt="Girl asleep with her smooth Collie.JPG" src="static/images/800px-Girl_asleep_with_her_smooth_Collie.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Girl_asleep_with_her_smooth_Collie.JPG" title="File:Girl asleep with her smooth Collie.JPG">Girl asleep with her smooth Collie.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Godt_med_s%C3%B8vn_(8441026618).jpg" class="image"><img alt="Godt med sÃ¸vn (8441026618).jpg" src="static/images/800px-Godt_med_s%C3%B8vn_%288441026618%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Godt_med_s%C3%B8vn_(8441026618).jpg" title="File:Godt med sÃ¸vn (8441026618).jpg">Godt med sÃ¸vn (8441026618).jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Greyhound_curled_into_a_ball.jpg" class="image"><img alt="Greyhound curled into a ball.jpg" src="static/images/800px-Greyhound_curled_into_a_ball.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Greyhound_curled_into_a_ball.jpg" title="File:Greyhound curled into a ball.jpg">Greyhound curled into a ball.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Greyhound_sleeping_stretched_out.jpg" class="image"><img alt="Greyhound sleeping stretched out.jpg" src="static/images/800px-Greyhound_sleeping_stretched_out.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Greyhound_sleeping_stretched_out.jpg" title="File:Greyhound sleeping stretched out.jpg">Greyhound sleeping stretched out.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Greyhound_teeth.jpg" class="image"><img alt="Greyhound teeth.jpg" src="static/images/800px-Greyhound_teeth.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Greyhound_teeth.jpg" title="File:Greyhound teeth.jpg">Greyhound teeth.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Hund003.gif" class="image"><img alt="Hund003.gif" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Hund003.gif" class=""></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Hund003.gif" title="File:Hund003.gif">Hund003.gif</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Indian_Spitz_-_1.jpeg" class="image"><img alt="Indian Spitz - 1.jpeg" src="static/images/800px-Indian_Spitz_-_1.jpeg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Indian_Spitz_-_1.jpeg" title="File:Indian Spitz - 1.jpeg">Indian Spitz - 1.jpeg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Italian_Longback_Moose.jpg" class="image"><img alt="Italian Longback Moose.jpg" src="static/images/800px-Italian_Longback_Moose.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Italian_Longback_Moose.jpg" title="File:Italian Longback Moose.jpg">Italian Longback Moose.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Puppies_Eddi_%26_Lola.JPG" class="image"><img alt="Jack Russell Puppies Eddi &amp; Lola.JPG" src="static/images/800px-Jack_Russell_Puppies_Eddi_%26_Lola.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jack_Russell_Puppies_Eddi_%26_Lola.JPG" title="File:Jack Russell Puppies Eddi &amp; Lola.JPG">Jack Russell Puppies Eddi &amp; Lola.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:KoerRannas.jpg" class="image"><img alt="KoerRannas.jpg" src="static/images/800px-KoerRannas.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:KoerRannas.jpg" title="File:KoerRannas.jpg">KoerRannas.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:L%27Aquila_2011_by-RaBoe-161.jpg" class="image"><img alt="L'Aquila 2011 by-RaBoe-161.jpg" src="static/images/800px-L%27Aquila_2011_by-RaBoe-161.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:L%27Aquila_2011_by-RaBoe-161.jpg" title="File:L'Aquila 2011 by-RaBoe-161.jpg">L'Aquila 2011 by-RaBoe-161.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Let_Sleeping_Dogs_Lie..jpg" class="image"><img alt="Let Sleeping Dogs Lie..jpg" src="static/images/800px-Let_Sleeping_Dogs_Lie..jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Let_Sleeping_Dogs_Lie..jpg" title="File:Let Sleeping Dogs Lie..jpg">Let Sleeping Dogs Lie..jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Lil-bit.jpg" class="image"><img alt="Lil-bit.jpg" src="static/images/800px-Lil-bit.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Lil-bit.jpg" title="File:Lil-bit.jpg">Lil-bit.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Maltese_dog_named_Pofak.jpg" class="image"><img alt="Maltese dog named Pofak.jpg" src="static/images/800px-Maltese_dog_named_Pofak.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Maltese_dog_named_Pofak.jpg" title="File:Maltese dog named Pofak.jpg">Maltese dog named Pofak.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Miniature_Schnauzer_Sleeping.jpg" class="image"><img alt="Miniature Schnauzer Sleeping.jpg" src="static/images/800px-Miniature_Schnauzer_Sleeping.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Miniature_Schnauzer_Sleeping.jpg" title="File:Miniature Schnauzer Sleeping.jpg">Miniature Schnauzer Sleeping.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Note_to_a_dog%3F.jpg" class="image"><img alt="Note to a dog?.jpg" src="static/images/800px-Note_to_a_dog%3F.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Note_to_a_dog%3F.jpg" title="File:Note to a dog?.jpg">Note to a dog?.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Pepper_(8730616959).jpg" class="image"><img alt="Pepper (8730616959).jpg" src="static/images/800px-Pepper_%288730616959%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Pepper_(8730616959).jpg" title="File:Pepper (8730616959).jpg">Pepper (8730616959).jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Pepper_(8731737514).jpg" class="image"><img alt="Pepper (8731737514).jpg" src="static/images/800px-Pepper_%288731737514%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Pepper_(8731737514).jpg" title="File:Pepper (8731737514).jpg">Pepper (8731737514).jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Perrodurmiendo.jpg" class="image"><img alt="Perrodurmiendo.jpg" src="static/images/800px-Perrodurmiendo.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Perrodurmiendo.jpg" title="File:Perrodurmiendo.jpg">Perrodurmiendo.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:PerrodurmiendoTandil-dec2014.JPG" class="image"><img alt="PerrodurmiendoTandil-dec2014.JPG" src="static/images/800px-PerrodurmiendoTandil-dec2014.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:PerrodurmiendoTandil-dec2014.JPG" title="File:PerrodurmiendoTandil-dec2014.JPG">PerrodurmiendoTandil-dec2014.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:PesPeggyPec.jpg" class="image"><img alt="PesPeggyPec.jpg" src="static/images/800px-PesPeggyPec.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:PesPeggyPec.jpg" title="File:PesPeggyPec.jpg">PesPeggyPec.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Picture_of_a_mutt.jpg" class="image"><img alt="Picture of a mutt.jpg" src="static/images/800px-Picture_of_a_mutt.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Picture_of_a_mutt.jpg" title="File:Picture of a mutt.jpg">Picture of a mutt.jpg</a><br>
+	</div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Portuguese_pointer_asleep_(8109940484).jpg" title="File:Portuguese pointer asleep (8109940484).jpg">Portuguese pointer asleep (8109940484).jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Ruger_(8761894086)_(2).jpg" class="image"><img alt="Ruger (8761894086) (2).jpg" src="static/images/800px-Ruger_%288761894086%29_%282%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Ruger_(8761894086)_(2).jpg" title="File:Ruger (8761894086) (2).jpg">Ruger (8761894086) (2).jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Rust_en_Vrede_17.JPG" class="image"><img alt="Rust en Vrede 17.JPG" src="static/images/800px-Rust_en_Vrede_17.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Rust_en_Vrede_17.JPG" title="File:Rust en Vrede 17.JPG">Rust en Vrede 17.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:S._Husky_mix_sleeping.jpg" class="image"><img alt="S. Husky mix sleeping.jpg" src="static/images/800px-S._Husky_mix_sleeping.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:S._Husky_mix_sleeping.jpg" title="File:S. Husky mix sleeping.jpg">S. Husky mix sleeping.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Sandler-ChinCouch.jpg" class="image"><img alt="Sandler-ChinCouch.jpg" src="static/images/800px-Sandler-ChinCouch.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sandler-ChinCouch.jpg" title="File:Sandler-ChinCouch.jpg">Sandler-ChinCouch.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:SandlerPillowsSleeping.JPG" class="image"><img alt="SandlerPillowsSleeping.JPG" src="static/images/800px-SandlerPillowsSleeping.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:SandlerPillowsSleeping.JPG" title="File:SandlerPillowsSleeping.JPG">SandlerPillowsSleeping.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Schlafender_Hund.jpg" class="image"><img alt="Schlafender Hund.jpg" src="static/images/800px-Schlafender_Hund.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Schlafender_Hund.jpg" title="File:Schlafender Hund.jpg">Schlafender Hund.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Selvanegrasecuritydog.JPG" class="image"><img alt="Selvanegrasecuritydog.JPG" src="static/images/800px-Selvanegrasecuritydog.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Selvanegrasecuritydog.JPG" title="File:Selvanegrasecuritydog.JPG">Selvanegrasecuritydog.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Shiba_Inu_15_year_old.jpg" class="image"><img alt="Shiba Inu 15 year old.jpg" src="static/images/800px-Shiba_Inu_15_year_old.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Shiba_Inu_15_year_old.jpg" title="File:Shiba Inu 15 year old.jpg">Shiba Inu 15 year old.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Siberianhuskywhite1.jpg" class="image"><img alt="Siberianhuskywhite1.jpg" src="static/images/800px-Siberianhuskywhite1.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Siberianhuskywhite1.jpg" title="File:Siberianhuskywhite1.jpg">Siberianhuskywhite1.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Sleeping_Border_Terrier.JPG" class="image"><img alt="Sleeping Border Terrier.JPG" src="static/images/800px-Sleeping_Border_Terrier.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_Border_Terrier.JPG" title="File:Sleeping Border Terrier.JPG">Sleeping Border Terrier.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Sleeping_Dog_(2613968907).jpg" class="image"><img alt="Sleeping Dog (2613968907).jpg" src="static/images/800px-Sleeping_Dog_%282613968907%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_Dog_(2613968907).jpg" title="File:Sleeping Dog (2613968907).jpg">Sleeping Dog (2613968907).jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Sleeping_dog_016.jpg" class="image"><img alt="Sleeping dog 016.jpg" src="static/images/800px-Sleeping_dog_016.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_dog_016.jpg" title="File:Sleeping dog 016.jpg">Sleeping dog 016.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Sleeping_dog_98a.jpg" class="image"><img alt="Sleeping dog 98a.jpg" src="static/images/800px-Sleeping_dog_98a.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_dog_98a.jpg" title="File:Sleeping dog 98a.jpg">Sleeping dog 98a.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Sleeping_dog.JPG" class="image"><img alt="Sleeping dog.JPG" src="static/images/800px-Sleeping_dog.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_dog.JPG" title="File:Sleeping dog.JPG">Sleeping dog.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Sleeping_dogs_(15554940586).jpg" class="image"><img alt="Sleeping dogs (15554940586).jpg" src="static/images/800px-Sleeping_dogs_%2815554940586%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_dogs_(15554940586).jpg" title="File:Sleeping dogs (15554940586).jpg">Sleeping dogs (15554940586).jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Sleeping_Husky-Sheepdog.jpg" class="image"><img alt="Sleeping Husky-Sheepdog.jpg" src="static/images/800px-Sleeping_Husky-Sheepdog.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_Husky-Sheepdog.jpg" title="File:Sleeping Husky-Sheepdog.jpg">Sleeping Husky-Sheepdog.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Sleeping_Irish_Red_and_White_Setter.jpg" class="image"><img alt="Sleeping Irish Red and White Setter.jpg" src="static/images/800px-Sleeping_Irish_Red_and_White_Setter.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_Irish_Red_and_White_Setter.jpg" title="File:Sleeping Irish Red and White Setter.jpg">Sleeping Irish Red and White Setter.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Sleeping_miniature_schnauzer.jpg" class="image"><img alt="Sleeping miniature schnauzer.jpg" src="static/images/800px-Sleeping_miniature_schnauzer.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_miniature_schnauzer.jpg" title="File:Sleeping miniature schnauzer.jpg">Sleeping miniature schnauzer.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Sleeping_Pups.jpg" class="image"><img alt="Sleeping Pups.jpg" src="static/images/800px-Sleeping_Pups.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Sleeping_Pups.jpg" title="File:Sleeping Pups.jpg">Sleeping Pups.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Speeping_Jack_Russell_Terrier.jpg" class="image"><img alt="Speeping Jack Russell Terrier.jpg" src="static/images/800px-Speeping_Jack_Russell_Terrier.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Speeping_Jack_Russell_Terrier.jpg" title="File:Speeping Jack Russell Terrier.jpg">Speeping Jack Russell Terrier.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Stacia_Napierkowska_002.jpg" class="image"><img alt="Stacia Napierkowska 002.jpg" src="static/images/800px-Stacia_Napierkowska_002.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Stacia_Napierkowska_002.jpg" title="File:Stacia Napierkowska 002.jpg">Stacia Napierkowska 002.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Stray_dog_-_asleep.jpg" class="image"><img alt="Stray dog - asleep.jpg" src="static/images/800px-Stray_dog_-_asleep.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Stray_dog_-_asleep.jpg" title="File:Stray dog - asleep.jpg">Stray dog - asleep.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Tobias_sleeping_in_the_floor_2.JPG" class="image"><img alt="Tobias sleeping in the floor 2.JPG" src="static/images/800px-Tobias_sleeping_in_the_floor_2.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Tobias_sleeping_in_the_floor_2.JPG" title="File:Tobias sleeping in the floor 2.JPG">Tobias sleeping in the floor 2.JPG</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Tobias_sleeping_in_the_floor.JPG" class="image"><img alt="Tobias sleeping in the floor.JPG" src="static/images/800px-Tobias_sleeping_in_the_floor.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Tobias_sleeping_in_the_floor.JPG" title="File:Tobias sleeping in the floor.JPG">Tobias sleeping in the floor.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Un_perro_durmiendo_.2.jpg" class="image"><img alt="Un perro durmiendo .2.jpg" src="static/images/800px-Un_perro_durmiendo_.2.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Un_perro_durmiendo_.2.jpg" title="File:Un perro durmiendo .2.jpg">Un perro durmiendo .2.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Un_perro_durmiendo.jpg" class="image"><img alt="Un perro durmiendo.jpg" src="static/images/800px-Un_perro_durmiendo.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Un_perro_durmiendo.jpg" title="File:Un perro durmiendo.jpg">Un perro durmiendo.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Un_perro_flaco.jpg" class="image"><img alt="Un perro flaco.jpg" src="static/images/800px-Un_perro_flaco.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Un_perro_flaco.jpg" title="File:Un perro flaco.jpg">Un perro flaco.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:US_Army_53395_DOSING_OFF.jpg" class="image"><img alt="US Army 53395 DOSING OFF.jpg" src="static/images/800px-US_Army_53395_DOSING_OFF.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:US_Army_53395_DOSING_OFF.jpg" title="File:US Army 53395 DOSING OFF.jpg">US Army 53395 DOSING OFF.jpg</a><br>
+	</div><div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Utah_dort.png" class="image"><img alt="Utah dort.png" src="static/images/800px-Utah_dort.png" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Utah_dort.png" title="File:Utah dort.png">Utah dort.png</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:VAQUITA.JPG" class="image"><img alt="VAQUITA.JPG" src="static/images/800px-VAQUITA.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:VAQUITA.JPG" title="File:VAQUITA.JPG">VAQUITA.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Vasco_van_de_Lochtergoldens_18_II_2003.jpg" class="image"><img alt="Vasco van de Lochtergoldens 18 II 2003.jpg" src="static/images/800px-Vasco_van_de_Lochtergoldens_18_II_2003.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Vasco_van_de_Lochtergoldens_18_II_2003.jpg" title="File:Vasco van de Lochtergoldens 18 II 2003.jpg">Vasco van de Lochtergoldens 18 II 2003.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:We%27ve_Had_a_Really_Hard_Day.jpg" class="image"><img alt="We've Had a Really Hard Day.jpg" src="static/images/800px-We%27ve_Had_a_Really_Hard_Day.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:We%27ve_Had_a_Really_Hard_Day.jpg" title="File:We've Had a Really Hard Day.jpg">We've Had a Really Hard Day.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Whippet_sleeping.jpg" class="image"><img alt="Whippet sleeping.jpg" src="static/images/800px-Whippet_sleeping.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Whippet_sleeping.jpg" title="File:Whippet sleeping.jpg">Whippet sleeping.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Whitedog_Sleeping.jpg" class="image"><img alt="Whitedog Sleeping.jpg" src="static/images/800px-Whitedog_Sleeping.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Whitedog_Sleeping.jpg" title="File:Whitedog Sleeping.jpg">Whitedog Sleeping.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:2_Tollers_in_the_water.JPG" class="image"><img alt="2 Tollers in the water.JPG" src="static/images/800px-2_Tollers_in_the_water.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:2_Tollers_in_the_water.JPG" title="File:2 Tollers in the water.JPG">2 Tollers in the water...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:20060128DalmenyOtto_002.jpg" class="image"><img alt="20060128DalmenyOtto 002.jpg" src="static/images/800px-20060128DalmenyOtto_002.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:20060128DalmenyOtto_002.jpg" title="File:20060128DalmenyOtto 002.jpg">20060128DalmenyOtto 00...</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:ACD_swimming.jpg" class="image"><img alt="ACD swimming.jpg" src="static/images/800px-ACD_swimming.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:ACD_swimming.jpg" title="File:ACD swimming.jpg">ACD swimming.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Australian_Cattle_Dogs_swimming.jpg" class="image"><img alt="Australian Cattle Dogs swimming.jpg" src="static/images/800px-Australian_Cattle_Dogs_swimming.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Australian_Cattle_Dogs_swimming.jpg" title="File:Australian Cattle Dogs swimming.jpg">Australian Cattle Dogs...</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Cairn505.jpg" class="image"><img alt="Cairn505.jpg" src="static/images/800px-Cairn505.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Cairn505.jpg" title="File:Cairn505.jpg">Cairn505.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:ChesapeakeBayRetriever.jpg" class="image"><img alt="ChesapeakeBayRetriever.jpg" src="static/images/800px-ChesapeakeBayRetriever.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:ChesapeakeBayRetriever.jpg" title="File:ChesapeakeBayRetriever.jpg">ChesapeakeBayRetriever...</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Christina_Lake.jpg" class="image"><img alt="Christina Lake.jpg" src="static/images/800px-Christina_Lake.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Christina_Lake.jpg" title="File:Christina Lake.jpg">Christina Lake.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dachshund_swimming.jpg" class="image"><img alt="Dachshund swimming.jpg" src="static/images/800px-Dachshund_swimming.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dachshund_swimming.jpg" title="File:Dachshund swimming.jpg">Dachshund swimming.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Dog_fetching_ball_in_pool.jpg" class="image"><img alt="Dog fetching ball in pool.jpg" src="static/images/800px-Dog_fetching_ball_in_pool.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Dog_fetching_ball_in_pool.jpg" title="File:Dog fetching ball in pool.jpg">Dog fetching ball in p...</a><br>
+</div><div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:English_Setter_black_water.jpg" class="image"><img alt="English Setter black water.jpg" src="static/images/800px-English_Setter_black_water.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:English_Setter_black_water.jpg" title="File:English Setter black water.jpg">English Setter black w...</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:FlatcoatsSharingStick.jpg" class="image"><img alt="FlatcoatsSharingStick.jpg" src="static/images/800px-FlatcoatsSharingStick.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:FlatcoatsSharingStick.jpg" title="File:FlatcoatsSharingStick.jpg">FlatcoatsSharingStick.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Four_swimming_dogs.jpg" class="image"><img alt="Four swimming dogs.jpg" src="static/images/800px-Four_swimming_dogs.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Four_swimming_dogs.jpg" title="File:Four swimming dogs.jpg">Four swimming dogs.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:German_Shepherd_Dog_swimming.jpg" class="image"><img alt="German Shepherd Dog swimming.jpg" src="static/images/800px-German_Shepherd_Dog_swimming.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:German_Shepherd_Dog_swimming.jpg" title="File:German Shepherd Dog swimming.jpg">German Shepherd Dog sw...</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:GermanShepherdDog_swimming.jpg" class="image"><img alt="GermanShepherdDog swimming.jpg" src="static/images/800px-GermanShepherdDog_swimming.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:GermanShepherdDog_swimming.jpg" title="File:GermanShepherdDog swimming.jpg">GermanShepherdDog swim...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_Retriever_afloat_(Barras).jpg" class="image"><img alt="Golden Retriever afloat (Barras).jpg" src="static/images/800px-Golden_Retriever_afloat_%28Barras%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_Retriever_afloat_(Barras).jpg" title="File:Golden Retriever afloat (Barras).jpg">Golden Retriever afloa...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_dummytraining.jpg" class="image"><img alt="Golden retriever dummytraining.jpg" src="static/images/800px-Golden_retriever_dummytraining.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_dummytraining.jpg" title="File:Golden retriever dummytraining.jpg">Golden retriever dummy...</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380154.jpg" class="image"><img alt="Golden retriever swimming 1380154.jpg" src="static/images/800px-Golden_retriever_swimming_1380154.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380154.jpg" title="File:Golden retriever swimming 1380154.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380155.jpg" class="image"><img alt="Golden retriever swimming 1380155.jpg" src="static/images/800px-Golden_retriever_swimming_1380155.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380155.jpg" title="File:Golden retriever swimming 1380155.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380173.jpg" class="image"><img alt="Golden retriever swimming 1380173.jpg" src="static/images/800px-Golden_retriever_swimming_1380173.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380173.jpg" title="File:Golden retriever swimming 1380173.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380175.jpg" class="image"><img alt="Golden retriever swimming 1380175.jpg" src="static/images/800px-Golden_retriever_swimming_1380175.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380175.jpg" title="File:Golden retriever swimming 1380175.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380220.jpg" class="image"><img alt="Golden retriever swimming 1380220.jpg" src="static/images/800px-Golden_retriever_swimming_1380220.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380220.jpg" title="File:Golden retriever swimming 1380220.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380221.jpg" class="image"><img alt="Golden retriever swimming 1380221.jpg" src="static/images/800px-Golden_retriever_swimming_1380221.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380221.jpg" title="File:Golden retriever swimming 1380221.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380223.jpg" class="image"><img alt="Golden retriever swimming 1380223.jpg" src="static/images/800px-Golden_retriever_swimming_1380223.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380223.jpg" title="File:Golden retriever swimming 1380223.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380224.jpg" class="image"><img alt="Golden retriever swimming 1380224.jpg" src="static/images/800px-Golden_retriever_swimming_1380224.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_1380224.jpg" title="File:Golden retriever swimming 1380224.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_P1380174.jpg" class="image"><img alt="Golden retriever swimming P1380174.jpg" src="static/images/800px-Golden_retriever_swimming_P1380174.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_retriever_swimming_P1380174.jpg" title="File:Golden retriever swimming P1380174.jpg">Golden retriever swimm...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Golden_Retriever_Swimming.jpg" class="image"><img alt="Golden Retriever Swimming.jpg" src="static/images/800px-Golden_Retriever_Swimming.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Golden_Retriever_Swimming.jpg" title="File:Golden Retriever Swimming.jpg">Golden Retriever Swimm...</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Greven_-_Westeroder_See_24_ies.jpg" class="image"><img alt="Greven - Westeroder See 24 ies.jpg" src="static/images/800px-Greven_-_Westeroder_See_24_ies.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Greven_-_Westeroder_See_24_ies.jpg" title="File:Greven - Westeroder See 24 ies.jpg">Greven - Westeroder Se...</a><br>
+	15.</div><div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Irene_Dog_Swimming_NYC_2011_Shankbone.JPG" class="image"><img alt="Irene Dog Swimming NYC 2011 Shankbone.JPG" src="static/images/800px-Irene_Dog_Swimming_NYC_2011_Shankbone.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Irene_Dog_Swimming_NYC_2011_Shankbone.JPG" title="File:Irene Dog Swimming NYC 2011 Shankbone.JPG">Irene Dog Swimming NYC...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Labrador_Retriever_Nessie_Water.JPG" class="image"><img alt="Labrador Retriever Nessie Water.JPG" src="static/images/800px-Labrador_Retriever_Nessie_Water.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Labrador_Retriever_Nessie_Water.JPG" title="File:Labrador Retriever Nessie Water.JPG">Labrador Retriever Nes...</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Labrador_Retriever_running_water.jpg" class="image"><img alt="Labrador Retriever running water.jpg" src="static/images/800px-Labrador_Retriever_running_water.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Labrador_Retriever_running_water.jpg" title="File:Labrador Retriever running water.jpg">Labrador Retriever run...</a><br>
+</div><div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Low_Newton-by-the-Sea_MMB_08.jpg" class="image"><img alt="Low Newton-by-the-Sea MMB 08.jpg" src="static/images/800px-Low_Newton-by-the-Sea_MMB_08.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Low_Newton-by-the-Sea_MMB_08.jpg" title="File:Low Newton-by-the-Sea MMB 08.jpg">Low Newton-by-the-Sea...</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Nervous_Swimmer.jpg" class="image"><img alt="Nervous Swimmer.jpg" src="static/images/800px-Nervous_Swimmer.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Nervous_Swimmer.jpg" title="File:Nervous Swimmer.jpg">Nervous Swimmer.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Rita-nadando.jpg" class="image"><img alt="Rita-nadando.jpg" src="static/images/800px-Rita-nadando.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Rita-nadando.jpg" title="File:Rita-nadando.jpg">Rita-nadando.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Rita-nadando2.jpg" class="image"><img alt="Rita-nadando2.jpg" src="static/images/800px-Rita-nadando2.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Rita-nadando2.jpg" title="File:Rita-nadando2.jpg">Rita-nadando2.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:R%C3%B8rvig_haven.jpg" class="image"><img alt="RÃ¸rvig haven.jpg" src="static/images/800px-R%C3%B8rvig_haven.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:R%C3%B8rvig_haven.jpg" title="File:RÃ¸rvig haven.jpg">RÃ¸rvig haven.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Shakin_off.jpg" class="image"><img alt="Shakin off.jpg" src="static/images/800px-Shakin_off.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Shakin_off.jpg" title="File:Shakin off.jpg">Shakin off.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Snowy_downgraded_to_cool_from_heat.jpg" class="image"><img alt="Snowy downgraded to cool from heat.jpg" src="static/images/800px-Snowy_downgraded_to_cool_from_heat.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Snowy_downgraded_to_cool_from_heat.jpg" title="File:Snowy downgraded to cool from heat.jpg">Snowy downgraded to co...</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Swimming_dog_bgiu.jpg" class="image"><img alt="Swimming dog bgiu.jpg" src="static/images/800px-Swimming_dog_bgiu.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Swimming_dog_bgiu.jpg" title="File:Swimming dog bgiu.jpg">Swimming dog bgiu.jpg</a><br>
+	</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Swimming_school.jpg" class="image"><img alt="Swimming school.jpg" src="static/images/800px-Swimming_school.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Swimming_school.jpg" title="File:Swimming school.jpg">Swimming school.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Swimming_shetties_May_2010_039.jpg" class="image"><img alt="Swimming shetties May 2010 039.jpg" src="static/images/800px-Swimming_shetties_May_2010_039.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Swimming_shetties_May_2010_039.jpg" title="File:Swimming shetties May 2010 039.jpg">Swimming shetties May...</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Terre-neuve-img_2265.jpg" class="image"><img alt="Terre-neuve-img 2265.jpg" src="static/images/800px-Terre-neuve-img_2265.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Terre-neuve-img_2265.jpg" title="File:Terre-neuve-img 2265.jpg">Terre-neuve-img 2265.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Terre-neuve-img_2266.jpg" class="image"><img alt="Terre-neuve-img 2266.jpg" src="static/images/800px-Terre-neuve-img_2266.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Terre-neuve-img_2266.jpg" title="File:Terre-neuve-img 2266.jpg">Terre-neuve-img 2266.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Terre-neuve-img_2278.jpg" class="image"><img alt="Terre-neuve-img 2278.jpg" src="static/images/800px-Terre-neuve-img_2278.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Terre-neuve-img_2278.jpg" title="File:Terre-neuve-img 2278.jpg">Terre-neuve-img 2278.jpg</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Toller_Swimming.JPG" class="image"><img alt="Toller Swimming.JPG" src="static/images/800px-Toller_Swimming.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Toller_Swimming.JPG" title="File:Toller Swimming.JPG">Toller Swimming.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Wikilabrador_eau.JPG" class="image"><img alt="Wikilabrador eau.JPG" src="static/images/800px-Wikilabrador_eau.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Wikilabrador_eau.JPG" title="File:Wikilabrador eau.JPG">Wikilabrador eau.JPG</a><br>
+	</div><div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Cat_fish_Carousel_Philly.JPG" class="image"><img alt="Cat fish Carousel Philly.JPG" src="static/images/800px-Cat_fish_Carousel_Philly.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Cat_fish_Carousel_Philly.JPG" title="File:Cat fish Carousel Philly.JPG">Cat fish Carousel Philly.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Checkuser_is_not_for_fishing2.jpg" class="image"><img alt="Checkuser is not for fishing2.jpg" src="static/images/800px-Checkuser_is_not_for_fishing2.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Checkuser_is_not_for_fishing2.jpg" title="File:Checkuser is not for fishing2.jpg">Checkuser is not for fishing2.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Fishes_and_Cat.jpg" class="image"><img alt="Fishes and Cat.jpg" src="static/images/800px-Fishes_and_Cat.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Fishes_and_Cat.jpg" title="File:Fishes and Cat.jpg">Fishes and Cat.jpg</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Jan_van_Kessel_still_life.jpg" class="image"><img alt="Jan van Kessel still life.jpg" src="static/images/800px-Jan_van_Kessel_still_life.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Jan_van_Kessel_still_life.jpg" title="File:Jan van Kessel still life.jpg">Jan van Kessel still life.jpg</a><br>
+</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Katze_(Aquarium).jpg" class="image"><img alt="Katze (Aquarium).jpg" src="static/images/800px-Katze_%28Aquarium%29.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Katze_(Aquarium).jpg" title="File:Katze (Aquarium).jpg">Katze (Aquarium).jpg</a><br>
+	1,</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Kocka-kapr.JPG" class="image"><img alt="Kocka-kapr.JPG" src="static/images/800px-Kocka-kapr.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Kocka-kapr.JPG" title="File:Kocka-kapr.JPG">Kocka-kapr.JPG</a><br>
+	</div>
+	<div class="thumb"><div><a href="https://commons.wikimedia.org/wiki/File:Waiting_for_a_catch.JPG" class="image"><img alt="Waiting for a catch.JPG" src="static/images/800px-Waiting_for_a_catch.JPG" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Waiting_for_a_catch.JPG" title="File:Waiting for a catch.JPG">Waiting for a catch.JPG</a><br>
+</div>
+	<div class="thumb"><div style=""><a href="https://commons.wikimedia.org/wiki/File:Wolf_Howard._Dog_and_Cat_Underwater.jpg" class="image"><img alt="Wolf Howard. Dog and Cat Underwater.jpg" src="static/images/800px-Wolf_Howard._Dog_and_Cat_Underwater.jpg" ></a></div></div>
+	<div class="gallerytext">
+	<a href="https://commons.wikimedia.org/wiki/File:Wolf_Howard._Dog_and_Cat_Underwater.jpg" title="File:Wolf Howard. Dog and Cat Underwater.jpg">Wolf Howard. Dog and Cat Underwater.jpg</a><br>
+	</div>
+</div>
+<script src="static/jquery.js"></script>
+<script src="static/lazyload.js"></script>
+</body>
+</html>
