@@ -7,7 +7,9 @@
 <script>document.documentElement.className="client-js";</script>
 
 <link rel="stylesheet" href="https://en.m.wikipedia.org//w/load.php?lang=en&amp;modules=mediawiki.hlist%7Cmediawiki.ui.button%2Cicon%7Cmobile.init.styles%7Cskins.minerva.base.styles%7Cskins.minerva.content.styles%7Cskins.minerva.content.styles.images%7Cskins.minerva.icons.images%2Cwikimedia%7Cskins.minerva.mainPage.styles&amp;only=styles&amp;skin=minerva"/>
-<script async="" src="https://en.m.wikipedia.org/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=minerva&amp;target=mobile"></script>
+<script async="">
+	document.documentElement.className = document.documentElement.className.replace(/(^|\s)client-js(\s|$)/, '$1client-nojs$2');
+</script>
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Leonardo_11%2C_Poitevin_stallion_%28cropped%29.jpg/1200px-Leonardo_11%2C_Poitevin_stallion_%28cropped%29.jpg"/>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
 <link rel="canonical" href="https://en.wikipedia.org/wiki/Main_Page"/>
