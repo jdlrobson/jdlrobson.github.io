@@ -1872,19 +1872,3 @@ a.external--reference {
     background-image: linear-gradient(transparent, transparent), url(/w/load.php?modules=skins.minerva.icons.wikimedia&image=userAvatar&variant=progressive&format=original&skin=minerva&version=1jlmm)
 }
 
-.page-Main_Page #section_0 {
-    border: 0
-}
-
-.page-Main_Page #page-actions,
-.page-Main_Page .pre-content {
-    display: none
-}
-
-.page-Main_Page.is-authenticated .pre-content {
-    display: block
-}
-
-.page-Main_Page #page-secondary-actions a {
-    margin-top: 1em
-}
