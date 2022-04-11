@@ -1,0 +1,962 @@
+report({
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Main_Page_vector-2022_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Main_Page_vector-2022_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Main_Page_vector-2022_0_document_0_phone.png",
+        "label": "Main_Page (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 10,
+            "height": -79
+          },
+          "rawMisMatchPercentage": 9.476129187949967,
+          "misMatchPercentage": "9.48",
+          "analysisTime": 855
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Main_Page_vector-2022_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Main_Page_vector-2022_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Main_Page_vector-2022_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Main_Page_vector-2022_0_document_1_tablet.png",
+        "label": "Main_Page (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -79
+          },
+          "rawMisMatchPercentage": 7.1130555555555555,
+          "misMatchPercentage": "7.11",
+          "analysisTime": 1076
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Main_Page_vector-2022_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Main_Page_vector-2022_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Main_Page_vector-2022_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Main_Page_vector-2022_0_document_2_desktop.png",
+        "label": "Main_Page (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.179444444444444,
+          "misMatchPercentage": "6.18",
+          "analysisTime": 868
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Main_Page_vector-2022_0_document_2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Main_Page_vector-2022_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Main_Page_vector-2022_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Main_Page_vector-2022_0_document_3_desktop-wide.png",
+        "label": "Main_Page (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.6872519841269837,
+          "misMatchPercentage": "3.69",
+          "analysisTime": 2195
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Main_Page_vector-2022_0_document_3_desktop-wide.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Test_vector-2022_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Test_vector-2022_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_vector-2022_0_document_0_phone.png",
+        "label": "Test (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Test",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 10,
+            "height": -1179
+          },
+          "rawMisMatchPercentage": 23.360905464539954,
+          "misMatchPercentage": "23.36",
+          "analysisTime": 1481
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Test_vector-2022_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Test_vector-2022_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Test_vector-2022_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_vector-2022_0_document_1_tablet.png",
+        "label": "Test (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Test",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -1399
+          },
+          "rawMisMatchPercentage": 15.411519775790014,
+          "misMatchPercentage": "15.41",
+          "analysisTime": 2230
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Test_vector-2022_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Test_vector-2022_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Test_vector-2022_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_vector-2022_0_document_2_desktop.png",
+        "label": "Test (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Test",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -491
+          },
+          "rawMisMatchPercentage": 16.943697133941036,
+          "misMatchPercentage": "16.94",
+          "analysisTime": 2169
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Test_vector-2022_0_document_2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Test_vector-2022_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Test_vector-2022_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_vector-2022_0_document_3_desktop-wide.png",
+        "label": "Test (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Test",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 25
+          },
+          "rawMisMatchPercentage": 11.884985707986203,
+          "misMatchPercentage": "11.88",
+          "analysisTime": 2583
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Test_vector-2022_0_document_3_desktop-wide.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TestactionHistory_vector-2022_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TestactionHistory_vector-2022_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TestactionHistory_vector-2022_0_document_0_phone.png",
+        "label": "Test?action=History (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/w/index.php?title=Test&action=history",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 10,
+            "height": -118
+          },
+          "rawMisMatchPercentage": 12.648911751778478,
+          "misMatchPercentage": "12.65",
+          "analysisTime": 889
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TestactionHistory_vector-2022_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TestactionHistory_vector-2022_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TestactionHistory_vector-2022_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TestactionHistory_vector-2022_0_document_1_tablet.png",
+        "label": "Test?action=History (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/w/index.php?title=Test&action=history",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -118
+          },
+          "rawMisMatchPercentage": 9.2062010142923,
+          "misMatchPercentage": "9.21",
+          "analysisTime": 1115
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TestactionHistory_vector-2022_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TestactionHistory_vector-2022_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TestactionHistory_vector-2022_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TestactionHistory_vector-2022_0_document_2_desktop.png",
+        "label": "Test?action=History (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/w/index.php?title=Test&action=history",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 9.383777777777778,
+          "misMatchPercentage": "9.38",
+          "analysisTime": 1255
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TestactionHistory_vector-2022_0_document_2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TestactionHistory_vector-2022_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TestactionHistory_vector-2022_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TestactionHistory_vector-2022_0_document_3_desktop-wide.png",
+        "label": "Test?action=History (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/w/index.php?title=Test&action=history",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 5.653645833333333,
+          "misMatchPercentage": "5.65",
+          "analysisTime": 2124
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TestactionHistory_vector-2022_0_document_3_desktop-wide.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TalkTest_vector-2022_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TalkTest_vector-2022_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TalkTest_vector-2022_0_document_0_phone.png",
+        "label": "Talk:Test (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Talk:Test",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 10,
+            "height": -79
+          },
+          "rawMisMatchPercentage": 7.780905420096289,
+          "misMatchPercentage": "7.78",
+          "analysisTime": 721
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TalkTest_vector-2022_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TalkTest_vector-2022_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TalkTest_vector-2022_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TalkTest_vector-2022_0_document_1_tablet.png",
+        "label": "Talk:Test (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Talk:Test",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -79
+          },
+          "rawMisMatchPercentage": 5.91627358490566,
+          "misMatchPercentage": "5.92",
+          "analysisTime": 1236
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TalkTest_vector-2022_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TalkTest_vector-2022_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TalkTest_vector-2022_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TalkTest_vector-2022_0_document_2_desktop.png",
+        "label": "Talk:Test (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Talk:Test",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 5.585,
+          "misMatchPercentage": "5.58",
+          "analysisTime": 1247
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TalkTest_vector-2022_0_document_2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TalkTest_vector-2022_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TalkTest_vector-2022_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TalkTest_vector-2022_0_document_3_desktop-wide.png",
+        "label": "Talk:Test (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Talk:Test",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.4393601190476195,
+          "misMatchPercentage": "3.44",
+          "analysisTime": 1648
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TalkTest_vector-2022_0_document_3_desktop-wide.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Tree_vector-2022_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Tree_vector-2022_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Tree_vector-2022_0_document_0_phone.png",
+        "label": "Tree (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Tree",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 10,
+            "height": -101
+          },
+          "rawMisMatchPercentage": 8.440581214322782,
+          "misMatchPercentage": "8.44",
+          "analysisTime": 718
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Tree_vector-2022_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Tree_vector-2022_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Tree_vector-2022_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Tree_vector-2022_0_document_1_tablet.png",
+        "label": "Tree (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Tree",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.199905960648148,
+          "misMatchPercentage": "6.20",
+          "analysisTime": 707
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Tree_vector-2022_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Tree_vector-2022_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Tree_vector-2022_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Tree_vector-2022_0_document_2_desktop.png",
+        "label": "Tree (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Tree",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 4.3067777777777785,
+          "misMatchPercentage": "4.31",
+          "analysisTime": 1057
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Tree_vector-2022_0_document_2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Tree_vector-2022_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Tree_vector-2022_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Tree_vector-2022_0_document_3_desktop-wide.png",
+        "label": "Tree (vector-2022)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Tree",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 2.6245039682539684,
+          "misMatchPercentage": "2.62",
+          "analysisTime": 1784
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_Tree_vector-2022_0_document_3_desktop-wide.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Main_Page_vector_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Main_Page_vector_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Main_Page_vector_0_document_0_phone.png",
+        "label": "Main_Page (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.08752527805864509,
+          "misMatchPercentage": "0.09",
+          "analysisTime": 462
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Main_Page_vector_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Main_Page_vector_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Main_Page_vector_0_document_1_tablet.png",
+        "label": "Main_Page (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Main_Page_vector_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Main_Page_vector_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Main_Page_vector_0_document_2_desktop.png",
+        "label": "Main_Page (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Main_Page_vector_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Main_Page_vector_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Main_Page_vector_0_document_3_desktop-wide.png",
+        "label": "Main_Page (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Test_vector_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Test_vector_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_vector_0_document_0_phone.png",
+        "label": "Test (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Test?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Test_vector_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Test_vector_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_vector_0_document_1_tablet.png",
+        "label": "Test (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Test?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Test_vector_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Test_vector_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_vector_0_document_2_desktop.png",
+        "label": "Test (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Test?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Test_vector_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Test_vector_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_vector_0_document_3_desktop-wide.png",
+        "label": "Test (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Test?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TestactionHistory_vector_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TestactionHistory_vector_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TestactionHistory_vector_0_document_0_phone.png",
+        "label": "Test?action=History (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/w/index.php?title=Test&action=history&useskin=vector",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.0425289593379899,
+          "misMatchPercentage": "0.04",
+          "analysisTime": 833
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TestactionHistory_vector_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TestactionHistory_vector_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TestactionHistory_vector_0_document_1_tablet.png",
+        "label": "Test?action=History (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/w/index.php?title=Test&action=history&useskin=vector",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TestactionHistory_vector_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TestactionHistory_vector_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TestactionHistory_vector_0_document_2_desktop.png",
+        "label": "Test?action=History (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/w/index.php?title=Test&action=history&useskin=vector",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TestactionHistory_vector_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TestactionHistory_vector_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TestactionHistory_vector_0_document_3_desktop-wide.png",
+        "label": "Test?action=History (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/w/index.php?title=Test&action=history&useskin=vector",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TalkTest_vector_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TalkTest_vector_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TalkTest_vector_0_document_0_phone.png",
+        "label": "Talk:Test (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Talk:Test",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 10,
+            "height": -79
+          },
+          "rawMisMatchPercentage": 7.780905420096289,
+          "misMatchPercentage": "7.78",
+          "analysisTime": 911
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TalkTest_vector_0_document_0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TalkTest_vector_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TalkTest_vector_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TalkTest_vector_0_document_1_tablet.png",
+        "label": "Talk:Test (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Talk:Test",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -79
+          },
+          "rawMisMatchPercentage": 5.91627358490566,
+          "misMatchPercentage": "5.92",
+          "analysisTime": 1273
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TalkTest_vector_0_document_1_tablet.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TalkTest_vector_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TalkTest_vector_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TalkTest_vector_0_document_2_desktop.png",
+        "label": "Talk:Test (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Talk:Test",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 5.585,
+          "misMatchPercentage": "5.58",
+          "analysisTime": 1239
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TalkTest_vector_0_document_2_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_TalkTest_vector_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_TalkTest_vector_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_TalkTest_vector_0_document_3_desktop-wide.png",
+        "label": "Talk:Test (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Talk:Test",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.4393601190476195,
+          "misMatchPercentage": "3.44",
+          "analysisTime": 1267
+        },
+        "diffImage": "../bitmaps_test/20220411-200452/failed_diff_MediaWiki_TalkTest_vector_0_document_3_desktop-wide.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Tree_vector_0_document_0_phone.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Tree_vector_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Tree_vector_0_document_0_phone.png",
+        "label": "Tree (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Tree?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Tree_vector_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Tree_vector_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Tree_vector_0_document_1_tablet.png",
+        "label": "Tree (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Tree?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Tree_vector_0_document_2_desktop.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Tree_vector_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Tree_vector_0_document_2_desktop.png",
+        "label": "Tree (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Tree?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/MediaWiki_Tree_vector_0_document_3_desktop-wide.png",
+        "test": "../bitmaps_test/20220411-200452/MediaWiki_Tree_vector_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Tree_vector_0_document_3_desktop-wide.png",
+        "label": "Tree (vector)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Tree?useskin=vector",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    }
+  ],
+  "id": "MediaWiki"
+});
