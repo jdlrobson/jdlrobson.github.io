@@ -1,0 +1,100 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "reference-screenshots/MediaWiki_Test_sticky_header_logged-in_scroll_0_document_0_phone.png",
+        "test": "test-screenshots/20220418-183632/MediaWiki_Test_sticky_header_logged-in_scroll_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_sticky_header_logged-in_scroll_0_document_0_phone.png",
+        "label": "Test sticky header (#logged-in, #scroll)",
+        "misMatchThreshold": 0.4,
+        "url": "http://mediawiki-web:8080/wiki/Test",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "reference-screenshots/MediaWiki_Test_sticky_header_logged-in_scroll_0_document_1_tablet.png",
+        "test": "test-screenshots/20220418-183632/MediaWiki_Test_sticky_header_logged-in_scroll_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_sticky_header_logged-in_scroll_0_document_1_tablet.png",
+        "label": "Test sticky header (#logged-in, #scroll)",
+        "misMatchThreshold": 0.4,
+        "url": "http://mediawiki-web:8080/wiki/Test",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.0603780383027078,
+          "misMatchPercentage": "0.06",
+          "analysisTime": 721
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "reference-screenshots/MediaWiki_Test_sticky_header_logged-in_scroll_0_document_2_desktop.png",
+        "test": "test-screenshots/20220418-183632/MediaWiki_Test_sticky_header_logged-in_scroll_0_document_2_desktop.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_sticky_header_logged-in_scroll_0_document_2_desktop.png",
+        "label": "Test sticky header (#logged-in, #scroll)",
+        "misMatchThreshold": 0.4,
+        "url": "http://mediawiki-web:8080/wiki/Test",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.07008720024914357,
+          "misMatchPercentage": "0.07",
+          "analysisTime": 642
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "reference-screenshots/MediaWiki_Test_sticky_header_logged-in_scroll_0_document_3_desktop-wide.png",
+        "test": "test-screenshots/20220418-183632/MediaWiki_Test_sticky_header_logged-in_scroll_0_document_3_desktop-wide.png",
+        "selector": "document",
+        "fileName": "MediaWiki_Test_sticky_header_logged-in_scroll_0_document_3_desktop-wide.png",
+        "label": "Test sticky header (#logged-in, #scroll)",
+        "misMatchThreshold": 0.4,
+        "url": "http://mediawiki-web:8080/wiki/Test",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.1479815955784523,
+          "misMatchPercentage": "0.15",
+          "analysisTime": 898
+        }
+      },
+      "status": "pass"
+    }
+  ],
+  "id": "MediaWiki"
+}

@@ -1,0 +1,98 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "reference-screenshots/MediaWiki_Main_Page_logged-in_0__0_phone.png",
+        "test": "test-screenshots/20220414-184214/MediaWiki_Main_Page_logged-in_0__0_phone.png",
+        "selector": "",
+        "fileName": "MediaWiki_Main_Page_logged-in_0__0_phone.png",
+        "label": "Main_Page (#logged-in)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "engineErrorMsg": "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "reference-screenshots/MediaWiki_Main_Page_logged-in_0__1_tablet.png",
+        "test": "test-screenshots/20220414-184214/MediaWiki_Main_Page_logged-in_0__1_tablet.png",
+        "selector": "",
+        "fileName": "MediaWiki_Main_Page_logged-in_0__1_tablet.png",
+        "label": "Main_Page (#logged-in)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "engineErrorMsg": "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "reference-screenshots/MediaWiki_Main_Page_logged-in_0__2_desktop.png",
+        "test": "test-screenshots/20220414-184214/MediaWiki_Main_Page_logged-in_0__2_desktop.png",
+        "selector": "",
+        "fileName": "MediaWiki_Main_Page_logged-in_0__2_desktop.png",
+        "label": "Main_Page (#logged-in)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "engineErrorMsg": "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "reference-screenshots/MediaWiki_Main_Page_logged-in_0__3_desktop-wide.png",
+        "test": "test-screenshots/20220414-184214/MediaWiki_Main_Page_logged-in_0__3_desktop-wide.png",
+        "selector": "",
+        "fileName": "MediaWiki_Main_Page_logged-in_0__3_desktop-wide.png",
+        "label": "Main_Page (#logged-in)",
+        "misMatchThreshold": 0.1,
+        "url": "http://mediawiki-web:8080/wiki/Main_Page",
+        "expect": 0,
+        "viewportLabel": "desktop-wide",
+        "engineErrorMsg": "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    }
+  ],
+  "id": "MediaWiki"
+}
