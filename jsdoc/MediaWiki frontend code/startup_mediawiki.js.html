@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: startup/mediawiki.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: startup/mediawiki.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Base library for MediaWiki.
+ */
+/* global $CODE */
+
+( function () {
+	'use strict';
+
+	var con = window.console;
+
+	/**
+	 * Log a message to window.console.
+	 *
+	 * Useful to force logging of some errors that are otherwise hard to detect (i.e., this logs
+	 * also in production mode).
+	 *
+	 * @private
+	 * @param {string} topic Stream name passed by mw.track
+	 * @param {Object} data Data passed by mw.track
+	 * @param {Error} [data.exception]
+	 * @param {string} data.source Error source
+	 * @param {string} [data.module] Name of module which caused the error
+	 */
+	function logError( topic, data ) {
+		var e = data.exception;
+		var msg = ( e ? 'Exception' : 'Error' ) +
+			' in ' + data.source +
+			( data.module ? ' in module ' + data.module : '' ) +
+			( e ? ':' : '.' );
+
+		con.log( msg );
+
+		// If we have an exception object, log it to the warning channel to trigger
+		// proper stacktraces in browsers that support it.
+		if ( e ) {
+			con.warn( e );
+		}
+	}
+
+	/**
+	 * Create an object that can be read from or written to via methods that allow
+	 * interaction both with single and multiple properties at once.
+	 *
+	 * @memberof mw
+	 * @constructor
+	 */
+	function Map() {
+		this.values = Object.create( null );
+	}
+
+	Map.prototype = {
+		constructor: Map,
+
+		/**
+		 * Get the value of one or more keys.
+		 *
+		 * If called with no arguments, all values are returned.
+		 *
+		 * @param {string|Array} [selection] Key or array of keys to retrieve values for.
+		 * @param {any} [fallback=null] Value for keys that don't exist.
+		 * @return {any|Object|null} If selection was a string, returns the value,
+		 *  If selection was an array, returns an object of key/values.
+		 *  If no selection is passed, a new object with all key/values is returned.
+		 */
+		get: function ( selection, fallback ) {
+			if ( arguments.length &lt; 2 ) {
+				fallback = null;
+			}
+
+			if ( typeof selection === 'string' ) {
+				return selection in this.values ?
+					this.values[ selection ] :
+					fallback;
+			}
+
+			var results;
+			if ( Array.isArray( selection ) ) {
+				results = {};
+				for ( var i = 0; i &lt; selection.length; i++ ) {
+					if ( typeof selection[ i ] === 'string' ) {
+						results[ selection[ i ] ] = selection[ i ] in this.values ?
+							this.values[ selection[ i ] ] :
+							fallback;
+					}
+				}
+				return results;
+			}
+
+			if ( selection === undefined ) {
+				results = {};
+				for ( var key in this.values ) {
+					results[ key ] = this.values[ key ];
+				}
+				return results;
+			}
+
+			// Invalid selection key
+			return fallback;
+		},
+
+		/**
+		 * Set one or more key/value pairs.
+		 *
+		 * @param {string|Object} selection Key to set value for, or object mapping keys to values
+		 * @param {Mixed} [value] Value to set (optional, only in use when key is a string)
+		 * @return {boolean} True on success, false on failure
+		 */
+		set: function ( selection, value ) {
+			// Use `arguments.length` because `undefined` is also a valid value.
+			if ( arguments.length > 1 ) {
+				// Set one key
+				if ( typeof selection === 'string' ) {
+					this.values[ selection ] = value;
+					return true;
+				}
+			} else if ( typeof selection === 'object' ) {
+				// Set multiple keys
+				for ( var key in selection ) {
+					this.values[ key ] = selection[ key ];
+				}
+				return true;
+			}
+			return false;
+		},
+
+		/**
+		 * Check if a given key exists in the map.
+		 *
+		 * @param {string} selection Key to check
+		 * @return {boolean} True if the key exists
+		 */
+		exists: function ( selection ) {
+			return typeof selection === 'string' &amp;&amp; selection in this.values;
+		}
+	};
+
+	/**
+	 * Write a verbose message to the browser's console in debug mode.
+	 *
+	 * This method is mainly intended for verbose logging. It is a no-op in production mode.
+	 * In ResourceLoader debug mode, it will use the browser's console.
+	 *
+	 * @memberof mw
+	 * @param {...string} msg Messages to output to console.
+	 */
+	var log = function () {
+		$CODE.consoleLog();
+	};
+
+	/**
+	 * Write a message to the browser console's warning channel.
+	 *
+	 * @memberof mw
+	 * @function
+	 * @param {...string} msg Messages to output to console
+	 */
+	log.warn = Function.prototype.bind.call( con.warn, con );
+
+	/**
+	 * Collection of methods to help log messages to the console.
+	 *
+	 * @classdesc Base library for MediaWiki. Exposed globally as `mw`, with `mediaWiki` as alias.
+	 * @namespace mw
+	 * @singleton
+	 * @hideconstructor
+	 * @static
+	 */
+	var mw = {
+		/**
+		 * Get the current time, measured in milliseconds since January 1, 1970 (UTC).
+		 *
+		 * On browsers that implement the Navigation Timing API, this function will produce
+		 * floating-point values with microsecond precision that are guaranteed to be monotonic.
+		 * On all other browsers, it will fall back to using `Date`.
+		 *
+		 * @memberof mw
+		 * @return {number} Current time
+		 */
+		now: function () {
+			// Optimisation: Cache and re-use the chosen implementation.
+			// Optimisation: Avoid startup overhead by re-defining on first call instead of IIFE.
+			var perf = window.performance;
+			var navStart = perf &amp;&amp; perf.timing &amp;&amp; perf.timing.navigationStart;
+
+			// Define the relevant shortcut
+			mw.now = navStart &amp;&amp; perf.now ?
+				function () {
+					return navStart + perf.now();
+				} :
+				Date.now;
+
+			return mw.now();
+		},
+
+		/**
+		 * List of all analytic events emitted so far.
+		 *
+		 * Exposed only for use by mediawiki.base.
+		 *
+		 * @private
+		 * @property {Array}
+		 */
+		trackQueue: [],
+
+		/**
+		 * @param {any} topic 
+		 * @param {any} data 
+		 * @memberof mw
+		 */
+		track: function ( topic, data ) {
+			mw.trackQueue.push( { topic: topic, data: data } );
+			// This method is extended by mediawiki.base to also fire events.
+		},
+
+		/**
+		 * Track an early error event via mw.track and send it to the window console.
+		 *
+		 * @private
+		 * @param {string} topic Topic name
+		 * @param {Object} data Data describing the event, encoded as an object; see mw#logError
+		 */
+		trackError: function ( topic, data ) {
+			mw.track( topic, data );
+			logError( topic, data );
+		},
+
+		/**
+		 * @memberof mw
+		 * @type {mw.Map}
+		 */
+		Map,
+
+		/**
+		 * Map of configuration values.
+		 *
+		 * Check out [the complete list of configuration values](https://www.mediawiki.org/wiki/Manual:Interface/JavaScript#mw.config)
+		 * on mediawiki.org.
+		 *
+		 * @memberof mw
+		 * @type {mw.Map}
+		 */
+		config: new Map(),
+
+		/**
+		 * Store for messages.
+		 *
+		 * @memberof mw
+		 * @type {mw.Map}
+		 */
+		messages: new Map(),
+
+		/**
+		 * Store for templates associated with a module.
+		 *
+		 * @type {mw.Map}
+		 * @memberof mw
+		 */
+		templates: new Map(),
+
+		// Expose mw.log
+		log,
+
+		// mw.loader is defined in a separate file that is appended to this
+	};
+
+	// Attach to window and globally alias
+	window.mw = window.mediaWiki = mw;
+}() );
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul><h3>Namespaces</h3><ul><li><a href="jQuery.plugin.html">jQuery.plugin</a></li><li><a href="mw.html">mw</a></li><li><a href="mw.errorLogger.html">mw.errorLogger</a></li><li><a href="mw.hook.html">mw.hook</a></li><li><a href="mw.html.html">mw.html</a></li><li><a href="mw.loader.html">mw.loader</a></li><li><a href="mw.html#.log">mw.log</a></li><li><a href="mw.util.html">mw.util</a></li><li><a href="window.html">window</a></li></ul><h3>Classes</h3><ul><li><a href="Message.html">Message</a></li><li><a href="mw.html.Raw.html">mw.html.Raw</a></li><li><a href="mw.html#.Map">mw.Map</a></li></ul><h3>Events</h3><ul><li><a href="global.html#event:error_caught">error_caught</a></li><li><a href="global.html#event:global_error">global_error</a></li><li><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Nov 30 2023 17:25:38 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,13366 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html lang="en" class="js-off lte-ie8"><![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="js-off ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="js-off">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Module: util: JSDoc</title>
+    <script>
+document.documentElement.className = document.documentElement.className.replace(/\bjs-off\b/,'js-on'); // no BEM notation thx to IE
+    </script>
+    <!--[if lt IE 9]>
+      <script>window.html5={'shivCSS':false};</script>
+      <script src="wmf/js/vendor/ie/html5shiv-3.7.3.min.js"></script>
+      <script src="wmf/js/vendor/ie/respond-1.4.2.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="wmf/css/build/wmui-style-guide.min.css">
+    <link rel="stylesheet" href="styles/jsdoc-wmf-theme.css">
+    <link rel="stylesheet" href="styles/search.css">
+    <link rel="stylesheet" href="styles/method-filters.css">
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link rel="preload" href="wmf/fonts/Charter_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="wmf/fonts/Lato_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <script src="scripts/fonts-loader.js" async=""></script>
+</head>
+
+<body class="page--home">
+	<header id="header" class="header" role="banner">
+		<div class="content-box">
+			<a href="#content" class="is-aural is-focusable">Jump to content</a>
+			<a href="#nav--main" class="is-aural is-focusable">Jump to navigation</a>
+			<h1 class="site__title"><a href="./"><span class="site__logo"></span>MediaWiki frontend code/ Module: util</a></h1>
+			<label class="btn--nav-main" for="trigger--nav-main" aria-hidden="true" title="Show main menu">
+				<i></i> <span>Menu</span>
+			</label>
+      <div id="search-container">
+  <input type="search" id="lunr-search" placeholder="Search">
+  <ul id="search-results"></ul>
+</div>
+<script src="lunr-data.js"></script>
+<script src="scripts/lunr.js"></script>
+<script src="scripts/lunrSearch.js"></script>
+
+		</div>
+	</header>
+	<div class="page">
+		<div class="content-box">
+			<div class="col col--start">
+				<input type="checkbox" id="trigger--nav-main" class="trigger--nav-main">
+				<nav id="nav--main" class="nav nav--main" role="navigation">
+					<ol><li class="nav__item"><a href="index.html">Home</a></li><li class="nav__item is-on"><a>Modules</a><ul class="nav__sub-items"><li class="nav__sub-item is-on"><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul></li><li class="nav__item"><a>Namespaces</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="jQuery.plugin.html">jQuery.plugin</a></li><li class="nav__sub-item"><a href="mw.html">mw</a></li><li class="nav__sub-item"><a href="mw.errorLogger.html">mw.errorLogger</a></li><li class="nav__sub-item"><a href="mw.hook.html">mw.hook</a></li><li class="nav__sub-item"><a href="mw.html.html">mw.html</a></li><li class="nav__sub-item"><a href="mw.loader.html">mw.loader</a></li><li class="nav__sub-item"><a href="mw.html#.log">mw.log</a></li><li class="nav__sub-item"><a href="mw.notification.html">mw.notification</a></li><li class="nav__sub-item"><a href="mw.util.html">mw.util</a></li><li class="nav__sub-item"><a href="window.html">window</a></li></ul></li><li class="nav__item"><a>Classes</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="Message.html">Message</a></li><li class="nav__sub-item"><a href="mw.html.Raw.html">mw.html.Raw</a></li><li class="nav__sub-item"><a href="MwMap.html">MwMap</a></li><li class="nav__sub-item"><a href="Notification.html">Notification</a></li></ul></li><li class="nav__item"><a>Events</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="global.html#event:error_caught">error_caught</a></li><li class="nav__sub-item"><a href="global.html#event:global_error">global_error</a></li><li class="nav__sub-item"><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul></li></ol>
+				</nav>
+			</div>
+			<div class="col col--end">
+				<main id="content" class="content" role="main">
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.$content"
+  />
+<label for="toggle-.$content"></label>
+
+<h4 class="name" id=".$content"><span class="type-signature">(static) </span>$content<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>The content wrapper of the skin (e.g. <code>.mw-body</code>).</p>
+<p>Populated on document ready. To use this property,
+wait for <code>$.ready</code> and be sure to have a module dependency on
+<code>mediawiki.util</code> which will ensure
+your document ready handler fires after initialization.</p>
+<p>Because of the lazy-initialised nature of this property,
+you're discouraged from using it.</p>
+<p>If you need just the wikipage content (not any of the
+extra elements output by the skin), use <code>$( '#mw-content-text' )</code>
+instead. Or listen to mw.hook#wikipage_content which will
+allow your code to re-run when the page changes (e.g. live preview
+or re-render after ajax save).</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="jQuery.html">jQuery</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line448">line 448</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.rawurlencode"
+  />
+<label for="toggle-.rawurlencode"></label>
+
+<h4 class="name" id=".rawurlencode"><span class="type-signature">(static) </span>rawurlencode<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Encode the string like PHP's rawurlencode</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.wikiUrlencode"
+  />
+<label for="toggle-.wikiUrlencode"></label>
+
+<h4 class="name" id=".wikiUrlencode"><span class="type-signature">(static) </span>wikiUrlencode<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Encode page titles in a way that matches <code>wfUrlencode</code> in PHP.</p>
+<p>This is important both for readability and consistency in the user experience,
+as well as for caching. If URLs are not formatted in the canonical way, they
+may be subject to drastically shorter cache durations and/or miss automatic
+purging after edits, thus leading to stale content being served from a
+non-canonical URL.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line270">line 270</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.addCSS"
+  />
+<label for="toggle-.addCSS"></label>
+
+    <h4 class="name" id=".addCSS"><span class="type-signature">(static) </span>addCSS<span class="signature">(text)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet">CSSStyleSheet</a>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Append a new style block to the head and return the CSSStyleSheet object.</p>
+<p>To access the <code>&lt;style&gt;</code> element, reference <code>sheet.ownerNode</code>, or call
+the mw.loader#addStyleTag method directly.</p>
+<p>This function returns the CSSStyleSheet object for convience with features
+that are managed at that level, such as toggling of styles:</p>
+<pre><code>var sheet = util.addCSS( '.foobar { display: none; }' );
+$( '#myButton' ).click( function () {
+    // Toggle the sheet on and off
+    sheet.disabled = !sheet.disabled;
+} );
+</code></pre>
+<p>See also <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet">MDN: CSSStyleSheet</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSS to be appended</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line356">line 356</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The sheet object</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet">CSSStyleSheet</a>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.addPortlet"
+  />
+<label for="toggle-.addPortlet"></label>
+
+    <h4 class="name" id=".addPortlet"><span class="type-signature">(static) </span>addPortlet<span class="signature">(id, label<span class="signature-attributes">opt</span>, before<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Creates a detached portlet Element in the skin with no elements.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>of the new portlet.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>of the new portlet.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>before</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>selector of the element preceding the new portlet. If not passed
+the caller is responsible for appending the element to the DOM before using addPortletLink.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line526">line 526</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li><a href="mediawiki.module_util.html#~event:util_addPortlet">event:util_addPortlet</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>will be null if it was not possible to create an portlet with
+the required information e.g. the selector given in before parameter could not be resolved
+to an existing element in the page.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.addPortletLink"
+  />
+<label for="toggle-.addPortletLink"></label>
+
+    <h4 class="name" id=".addPortletLink"><span class="type-signature">(static) </span>addPortletLink<span class="signature">(portletId, href, text, id<span class="signature-attributes">opt</span>, tooltip<span class="signature-attributes">opt</span>, accesskey<span class="signature-attributes">opt</span>, nextnode<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Add a link to a portlet menu on the page, such as:</p>
+<ul>
+<li>p-cactions (Content actions),</li>
+<li>p-personal (Personal tools),</li>
+<li>p-navigation (Navigation),</li>
+<li>p-tb (Toolbox).</li>
+<li>p-associated-pages (For namespaces and special page tabs on supported skins)</li>
+<li>p-namespaces (For namespaces on legacy skins)</li>
+</ul>
+<p>Additional menus can be discovered through the following code:
+<code>$('.mw-portlet').toArray().map((el) =&gt; el.id);</code></p>
+<p>Menu availability varies by skin, wiki, and current page.</p>
+<p>The first three parameters are required, the others are optional and
+may be null. Though providing an id and tooltip is recommended.</p>
+<p>By default, the new link will be added to the end of the menu. To
+add the link before an existing item, pass the DOM node or a CSS selector
+for that item, e.g. <code>'#foobar'</code> or <code>document.getElementById( 'foobar' )</code>.</p>
+<pre><code>mw.util.addPortletLink(
+    'p-tb', 'https://www.mediawiki.org/',
+    'mediawiki.org', 't-mworg', 'Go to mediawiki.org', 'm', '#t-print'
+);
+
+var node = mw.util.addPortletLink(
+    'p-tb',
+    mw.util.getUrl( 'Special:Example' ),
+    'Example'
+);
+$( node ).on( 'click', function ( e ) {
+    console.log( 'Example' );
+    e.preventDefault();
+} );
+</code></pre>
+<p>Remember that to call this inside a user script, you may have to ensure the
+<code>mediawiki.util</code> is loaded first:</p>
+<pre><code>$.when( mw.loader.using( [ 'mediawiki.util' ] ), $.ready ).then( function () {
+     mw.util.addPortletLink( 'p-tb', 'https://www.mediawiki.org/', 'mediawiki.org' );
+} );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portletId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>ID of the target portlet (e.g. 'p-cactions' or 'p-personal')</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>href</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Link URL</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Link text</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>ID of the list item, should be unique and preferably have
+the appropriate prefix ('ca-', 'pt-', 'n-' or 't-')</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tooltip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Text to show when hovering over the link, without accesskey suffix</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accesskey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Access key to activate this link. One character only,
+avoid conflicts with other links. Use <code>$( '[accesskey=x]' )</code> in the console to
+see if 'x' is already used.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nextnode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <a href="jQuery.html">jQuery</a>
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Element that the new item should be added before.
+Must be another item in the same list, it will be ignored otherwise.
+Can be specified as DOM reference, as jQuery object, or as CSS selector string.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line631">line 631</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li><a href="mediawiki.module_util.html#~event:util_addPortletLink">event:util_addPortletLink</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The added list item, or null if no element was added.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.addSubtitle"
+  />
+<label for="toggle-.addSubtitle"></label>
+
+    <h4 class="name" id=".addSubtitle"><span class="type-signature">(static) </span>addSubtitle<span class="signature">(nodeOrHTMLString)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Add content to the subtitle of the skin.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>nodeOrHTMLString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line501">line 501</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.clearSubtitle"
+  />
+<label for="toggle-.clearSubtitle"></label>
+
+    <h4 class="name" id=".clearSubtitle"><span class="type-signature">(static) </span>clearSubtitle<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Clears the entire subtitle if present in the page. Used for refreshing subtitle
+after edit with response from parse API.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line489">line 489</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.debounce"
+  />
+<label for="toggle-.debounce"></label>
+
+    <h4 class="name" id=".debounce"><span class="type-signature">(static) </span>debounce<span class="signature">(func, wait<span class="signature-attributes">opt</span>, immediate<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Return a function, that, as long as it continues to be invoked, will not
+be triggered. The function will be called after it stops being called for
+N milliseconds. If <code>immediate</code> is passed, trigger the function on the
+leading edge, instead of the trailing.</p>
+<p>Ported from Underscore.js 1.5.2, Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud
+and Investigative Reporters &amp; Editors, distributed under the MIT license, from
+<a href="https:%5C/%5C/github.com/jashkenas/underscore/blob/1.5.2/underscore.js#L689">https://github.com/jashkenas/underscore/blob/1.5.2/underscore.js#L689</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>func</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Function to debounce</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wait</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 number
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last"><p>Wait period in milliseconds</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>immediate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Trigger on leading edge</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.34</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line191">line 191</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Debounced function</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 function
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.escapeIdForAttribute"
+  />
+<label for="toggle-.escapeIdForAttribute"></label>
+
+    <h4 class="name" id=".escapeIdForAttribute"><span class="type-signature">(static) </span>escapeIdForAttribute<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Encode a string as CSS id, for use as HTML id attribute value.</p>
+<p>Analog to <code>Sanitizer::escapeIdForAttribute()</code> in PHP.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>String to encode</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.30</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Encoded string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.escapeIdForLink"
+  />
+<label for="toggle-.escapeIdForLink"></label>
+
+    <h4 class="name" id=".escapeIdForLink"><span class="type-signature">(static) </span>escapeIdForLink<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Encode a string as URL fragment, for use as HTML anchor link.</p>
+<p>Analog to <code>Sanitizer::escapeIdForLink()</code> in PHP.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>String to encode</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.30</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line102">line 102</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Encoded string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.escapeRegExp"
+  />
+<label for="toggle-.escapeRegExp"></label>
+
+    <h4 class="name" id=".escapeRegExp"><span class="type-signature">(static) </span>escapeRegExp<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Escape string for safe inclusion in regular expression</p>
+<p>The following characters are escaped:</p>
+<pre><code>\ { } ( ) | . ? * + - ^ $ [ ]
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>String to escape</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.26; moved to mw.util in 1.34</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line1013">line 1013</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Escaped string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getArrayParam"
+  />
+<label for="toggle-.getArrayParam"></label>
+
+    <h4 class="name" id=".getArrayParam"><span class="type-signature">(static) </span>getArrayParam<span class="signature">(param, params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>.&lt;string>|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the value for an array query parameter, combined according to similar rules as PHP uses.
+Currently this does not handle associative or multi-dimensional arrays, but that may be
+improved in the future.</p>
+<pre><code>mw.util.getArrayParam( 'foo', new URLSearchParams( '?foo[0]=a&amp;foo[1]=b' ) ); // [ 'a', 'b' ]
+mw.util.getArrayParam( 'foo', new URLSearchParams( '?foo[]=a&amp;foo[]=b' ) ); // [ 'a', 'b' ]
+mw.util.getArrayParam( 'foo', new URLSearchParams( '?foo=a' ) ); // null
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The parameter name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams">URLSearchParams</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Parsed URL parameters to search through, defaulting to the current browsing location.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line405">line 405</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Parameter value, or null if parameter was not found.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>.&lt;string>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getParamValue"
+  />
+<label for="toggle-.getParamValue"></label>
+
+    <h4 class="name" id=".getParamValue"><span class="type-signature">(static) </span>getParamValue<span class="signature">(param, url<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the value for a given URL query parameter.</p>
+<pre><code>mw.util.getParamValue( 'foo', '/?foo=x' ); // &quot;x&quot;
+mw.util.getParamValue( 'foo', '/?foo=' ); // &quot;&quot;
+mw.util.getParamValue( 'foo', '/' ); // null
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The parameter name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    location.href
+                
+                </td>
+            
+
+            <td class="description last"><p>URL to search through, defaulting to the current browsing location.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line372">line 372</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Parameter value, or null if parameter was not found.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getTargetFromFragment"
+  />
+<label for="toggle-.getTargetFromFragment"></label>
+
+    <h4 class="name" id=".getTargetFromFragment"><span class="type-signature">(static) </span>getTargetFromFragment<span class="signature">(hash<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the target element from a link hash</p>
+<p>This is the same element as you would get from
+document.querySelectorAll(':target'), but can be used on
+an arbitrary hash fragment, or after pushState/replaceState
+has been used.</p>
+<p>Link fragments can be unencoded, fully encoded or partially
+encoded, as defined in the spec.</p>
+<p>We can't just use decodeURI as that assumes the fragment
+is fully encoded, and throws an error on a string like '%A',
+so we use the percent-decode.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>hash</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hash fragment, without the leading '#'.
+Taken from location.hash if omitted.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line125">line 125</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Element, if found</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getUrl"
+  />
+<label for="toggle-.getUrl"></label>
+
+    <h4 class="name" id=".getUrl"><span class="type-signature">(static) </span>getUrl<span class="signature">(pageName<span class="signature-attributes">opt</span>, params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the URL to a given local wiki page name,</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    wgPageName
+                
+                </td>
+            
+
+            <td class="description last"><p>Page name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>A mapping of query parameter names to values,
+e.g. <code>{ action: 'edit' }</code></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line280">line 280</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>URL, relative to <code>wgServer</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.hidePortlet"
+  />
+<label for="toggle-.hidePortlet"></label>
+
+    <h4 class="name" id=".hidePortlet"><span class="type-signature">(static) </span>hidePortlet<span class="signature">(portletId)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Hide a portlet.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portletId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID of the target portlet (e.g. 'p-cactions' or 'p-personal')</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line455">line 455</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isIPAddress"
+  />
+<label for="toggle-.isIPAddress"></label>
+
+    <h4 class="name" id=".isIPAddress"><span class="type-signature">(static) </span>isIPAddress<span class="signature">(address, allowBlock<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Check whether a string is a valid IP address</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>String to check</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowBlock</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>If a block of IPs should be allowed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.25</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line905">line 905</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isIPv4Address"
+  />
+<label for="toggle-.isIPv4Address"></label>
+
+    <h4 class="name" id=".isIPv4Address"><span class="type-signature">(static) </span>isIPv4Address<span class="signature">(address, allowBlock<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Whether a string is a valid IPv4 address or not.</p>
+<p>Based on \Wikimedia\IPUtils::isIPv4 in PHP.</p>
+<pre><code>// Valid
+mw.util.isIPv4Address( '80.100.20.101' );
+mw.util.isIPv4Address( '192.168.1.101' );
+
+// Invalid
+mw.util.isIPv4Address( '192.0.2.0/24' );
+mw.util.isIPv4Address( 'hello' );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowBlock</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line820">line 820</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isIPv6Address"
+  />
+<label for="toggle-.isIPv6Address"></label>
+
+    <h4 class="name" id=".isIPv6Address"><span class="type-signature">(static) </span>isIPv6Address<span class="signature">(address, allowBlock<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Whether a string is a valid IPv6 address or not.</p>
+<p>Based on \Wikimedia\IPUtils::isIPv6 in PHP.</p>
+<pre><code>// Valid
+mw.util.isIPv6Address( '2001:db8:a:0:0:0:0:0' );
+mw.util.isIPv6Address( '2001:db8:a::' );
+
+// Invalid
+mw.util.isIPv6Address( '2001:db8:a::/32' );
+mw.util.isIPv6Address( 'hello' );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowBlock</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line852">line 852</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isPortletVisible"
+  />
+<label for="toggle-.isPortletVisible"></label>
+
+    <h4 class="name" id=".isPortletVisible"><span class="type-signature">(static) </span>isPortletVisible<span class="signature">(portletId)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Is a portlet visible?</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portletId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID of the target portlet (e.g. 'p-cactions' or 'p-personal')</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line468">line 468</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isTemporaryUser"
+  />
+<label for="toggle-.isTemporaryUser"></label>
+
+    <h4 class="name" id=".isTemporaryUser"><span class="type-signature">(static) </span>isTemporaryUser<span class="signature">(username)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Does given username match $wgAutoCreateTempUser?</p>
+<p>This functionality has been adapted from MediaWiki\User\TempUser\Pattern::isMatch()</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>username</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line1120">line 1120</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.parseImageUrl"
+  />
+<label for="toggle-.parseImageUrl"></label>
+
+    <h4 class="name" id=".parseImageUrl"><span class="type-signature">(static) </span>parseImageUrl<span class="signature">(url)</span><span class="type-signature"> &rarr; {Object|<code>null</code>|string|number|function}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Parse the URL of an image uploaded to MediaWiki, or a thumbnail for such an image,
+and return the image name, thumbnail size and a template that can be used to resize
+the image.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>URL to parse (URL-encoded)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line929">line 929</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>URL data, or null if the URL is not a valid MediaWiki
+image/thumbnail URL.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 Object
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>return.name File name (same format as Title.getMainText()).</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>[return.width] Thumbnail width, in pixels. Null when the file is not
+a thumbnail.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 number
+</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>[return.resizeUrl] A function that takes a width
+parameter and returns a thumbnail URL (URL-encoded) with that width. The width
+parameter must be smaller than the width of the original image (or equal to it; that
+only works if MediaHandler::mustRender returns true for the file). Null when the
+file in the original URL is not a thumbnail.
+On wikis with $wgGenerateThumbnailOnParse set to true, this will fall back to using
+Special:Redirect which is less efficient. Otherwise, it is a direct thumbnail URL.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 function
+</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.percentDecodeFragment"
+  />
+<label for="toggle-.percentDecodeFragment"></label>
+
+    <h4 class="name" id=".percentDecodeFragment"><span class="type-signature">(static) </span>percentDecodeFragment<span class="signature">(text)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Percent-decode a string, as found in a URL hash fragment</p>
+<p>Implements the percent-decode method as defined in
+https://url.spec.whatwg.org/#percent-decode.</p>
+<p>URLSearchParams implements https://url.spec.whatwg.org/#concept-urlencoded-parser
+which performs a '+' to ' ' substitution before running percent-decode.</p>
+<p>To get the desired behaviour we percent-encode any '+' in the fragment
+to effectively expose the percent-decode implementation.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Text to decode</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line161">line 161</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Decoded text, null if decoding failed</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.prettifyIP"
+  />
+<label for="toggle-.prettifyIP"></label>
+
+    <h4 class="name" id=".prettifyIP"><span class="type-signature">(static) </span>prettifyIP<span class="signature">(ip)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Prettify an IP for display to end users.</p>
+<p>This will make it more compact and lower-case.</p>
+<p>This functionality has been adapted from \Wikimedia\IPUtils::prettifyIP()</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>IP address in quad or octet form (CIDR or not).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line1079">line 1079</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.sanitizeIP"
+  />
+<label for="toggle-.sanitizeIP"></label>
+
+    <h4 class="name" id=".sanitizeIP"><span class="type-signature">(static) </span>sanitizeIP<span class="signature">(ip)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Convert an IP into a verbose, uppercase, normalized form.</p>
+<p>Both IPv4 and IPv6 addresses are trimmed. Additionally,
+IPv6 addresses in octet notation are expanded to 8 words;
+IPv4 addresses have leading zeros, in each octet, removed.</p>
+<p>This functionality has been adapted from \Wikimedia\IPUtils::sanitizeIP()</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>IP address in quad or octet form (CIDR or not).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line1030">line 1030</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.showPortlet"
+  />
+<label for="toggle-.showPortlet"></label>
+
+    <h4 class="name" id=".showPortlet"><span class="type-signature">(static) </span>showPortlet<span class="signature">(portletId)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Reveal a portlet if it is hidden.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portletId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID of the target portlet (e.g. 'p-cactions' or 'p-personal')</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line478">line 478</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.throttle"
+  />
+<label for="toggle-.throttle"></label>
+
+    <h4 class="name" id=".throttle"><span class="type-signature">(static) </span>throttle<span class="signature">(func, wait)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Return a function, that, when invoked, will only be triggered at most once
+during a given window of time. If called again during that window, it will
+wait until the window ends and then trigger itself again.</p>
+<p>As it's not knowable to the caller whether the function will actually run
+when the wrapper is called, return values from the function are entirely
+discarded.</p>
+<p>Ported from OOUI.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>func</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Function to throttle</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wait</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 number
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Throttle window length, in milliseconds</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line233">line 233</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Throttled function</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 function
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.validateEmail"
+  />
+<label for="toggle-.validateEmail"></label>
+
+    <h4 class="name" id=".validateEmail"><span class="type-signature">(static) </span>validateEmail<span class="signature">(email)</span><span class="type-signature"> &rarr; {boolean|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Validate a string as representing a valid e-mail address.</p>
+<p>This validation is based on the HTML5 specification.</p>
+<pre><code>mw.util.validateEmail( &quot;me@example.org&quot; ) === true;
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>E-mail address</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line748">line 748</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True if valid, false if invalid, null if <code>email</code> was empty.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.wikiScript"
+  />
+<label for="toggle-.wikiScript"></label>
+
+    <h4 class="name" id=".wikiScript"><span class="type-signature">(static) </span>wikiScript<span class="signature">(str<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get URL to a MediaWiki entry point.</p>
+<p>Similar to <code>wfScript()</code> in PHP.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "index"
+                
+                </td>
+            
+
+            <td class="description last"><p>Name of entry point (e.g. 'index' or 'api')</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.18</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line326">line 326</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>URL to the script file (e.g. <code>/w/api.php</code>)</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+
+        
+            
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-~event:util_addPortlet"
+  />
+<label for="toggle-~event:util_addPortlet"></label>
+
+    <h4 class="name" id="~event:util_addPortlet"><span class="type-signature"></span>util_addPortlet<span class="signature">(portlet, before)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Fires when a portlet is successfully created.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portlet</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the portlet that was created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>before</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the css selector used to append to the DOM.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line558">line 558</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>mw.hook( 'util.addPortlet' ).add( ( p ) => {
+   p.style.border = 'solid 1px black';
+  } );</code></pre>
+
+
+</div>
+</div>
+
+        
+            
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-~event:util_addPortletLink"
+  />
+<label for="toggle-~event:util_addPortletLink"></label>
+
+    <h4 class="name" id="~event:util_addPortletLink"><span class="type-signature"></span>util_addPortletLink<span class="signature">(item, information)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Fires when a portlet link is successfully created.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the portlet link that was created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>information</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>about the item include id.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line720">line 720</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>mw.hook( 'util.addPortletLink' ).add( ( link ) => {
+   const span = $( '&lt;span class="icon">' );
+   link.appendChild( span );
+  } );</code></pre>
+
+
+</div>
+</div>
+
+        
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Utility library provided by the <code>mediawiki.util</code> module. Available inside ResourceLoader modules
+or as part of the mw global object.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line70">line 70</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+    <pre class="prettyprint"><code>// Inside MediaWiki extensions
+  const util = require( 'mediawiki.util' );
+  // In gadgets
+  const mwUtil = mw.util;</code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.$content"
+  />
+<label for="toggle-.$content"></label>
+
+<h4 class="name" id=".$content"><span class="type-signature">(static) </span>$content<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>The content wrapper of the skin (e.g. <code>.mw-body</code>).</p>
+<p>Populated on document ready. To use this property,
+wait for <code>$.ready</code> and be sure to have a module dependency on
+<code>mediawiki.util</code> which will ensure
+your document ready handler fires after initialization.</p>
+<p>Because of the lazy-initialised nature of this property,
+you're discouraged from using it.</p>
+<p>If you need just the wikipage content (not any of the
+extra elements output by the skin), use <code>$( '#mw-content-text' )</code>
+instead. Or listen to mw.hook#wikipage_content which will
+allow your code to re-run when the page changes (e.g. live preview
+or re-render after ajax save).</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="jQuery.html">jQuery</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line448">line 448</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.rawurlencode"
+  />
+<label for="toggle-.rawurlencode"></label>
+
+<h4 class="name" id=".rawurlencode"><span class="type-signature">(static) </span>rawurlencode<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Encode the string like PHP's rawurlencode</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.wikiUrlencode"
+  />
+<label for="toggle-.wikiUrlencode"></label>
+
+<h4 class="name" id=".wikiUrlencode"><span class="type-signature">(static) </span>wikiUrlencode<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Encode page titles in a way that matches <code>wfUrlencode</code> in PHP.</p>
+<p>This is important both for readability and consistency in the user experience,
+as well as for caching. If URLs are not formatted in the canonical way, they
+may be subject to drastically shorter cache durations and/or miss automatic
+purging after edits, thus leading to stale content being served from a
+non-canonical URL.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line270">line 270</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.addCSS"
+  />
+<label for="toggle-.addCSS"></label>
+
+    <h4 class="name" id=".addCSS"><span class="type-signature">(static) </span>addCSS<span class="signature">(text)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet">CSSStyleSheet</a>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Append a new style block to the head and return the CSSStyleSheet object.</p>
+<p>To access the <code>&lt;style&gt;</code> element, reference <code>sheet.ownerNode</code>, or call
+the mw.loader#addStyleTag method directly.</p>
+<p>This function returns the CSSStyleSheet object for convience with features
+that are managed at that level, such as toggling of styles:</p>
+<pre><code>var sheet = util.addCSS( '.foobar { display: none; }' );
+$( '#myButton' ).click( function () {
+    // Toggle the sheet on and off
+    sheet.disabled = !sheet.disabled;
+} );
+</code></pre>
+<p>See also <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet">MDN: CSSStyleSheet</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSS to be appended</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line356">line 356</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The sheet object</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet">CSSStyleSheet</a>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.addPortlet"
+  />
+<label for="toggle-.addPortlet"></label>
+
+    <h4 class="name" id=".addPortlet"><span class="type-signature">(static) </span>addPortlet<span class="signature">(id, label<span class="signature-attributes">opt</span>, before<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Creates a detached portlet Element in the skin with no elements.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>of the new portlet.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>of the new portlet.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>before</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>selector of the element preceding the new portlet. If not passed
+the caller is responsible for appending the element to the DOM before using addPortletLink.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line526">line 526</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li><a href="mediawiki.module_util.html#~event:util_addPortlet">event:util_addPortlet</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>will be null if it was not possible to create an portlet with
+the required information e.g. the selector given in before parameter could not be resolved
+to an existing element in the page.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.addPortletLink"
+  />
+<label for="toggle-.addPortletLink"></label>
+
+    <h4 class="name" id=".addPortletLink"><span class="type-signature">(static) </span>addPortletLink<span class="signature">(portletId, href, text, id<span class="signature-attributes">opt</span>, tooltip<span class="signature-attributes">opt</span>, accesskey<span class="signature-attributes">opt</span>, nextnode<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Add a link to a portlet menu on the page, such as:</p>
+<ul>
+<li>p-cactions (Content actions),</li>
+<li>p-personal (Personal tools),</li>
+<li>p-navigation (Navigation),</li>
+<li>p-tb (Toolbox).</li>
+<li>p-associated-pages (For namespaces and special page tabs on supported skins)</li>
+<li>p-namespaces (For namespaces on legacy skins)</li>
+</ul>
+<p>Additional menus can be discovered through the following code:
+<code>$('.mw-portlet').toArray().map((el) =&gt; el.id);</code></p>
+<p>Menu availability varies by skin, wiki, and current page.</p>
+<p>The first three parameters are required, the others are optional and
+may be null. Though providing an id and tooltip is recommended.</p>
+<p>By default, the new link will be added to the end of the menu. To
+add the link before an existing item, pass the DOM node or a CSS selector
+for that item, e.g. <code>'#foobar'</code> or <code>document.getElementById( 'foobar' )</code>.</p>
+<pre><code>mw.util.addPortletLink(
+    'p-tb', 'https://www.mediawiki.org/',
+    'mediawiki.org', 't-mworg', 'Go to mediawiki.org', 'm', '#t-print'
+);
+
+var node = mw.util.addPortletLink(
+    'p-tb',
+    mw.util.getUrl( 'Special:Example' ),
+    'Example'
+);
+$( node ).on( 'click', function ( e ) {
+    console.log( 'Example' );
+    e.preventDefault();
+} );
+</code></pre>
+<p>Remember that to call this inside a user script, you may have to ensure the
+<code>mediawiki.util</code> is loaded first:</p>
+<pre><code>$.when( mw.loader.using( [ 'mediawiki.util' ] ), $.ready ).then( function () {
+     mw.util.addPortletLink( 'p-tb', 'https://www.mediawiki.org/', 'mediawiki.org' );
+} );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portletId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>ID of the target portlet (e.g. 'p-cactions' or 'p-personal')</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>href</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Link URL</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Link text</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>ID of the list item, should be unique and preferably have
+the appropriate prefix ('ca-', 'pt-', 'n-' or 't-')</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tooltip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Text to show when hovering over the link, without accesskey suffix</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accesskey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Access key to activate this link. One character only,
+avoid conflicts with other links. Use <code>$( '[accesskey=x]' )</code> in the console to
+see if 'x' is already used.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nextnode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <a href="jQuery.html">jQuery</a>
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Element that the new item should be added before.
+Must be another item in the same list, it will be ignored otherwise.
+Can be specified as DOM reference, as jQuery object, or as CSS selector string.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line631">line 631</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li><a href="mediawiki.module_util.html#~event:util_addPortletLink">event:util_addPortletLink</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The added list item, or null if no element was added.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.addSubtitle"
+  />
+<label for="toggle-.addSubtitle"></label>
+
+    <h4 class="name" id=".addSubtitle"><span class="type-signature">(static) </span>addSubtitle<span class="signature">(nodeOrHTMLString)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Add content to the subtitle of the skin.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>nodeOrHTMLString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line501">line 501</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.clearSubtitle"
+  />
+<label for="toggle-.clearSubtitle"></label>
+
+    <h4 class="name" id=".clearSubtitle"><span class="type-signature">(static) </span>clearSubtitle<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Clears the entire subtitle if present in the page. Used for refreshing subtitle
+after edit with response from parse API.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line489">line 489</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.debounce"
+  />
+<label for="toggle-.debounce"></label>
+
+    <h4 class="name" id=".debounce"><span class="type-signature">(static) </span>debounce<span class="signature">(func, wait<span class="signature-attributes">opt</span>, immediate<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Return a function, that, as long as it continues to be invoked, will not
+be triggered. The function will be called after it stops being called for
+N milliseconds. If <code>immediate</code> is passed, trigger the function on the
+leading edge, instead of the trailing.</p>
+<p>Ported from Underscore.js 1.5.2, Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud
+and Investigative Reporters &amp; Editors, distributed under the MIT license, from
+<a href="https:%5C/%5C/github.com/jashkenas/underscore/blob/1.5.2/underscore.js#L689">https://github.com/jashkenas/underscore/blob/1.5.2/underscore.js#L689</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>func</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Function to debounce</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wait</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 number
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last"><p>Wait period in milliseconds</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>immediate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Trigger on leading edge</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.34</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line191">line 191</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Debounced function</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 function
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.escapeIdForAttribute"
+  />
+<label for="toggle-.escapeIdForAttribute"></label>
+
+    <h4 class="name" id=".escapeIdForAttribute"><span class="type-signature">(static) </span>escapeIdForAttribute<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Encode a string as CSS id, for use as HTML id attribute value.</p>
+<p>Analog to <code>Sanitizer::escapeIdForAttribute()</code> in PHP.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>String to encode</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.30</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Encoded string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.escapeIdForLink"
+  />
+<label for="toggle-.escapeIdForLink"></label>
+
+    <h4 class="name" id=".escapeIdForLink"><span class="type-signature">(static) </span>escapeIdForLink<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Encode a string as URL fragment, for use as HTML anchor link.</p>
+<p>Analog to <code>Sanitizer::escapeIdForLink()</code> in PHP.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>String to encode</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.30</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line102">line 102</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Encoded string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.escapeRegExp"
+  />
+<label for="toggle-.escapeRegExp"></label>
+
+    <h4 class="name" id=".escapeRegExp"><span class="type-signature">(static) </span>escapeRegExp<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Escape string for safe inclusion in regular expression</p>
+<p>The following characters are escaped:</p>
+<pre><code>\ { } ( ) | . ? * + - ^ $ [ ]
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>String to escape</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.26; moved to mw.util in 1.34</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line1013">line 1013</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Escaped string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getArrayParam"
+  />
+<label for="toggle-.getArrayParam"></label>
+
+    <h4 class="name" id=".getArrayParam"><span class="type-signature">(static) </span>getArrayParam<span class="signature">(param, params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>.&lt;string>|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the value for an array query parameter, combined according to similar rules as PHP uses.
+Currently this does not handle associative or multi-dimensional arrays, but that may be
+improved in the future.</p>
+<pre><code>mw.util.getArrayParam( 'foo', new URLSearchParams( '?foo[0]=a&amp;foo[1]=b' ) ); // [ 'a', 'b' ]
+mw.util.getArrayParam( 'foo', new URLSearchParams( '?foo[]=a&amp;foo[]=b' ) ); // [ 'a', 'b' ]
+mw.util.getArrayParam( 'foo', new URLSearchParams( '?foo=a' ) ); // null
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The parameter name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams">URLSearchParams</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Parsed URL parameters to search through, defaulting to the current browsing location.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line405">line 405</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Parameter value, or null if parameter was not found.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>.&lt;string>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getParamValue"
+  />
+<label for="toggle-.getParamValue"></label>
+
+    <h4 class="name" id=".getParamValue"><span class="type-signature">(static) </span>getParamValue<span class="signature">(param, url<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the value for a given URL query parameter.</p>
+<pre><code>mw.util.getParamValue( 'foo', '/?foo=x' ); // &quot;x&quot;
+mw.util.getParamValue( 'foo', '/?foo=' ); // &quot;&quot;
+mw.util.getParamValue( 'foo', '/' ); // null
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The parameter name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    location.href
+                
+                </td>
+            
+
+            <td class="description last"><p>URL to search through, defaulting to the current browsing location.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line372">line 372</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Parameter value, or null if parameter was not found.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getTargetFromFragment"
+  />
+<label for="toggle-.getTargetFromFragment"></label>
+
+    <h4 class="name" id=".getTargetFromFragment"><span class="type-signature">(static) </span>getTargetFromFragment<span class="signature">(hash<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the target element from a link hash</p>
+<p>This is the same element as you would get from
+document.querySelectorAll(':target'), but can be used on
+an arbitrary hash fragment, or after pushState/replaceState
+has been used.</p>
+<p>Link fragments can be unencoded, fully encoded or partially
+encoded, as defined in the spec.</p>
+<p>We can't just use decodeURI as that assumes the fragment
+is fully encoded, and throws an error on a string like '%A',
+so we use the percent-decode.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>hash</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Hash fragment, without the leading '#'.
+Taken from location.hash if omitted.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line125">line 125</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Element, if found</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getUrl"
+  />
+<label for="toggle-.getUrl"></label>
+
+    <h4 class="name" id=".getUrl"><span class="type-signature">(static) </span>getUrl<span class="signature">(pageName<span class="signature-attributes">opt</span>, params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the URL to a given local wiki page name,</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    wgPageName
+                
+                </td>
+            
+
+            <td class="description last"><p>Page name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>A mapping of query parameter names to values,
+e.g. <code>{ action: 'edit' }</code></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line280">line 280</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>URL, relative to <code>wgServer</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.hidePortlet"
+  />
+<label for="toggle-.hidePortlet"></label>
+
+    <h4 class="name" id=".hidePortlet"><span class="type-signature">(static) </span>hidePortlet<span class="signature">(portletId)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Hide a portlet.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portletId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID of the target portlet (e.g. 'p-cactions' or 'p-personal')</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line455">line 455</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isIPAddress"
+  />
+<label for="toggle-.isIPAddress"></label>
+
+    <h4 class="name" id=".isIPAddress"><span class="type-signature">(static) </span>isIPAddress<span class="signature">(address, allowBlock<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Check whether a string is a valid IP address</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>String to check</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowBlock</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>If a block of IPs should be allowed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.25</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line905">line 905</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isIPv4Address"
+  />
+<label for="toggle-.isIPv4Address"></label>
+
+    <h4 class="name" id=".isIPv4Address"><span class="type-signature">(static) </span>isIPv4Address<span class="signature">(address, allowBlock<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Whether a string is a valid IPv4 address or not.</p>
+<p>Based on \Wikimedia\IPUtils::isIPv4 in PHP.</p>
+<pre><code>// Valid
+mw.util.isIPv4Address( '80.100.20.101' );
+mw.util.isIPv4Address( '192.168.1.101' );
+
+// Invalid
+mw.util.isIPv4Address( '192.0.2.0/24' );
+mw.util.isIPv4Address( 'hello' );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowBlock</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line820">line 820</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isIPv6Address"
+  />
+<label for="toggle-.isIPv6Address"></label>
+
+    <h4 class="name" id=".isIPv6Address"><span class="type-signature">(static) </span>isIPv6Address<span class="signature">(address, allowBlock<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Whether a string is a valid IPv6 address or not.</p>
+<p>Based on \Wikimedia\IPUtils::isIPv6 in PHP.</p>
+<pre><code>// Valid
+mw.util.isIPv6Address( '2001:db8:a:0:0:0:0:0' );
+mw.util.isIPv6Address( '2001:db8:a::' );
+
+// Invalid
+mw.util.isIPv6Address( '2001:db8:a::/32' );
+mw.util.isIPv6Address( 'hello' );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowBlock</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line852">line 852</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isPortletVisible"
+  />
+<label for="toggle-.isPortletVisible"></label>
+
+    <h4 class="name" id=".isPortletVisible"><span class="type-signature">(static) </span>isPortletVisible<span class="signature">(portletId)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Is a portlet visible?</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portletId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID of the target portlet (e.g. 'p-cactions' or 'p-personal')</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line468">line 468</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.isTemporaryUser"
+  />
+<label for="toggle-.isTemporaryUser"></label>
+
+    <h4 class="name" id=".isTemporaryUser"><span class="type-signature">(static) </span>isTemporaryUser<span class="signature">(username)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Does given username match $wgAutoCreateTempUser?</p>
+<p>This functionality has been adapted from MediaWiki\User\TempUser\Pattern::isMatch()</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>username</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line1120">line 1120</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.parseImageUrl"
+  />
+<label for="toggle-.parseImageUrl"></label>
+
+    <h4 class="name" id=".parseImageUrl"><span class="type-signature">(static) </span>parseImageUrl<span class="signature">(url)</span><span class="type-signature"> &rarr; {Object|<code>null</code>|string|number|function}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Parse the URL of an image uploaded to MediaWiki, or a thumbnail for such an image,
+and return the image name, thumbnail size and a template that can be used to resize
+the image.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>URL to parse (URL-encoded)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line929">line 929</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <p>URL data, or null if the URL is not a valid MediaWiki
+image/thumbnail URL.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 Object
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>return.name File name (same format as Title.getMainText()).</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>[return.width] Thumbnail width, in pixels. Null when the file is not
+a thumbnail.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 number
+</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <p>[return.resizeUrl] A function that takes a width
+parameter and returns a thumbnail URL (URL-encoded) with that width. The width
+parameter must be smaller than the width of the original image (or equal to it; that
+only works if MediaHandler::mustRender returns true for the file). Null when the
+file in the original URL is not a thumbnail.
+On wikis with $wgGenerateThumbnailOnParse set to true, this will fall back to using
+Special:Redirect which is less efficient. Otherwise, it is a direct thumbnail URL.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 function
+</span>
+
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.percentDecodeFragment"
+  />
+<label for="toggle-.percentDecodeFragment"></label>
+
+    <h4 class="name" id=".percentDecodeFragment"><span class="type-signature">(static) </span>percentDecodeFragment<span class="signature">(text)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Percent-decode a string, as found in a URL hash fragment</p>
+<p>Implements the percent-decode method as defined in
+https://url.spec.whatwg.org/#percent-decode.</p>
+<p>URLSearchParams implements https://url.spec.whatwg.org/#concept-urlencoded-parser
+which performs a '+' to ' ' substitution before running percent-decode.</p>
+<p>To get the desired behaviour we percent-encode any '+' in the fragment
+to effectively expose the percent-decode implementation.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Text to decode</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line161">line 161</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Decoded text, null if decoding failed</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.prettifyIP"
+  />
+<label for="toggle-.prettifyIP"></label>
+
+    <h4 class="name" id=".prettifyIP"><span class="type-signature">(static) </span>prettifyIP<span class="signature">(ip)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Prettify an IP for display to end users.</p>
+<p>This will make it more compact and lower-case.</p>
+<p>This functionality has been adapted from \Wikimedia\IPUtils::prettifyIP()</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>IP address in quad or octet form (CIDR or not).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line1079">line 1079</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.sanitizeIP"
+  />
+<label for="toggle-.sanitizeIP"></label>
+
+    <h4 class="name" id=".sanitizeIP"><span class="type-signature">(static) </span>sanitizeIP<span class="signature">(ip)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Convert an IP into a verbose, uppercase, normalized form.</p>
+<p>Both IPv4 and IPv6 addresses are trimmed. Additionally,
+IPv6 addresses in octet notation are expanded to 8 words;
+IPv4 addresses have leading zeros, in each octet, removed.</p>
+<p>This functionality has been adapted from \Wikimedia\IPUtils::sanitizeIP()</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>IP address in quad or octet form (CIDR or not).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line1030">line 1030</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.showPortlet"
+  />
+<label for="toggle-.showPortlet"></label>
+
+    <h4 class="name" id=".showPortlet"><span class="type-signature">(static) </span>showPortlet<span class="signature">(portletId)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Reveal a portlet if it is hidden.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portletId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID of the target portlet (e.g. 'p-cactions' or 'p-personal')</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line478">line 478</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.throttle"
+  />
+<label for="toggle-.throttle"></label>
+
+    <h4 class="name" id=".throttle"><span class="type-signature">(static) </span>throttle<span class="signature">(func, wait)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Return a function, that, when invoked, will only be triggered at most once
+during a given window of time. If called again during that window, it will
+wait until the window ends and then trigger itself again.</p>
+<p>As it's not knowable to the caller whether the function will actually run
+when the wrapper is called, return values from the function are entirely
+discarded.</p>
+<p>Ported from OOUI.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>func</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Function to throttle</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wait</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 number
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Throttle window length, in milliseconds</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line233">line 233</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Throttled function</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 function
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.validateEmail"
+  />
+<label for="toggle-.validateEmail"></label>
+
+    <h4 class="name" id=".validateEmail"><span class="type-signature">(static) </span>validateEmail<span class="signature">(email)</span><span class="type-signature"> &rarr; {boolean|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Validate a string as representing a valid e-mail address.</p>
+<p>This validation is based on the HTML5 specification.</p>
+<pre><code>mw.util.validateEmail( &quot;me@example.org&quot; ) === true;
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>E-mail address</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line748">line 748</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True if valid, false if invalid, null if <code>email</code> was empty.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 boolean
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.wikiScript"
+  />
+<label for="toggle-.wikiScript"></label>
+
+    <h4 class="name" id=".wikiScript"><span class="type-signature">(static) </span>wikiScript<span class="signature">(str<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get URL to a MediaWiki entry point.</p>
+<p>Similar to <code>wfScript()</code> in PHP.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "index"
+                
+                </td>
+            
+
+            <td class="description last"><p>Name of entry point (e.g. 'index' or 'api')</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.18</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line326">line 326</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>URL to the script file (e.g. <code>/w/api.php</code>)</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+
+        
+            
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-~event:util_addPortlet"
+  />
+<label for="toggle-~event:util_addPortlet"></label>
+
+    <h4 class="name" id="~event:util_addPortlet"><span class="type-signature"></span>util_addPortlet<span class="signature">(portlet, before)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Fires when a portlet is successfully created.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>portlet</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the portlet that was created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>before</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the css selector used to append to the DOM.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line558">line 558</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>mw.hook( 'util.addPortlet' ).add( ( p ) => {
+   p.style.border = 'solid 1px black';
+  } );</code></pre>
+
+
+</div>
+</div>
+
+        
+            
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-~event:util_addPortletLink"
+  />
+<label for="toggle-~event:util_addPortletLink"></label>
+
+    <h4 class="name" id="~event:util_addPortletLink"><span class="type-signature"></span>util_addPortletLink<span class="signature">(item, information)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Fires when a portlet link is successfully created.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the portlet link that was created.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>information</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>about the item include id.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.util_util.js.html">mediawiki.util/util.js</a>, <a href="mediawiki.util_util.js.html#line720">line 720</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>mw.hook( 'util.addPortletLink' ).add( ( link ) => {
+   const span = $( '&lt;span class="icon">' );
+   link.appendChild( span );
+  } );</code></pre>
+
+
+</div>
+</div>
+
+        
+    
+</article>
+
+</section>
+
+
+
+
+				</main>
+			</div>
+		</div>
+	</div>
+	<footer id="footer" class="footer">
+		<div class="content-box">
+			<ul class="footer__list">
+				<li><a href="">Contribute</a></li>
+			</ul>
+			<p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Thu Nov 30 2023 17:50:07 GMT-0800 (Pacific Standard Time)</p>
+			<p><a href="https://wikimediafoundation.org/" class="lnk--wikimedia-project">A Wikimedia Foundation project</a></p>
+		</div>
+	</footer>
+
+<script>
+var arr = function(aa) { return Array.prototype.slice.call(aa); };
+arr(document.querySelectorAll("nav > ol > li a:not([href])")).map(function(el) {
+  var li = el;
+  while (li && li.tagName !== 'LI') { li = li.parentNode; }
+  el.addEventListener('click', function(event) {
+    if (li.classList.contains('is-on')) {
+      li.classList.remove('is-on');
+      return;
+    }
+    arr(document.querySelectorAll("nav li.nav__item.is-on")).map(function(el2) {
+      el2.classList.remove('is-on');
+    });
+    li.classList.add('is-on');
+  });
+});
+</script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/open-member.js"> </script>
+<script src="scripts/sticky-sidebar.js"> </script>
+<script type="text/javascript">
+var sidebar = new StickySidebar('.col--start', {
+  containerSelector: '.content-box',
+  innerWrapperSelector: 'nav--main',
+  topSpacing: 100,
+  bottomSpacing: 20
+});
+document.getElementsByClassName('col--start')[0].addEventListener( 'click', function(e) {
+  sidebar.updateSticky();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html lang="en" class="js-off lte-ie8"><![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="js-off ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="js-off">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Namespace: loader: JSDoc</title>
+    <script>
+document.documentElement.className = document.documentElement.className.replace(/\bjs-off\b/,'js-on'); // no BEM notation thx to IE
+    </script>
+    <!--[if lt IE 9]>
+      <script>window.html5={'shivCSS':false};</script>
+      <script src="wmf/js/vendor/ie/html5shiv-3.7.3.min.js"></script>
+      <script src="wmf/js/vendor/ie/respond-1.4.2.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="wmf/css/build/wmui-style-guide.min.css">
+    <link rel="stylesheet" href="styles/jsdoc-wmf-theme.css">
+    <link rel="stylesheet" href="styles/search.css">
+    <link rel="stylesheet" href="styles/method-filters.css">
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link rel="preload" href="wmf/fonts/Charter_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="wmf/fonts/Lato_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <script src="scripts/fonts-loader.js" async=""></script>
+</head>
+
+<body class="page--home">
+	<header id="header" class="header" role="banner">
+		<div class="content-box">
+			<a href="#content" class="is-aural is-focusable">Jump to content</a>
+			<a href="#nav--main" class="is-aural is-focusable">Jump to navigation</a>
+			<h1 class="site__title"><a href="./"><span class="site__logo"></span>MediaWiki frontend code/ Namespace: loader</a></h1>
+			<label class="btn--nav-main" for="trigger--nav-main" aria-hidden="true" title="Show main menu">
+				<i></i> <span>Menu</span>
+			</label>
+      <div id="search-container">
+  <input type="search" id="lunr-search" placeholder="Search">
+  <ul id="search-results"></ul>
+</div>
+<script src="lunr-data.js"></script>
+<script src="scripts/lunr.js"></script>
+<script src="scripts/lunrSearch.js"></script>
+
+		</div>
+	</header>
+	<div class="page">
+		<div class="content-box">
+			<div class="col col--start">
+				<input type="checkbox" id="trigger--nav-main" class="trigger--nav-main">
+				<nav id="nav--main" class="nav nav--main" role="navigation">
+					<ol><li class="nav__item"><a href="index.html">Home</a></li><li class="nav__item"><a>Modules</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul></li><li class="nav__item is-on"><a>Namespaces</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="global.html#global#global#global#global#global">global</a></li><li class="nav__sub-item"><a href="jQuery.plugin.html">jQuery.plugin</a></li><li class="nav__sub-item"><a href="global.html#global#global#global#global#global#mw">mw</a></li><li class="nav__sub-item"><a href="mw.errorLogger.html">mw.errorLogger</a></li><li class="nav__sub-item is-on"><a href="global.html#global#global#global#global#global#mw#.loader">mw.loader</a></li><li class="nav__sub-item"><a href="global.html#global#global#global#global#global#mw#.log">mw.log</a></li><li class="nav__sub-item"><a href="mw.Message.html">mw.Message</a></li></ul></li><li class="nav__item"><a>Classes</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="Message.html">Message</a></li><li class="nav__sub-item"><a href="mw.hook.html">mw.hook</a></li><li class="nav__sub-item"><a href="mw.html.html">mw.html</a></li><li class="nav__sub-item"><a href="mw.html.Raw.html">mw.html.Raw</a></li><li class="nav__sub-item"><a href="global.html#global#global#global#global#global#mw#.Map">mw.Map</a></li><li class="nav__sub-item"><a href="mw.user.html">mw.user</a></li></ul></li><li class="nav__item"><a>Events</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="global.html#event:error_caught">error_caught</a></li><li class="nav__sub-item"><a href="global.html#event:global_error">global_error</a></li><li class="nav__sub-item"><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul></li></ol>
+				</nav>
+			</div>
+			<div class="col col--end">
+				<main id="content" class="content" role="main">
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="global.html#global#global#global#global#global#mw">mw</a>.</span>loader</h2>
+        
+            <div class="class-description"><p>Client for ResourceLoader server end point.
+This client is in charge of maintaining the module registry and state
+machine, initiating network (batch) requests for loading modules, as
+well as dependency resolution and execution of source code.</p></div>
+        
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://www.mediawiki.org/wiki/ResourceLoader/Features">https://www.mediawiki.org/wiki/ResourceLoader/Features</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.getState"
+  />
+<label for="toggle-.getState"></label>
+
+    <h4 class="name" id=".getState"><span class="type-signature">(static) </span>getState<span class="signature">(module)</span><span class="type-signature"> &rarr; {string|<code>null</code>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get the state of a module.</p>
+<p>Possible states for the public API:</p>
+<ul>
+<li><code>registered</code>: The module is available for loading but not yet requested.</li>
+<li><code>loading</code>, <code>loaded</code>, or <code>executing</code>: The module is currently being loaded.</li>
+<li><code>ready</code>: The module was succesfully and fully loaded.</li>
+<li><code>error</code>: The module or one its dependencies has failed to load, e.g. due to
+uncaught error from the module's script files.</li>
+<li><code>missing</code>: The module was requested but is not defined according to the server.</li>
+</ul>
+<p>Internal mw.loader state machine:</p>
+<ul>
+<li><code>registered</code>:
+The module is known to the system but not yet required.
+Meta data is stored by mw.loader#register.
+Calls to that method are generated server-side by StartupModule.</li>
+<li><code>loading</code>:
+The module was required through mw.loader (either directly or as dependency of
+another module). The client will fetch module contents from mw.loader.store
+or from the server. The contents should later be received by mw.loader#implement.</li>
+<li><code>loaded</code>:
+The module has been received by mw.loader#implement.
+Once the module has no more dependencies in-flight, the module will be executed,
+controlled via #setAndPropagate and #doPropagation.</li>
+<li><code>executing</code>:
+The module is being executed (apply messages and stylesheets, execute scripts)
+by mw.loader#execute.</li>
+<li><code>ready</code>:
+The module has been successfully executed.</li>
+<li><code>error</code>:
+The module (or one of its dependencies) produced an uncaught error during execution.</li>
+<li><code>missing</code>:
+The module was registered client-side and requested, but the server denied knowledge
+of the module's existence.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>module</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of module</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1720">line 1720</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The state, or null if the module (or its state) is not
+in the registry.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.impl"
+  />
+<label for="toggle-.impl"></label>
+
+    <h4 class="name" id=".impl"><span class="type-signature">(static) </span>impl<span class="signature">(declarator)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Implement a module given a function which returns the components of the module</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>declarator</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The declarator should return an array with the following keys:</p>
+<ul>
+<li>
+<ol start="0">
+<li>{string} module Name of module and current module version. Formatted
+as '<code>[name]@[version]</code>&quot;. This version should match the requested version
+(from #batchRequest and #registry). This avoids race conditions (T117587).</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>{Function|Array|string|Object} [script] Module code. This can be a function,
+a list of URLs to load via <code>&lt;script src&gt;</code>, a string for <code>globalEval()</code>, or an
+object like {&quot;files&quot;: {&quot;foo.js&quot;:function, &quot;bar.js&quot;: function, ...}, &quot;main&quot;: &quot;foo.js&quot;}.
+If an object is provided, the main file will be executed immediately, and the other
+files will only be executed if loaded via require(). If a function or string is
+provided, it will be executed/evaluated immediately. If an array is provided, all
+URLs in the array will be loaded immediately, and executed as soon as they arrive.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>{Object} [style] Should follow one of the following patterns:</li>
+</ol>
+<p>{ &quot;css&quot;: [css, ..] }
+{ &quot;url&quot;: { (media): [url, ..] } }</p>
+<p>The reason css strings are not concatenated anymore is T33676. We now check
+whether it's safe to extend the stylesheet.</p>
+</li>
+<li>
+<ol start="3">
+<li>{Object} [messages] List of key/value pairs to be added to mw#messages.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>{Object} [templates] List of key/value pairs to be added to mw#templates.</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>{String|null} [deprecationWarning] Deprecation warning if any</li>
+</ol>
+</li>
+</ul>
+<p>The declarator must not use any scope variables, since it will be serialized with
+Function.prototype.toString() and later restored and executed in the global scope.</p>
+<p>The elements are all optional except the name.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1581">line 1581</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.implement"
+  />
+<label for="toggle-.implement"></label>
+
+    <h4 class="name" id=".implement"><span class="type-signature">(static) </span>implement<span class="signature">(module, script<span class="signature-attributes">opt</span>, style<span class="signature-attributes">opt</span>, messages<span class="signature-attributes">opt</span>, templates<span class="signature-attributes">opt</span>, deprecationWarning<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Implement a module given the components of the module.</p>
+<p>See #impl for a full description of the parameters.</p>
+<p>Prior to MW 1.41, this was used internally, but now it is only kept
+for backwards compatibility.</p>
+<p>Does not support mw.loader.store caching.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>module</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>script</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>style</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>messages</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>List of key/value pairs to be added to mw#messages.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>templates</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>List of key/value pairs to be added to mw#templates.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>deprecationWarning</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Deprecation warning if any</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1519">line 1519</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.load"
+  />
+<label for="toggle-.load"></label>
+
+    <h4 class="name" id=".load"><span class="type-signature">(static) </span>load<span class="signature">(modules, type<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Load an external script or one or more modules.</p>
+<p>This method takes a list of unrelated modules. Use cases:</p>
+<ul>
+<li>A web page will be composed of many different widgets. These widgets independently
+queue their ResourceLoader modules (<code>OutputPage::addModules()</code>). If any of them
+have problems, or are no longer known (e.g. cached HTML), the other modules
+should still be loaded.</li>
+<li>This method is used for preloading, which must not throw. Later code that
+calls #using() will handle the error.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>modules</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Either the name of a module, array of modules,
+or a URL of an external script or style</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'text/javascript'
+                
+                </td>
+            
+
+            <td class="description last"><p>MIME type to use if calling with a URL of an
+external script or style; acceptable values are &quot;text/css&quot; and
+&quot;text/javascript&quot;; if no type is provided, text/javascript is assumed.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1638">line 1638</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If type is invalid</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">
+	 Error
+</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.register"
+  />
+<label for="toggle-.register"></label>
+
+    <h4 class="name" id=".register"><span class="type-signature">(static) </span>register<span class="signature">(modules, version<span class="signature-attributes">opt</span>, dependencies<span class="signature-attributes">opt</span>, group<span class="signature-attributes">opt</span>, source<span class="signature-attributes">opt</span>, skip<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Register a module, letting the system know about it and its properties.</p>
+<p>The startup module calls this method.</p>
+<p>When using multiple module registration by passing an array, dependencies that
+are specified as references to modules within the array will be resolved before
+the modules are registered.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>modules</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Module name or array of arrays, each containing
+a list of arguments compatible with this method</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>version</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Module version hash (falls backs to empty string)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dependencies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>.&lt;string>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Array of module names on which this module depends.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>group</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last"><p>Group which the module is in</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'local'
+                
+                </td>
+            
+
+            <td class="description last"><p>Name of the source</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>skip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last"><p>Script body of the skip function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1468">line 1468</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.state"
+  />
+<label for="toggle-.state"></label>
+
+    <h4 class="name" id=".state"><span class="type-signature">(static) </span>state<span class="signature">(states)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Change the state of one or more modules.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>states</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Object of module name/state pairs</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1670">line 1670</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.using"
+  />
+<label for="toggle-.using"></label>
+
+    <h4 class="name" id=".using"><span class="type-signature">(static) </span>using<span class="signature">(dependencies, ready<span class="signature-attributes">opt</span>, error<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="jQuery.html#.Promise">jQuery.Promise</a>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Execute a function after one or more modules are ready.</p>
+<p>Use this method if you need to dynamically control which modules are loaded
+and/or when they loaded (instead of declaring them as dependencies directly
+on your module.)</p>
+<p>This uses the same loader as for regular module dependencies. This means
+ResourceLoader will not re-download or re-execute a module for the second
+time if something else already needed it. And the same browser HTTP cache,
+and localStorage are checked before considering to fetch from the network.
+And any on-going requests from other dependencies or using() calls are also
+automatically re-used.</p>
+<p>Example of inline dependency on OOjs:</p>
+<pre><code>mw.loader.using( 'oojs', function () {
+    OO.compare( [ 1 ], [ 1 ] );
+} );
+</code></pre>
+<p>Example of inline dependency obtained via <code>require()</code>:</p>
+<pre><code>mw.loader.using( [ 'mediawiki.util' ], function ( require ) {
+    var util = require( 'mediawiki.util' );
+} );
+</code></pre>
+<p>Since MediaWiki 1.23 this returns a promise.</p>
+<p>Since MediaWiki 1.28 the promise is resolved with a <code>require</code> function.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dependencies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Module name or array of modules names the
+callback depends on to be ready before executing</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ready</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Callback to execute when all dependencies are ready</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Callback to execute if one or more dependencies failed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line777">line 777</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>With a <code>require</code> function</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="jQuery.html#.Promise">jQuery.Promise</a>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</main>
+			</div>
+		</div>
+	</div>
+	<footer id="footer" class="footer">
+		<div class="content-box">
+			<ul class="footer__list">
+				<li><a href="">Contribute</a></li>
+			</ul>
+			<p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Thu Nov 30 2023 16:53:34 GMT-0800 (Pacific Standard Time)</p>
+			<p><a href="https://wikimediafoundation.org/" class="lnk--wikimedia-project">A Wikimedia Foundation project</a></p>
+		</div>
+	</footer>
+
+<script>
+var arr = function(aa) { return Array.prototype.slice.call(aa); };
+arr(document.querySelectorAll("nav > ol > li a:not([href])")).map(function(el) {
+  var li = el;
+  while (li && li.tagName !== 'LI') { li = li.parentNode; }
+  el.addEventListener('click', function(event) {
+    if (li.classList.contains('is-on')) {
+      li.classList.remove('is-on');
+      return;
+    }
+    arr(document.querySelectorAll("nav li.nav__item.is-on")).map(function(el2) {
+      el2.classList.remove('is-on');
+    });
+    li.classList.add('is-on');
+  });
+});
+</script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/open-member.js"> </script>
+<script src="scripts/sticky-sidebar.js"> </script>
+<script type="text/javascript">
+var sidebar = new StickySidebar('.col--start', {
+  containerSelector: '.content-box',
+  innerWrapperSelector: 'nav--main',
+  topSpacing: 100,
+  bottomSpacing: 20
+});
+document.getElementsByClassName('col--start')[0].addEventListener( 'click', function(e) {
+  sidebar.updateSticky();
+});
+</script>
+</body>
+</html>

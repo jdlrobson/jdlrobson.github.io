@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: errorLogger</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Namespace: errorLogger</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="mw.html">mw</a>.</span>errorLogger</h2>
+        
+            <div class="class-description"><p>Allows the logging of client errors for later inspections.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_errorLogger.js.html">mediawiki.base/errorLogger.js</a>, <a href="mediawiki.base_errorLogger.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".logError"><span class="type-signature">(static) </span>logError<span class="signature">(error, topic<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Logs an error by notifying subscribers to the given mw.track() topic
+(by default <code>error.caught</code>) that an event has occurred.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'error.caught'
+                
+                </td>
+            
+
+            <td class="description last"><p>Error topic. Conventionally in the form
+'error.⧼component⧽' (where ⧼component⧽ identifies the code logging the error at a
+high level; e.g. an extension name).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_errorLogger.js.html">mediawiki.base/errorLogger.js</a>, <a href="mediawiki.base_errorLogger.js.html#line77">line 77</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li><a href="global.html#event:error_caught">event:error_caught</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul><h3>Namespaces</h3><ul><li><a href="jQuery.plugin.html">jQuery.plugin</a></li><li><a href="mw.html">mw</a></li><li><a href="mw.errorLogger.html">mw.errorLogger</a></li><li><a href="mw.hook.html">mw.hook</a></li><li><a href="mw.html.html">mw.html</a></li><li><a href="mw.loader.html">mw.loader</a></li><li><a href="mw.html#.log">mw.log</a></li><li><a href="mw.util.html">mw.util</a></li><li><a href="window.html">window</a></li></ul><h3>Classes</h3><ul><li><a href="Message.html">Message</a></li><li><a href="mw.html.Raw.html">mw.html.Raw</a></li><li><a href="mw.html#.Map">mw.Map</a></li></ul><h3>Events</h3><ul><li><a href="global.html#event:error_caught">error_caught</a></li><li><a href="global.html#event:global_error">global_error</a></li><li><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Nov 30 2023 17:25:38 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html lang="en" class="js-off lte-ie8"><![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="js-off ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="js-off">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Source: jquery.accessKeyLabel.js: JSDoc</title>
+    <script>
+document.documentElement.className = document.documentElement.className.replace(/\bjs-off\b/,'js-on'); // no BEM notation thx to IE
+    </script>
+    <!--[if lt IE 9]>
+      <script>window.html5={'shivCSS':false};</script>
+      <script src="wmf/js/vendor/ie/html5shiv-3.7.3.min.js"></script>
+      <script src="wmf/js/vendor/ie/respond-1.4.2.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="wmf/css/build/wmui-style-guide.min.css">
+    <link rel="stylesheet" href="styles/jsdoc-wmf-theme.css">
+    <link rel="stylesheet" href="styles/search.css">
+    <link rel="stylesheet" href="styles/method-filters.css">
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link rel="preload" href="wmf/fonts/Charter_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="wmf/fonts/Lato_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <script src="scripts/fonts-loader.js" async=""></script>
+</head>
+
+<body class="page--home">
+	<header id="header" class="header" role="banner">
+		<div class="content-box">
+			<a href="#content" class="is-aural is-focusable">Jump to content</a>
+			<a href="#nav--main" class="is-aural is-focusable">Jump to navigation</a>
+			<h1 class="site__title"><a href="./"><span class="site__logo"></span>MediaWiki frontend code/ Source: jquery.accessKeyLabel.js</a></h1>
+			<label class="btn--nav-main" for="trigger--nav-main" aria-hidden="true" title="Show main menu">
+				<i></i> <span>Menu</span>
+			</label>
+      <div id="search-container">
+  <input type="search" id="lunr-search" placeholder="Search">
+  <ul id="search-results"></ul>
+</div>
+<script src="lunr-data.js"></script>
+<script src="scripts/lunr.js"></script>
+<script src="scripts/lunrSearch.js"></script>
+
+		</div>
+	</header>
+	<div class="page">
+		<div class="content-box">
+			<div class="col col--start">
+				<input type="checkbox" id="trigger--nav-main" class="trigger--nav-main">
+				<nav id="nav--main" class="nav nav--main" role="navigation">
+					<ol><li class="nav__item"><a href="index.html">Home</a></li><li class="nav__item"><a>Modules</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul></li><li class="nav__item"><a>Classes</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="https://api.jquery.com/jQuery/">jQuery</a></li><li class="nav__sub-item"><a href="jQuery.fn.updateTooltipAccessKeys.html">jQuery.fn.updateTooltipAccessKeys</a></li></ul></li><li class="nav__item"><a>Events</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul></li></ol>
+				</nav>
+			</div>
+			<div class="col col--end">
+				<main id="content" class="content" role="main">
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * jQuery plugin to update the tooltip to show the correct access key
+ */
+
+// Whether to use 'test-' instead of correct prefix (for unit tests)
+var testMode = false;
+
+var cachedModifiers;
+
+/**
+ * Find the modifier keys that need to be pressed together with the accesskey to trigger the input.
+ *
+ * The result is dependent on the ua paramater or the current platform.
+ * For browsers that support accessKeyLabel, #getAccessKeyLabel never calls here.
+ * Valid key values that are returned can be: ctrl, alt, option, shift, esc
+ *
+ * @private
+ * @param {Object|undefined} [nav] A Navigator object with `userAgent` and `platform` properties.
+ * @return {string} Label with dash-separated segments in this order: ctrl, option, alt, shift, esc
+ */
+function getAccessKeyModifiers( nav ) {
+	if ( !nav &amp;&amp; cachedModifiers ) {
+		return cachedModifiers;
+	}
+
+	var profile = $.client.profile( nav );
+	var accessKeyModifiers;
+
+	switch ( profile.name ) {
+		// Historical: Opera 8-13 used shift-esc- (Presto engine, no longer supported).
+		// Opera 15+ (Blink engine) matches Chromium.
+		// Historical: Konqueror 3-4 (WebKit) behaved the same as Safari (no longer supported).
+		// Konqueror 18+ (QtWebEngine/Chromium engine) is profiled as 'chrome',
+		// and matches Chromium behaviour.
+		case 'opera':
+		case 'chrome':
+			if ( profile.platform === 'mac' ) {
+				// Chromium on macOS
+				accessKeyModifiers = 'ctrl-option';
+			} else {
+				// Chromium on Windows or Linux
+				// (both alt- and alt-shift work, but alt with E, D, F etc does not
+				// work since they are native browser shortcuts as well, so advertise
+				// alt-shift- instead)
+				accessKeyModifiers = 'alt-shift';
+			}
+			break;
+		// Historical: Firefox 1.x used alt- (no longer supported).
+		case 'firefox':
+		case 'iceweasel':
+			if ( profile.platform === 'mac' ) {
+				if ( profile.versionNumber &lt; 14 ) {
+					accessKeyModifiers = 'ctrl';
+				} else {
+					// Firefox 14+ on macOS
+					accessKeyModifiers = 'ctrl-option';
+				}
+			} else {
+				// Firefox 2+ on Windows or Linux
+				accessKeyModifiers = 'alt-shift';
+			}
+			break;
+		// Historical: Safari &lt;= 3 on Windows used alt- (no longer supported).
+		// Historical: Safari &lt;= 3 on macOS used ctrl- (no longer supported).
+		case 'safari':
+			// Safari 4+ (WebKit 526+) on macOS
+			accessKeyModifiers = 'ctrl-option';
+			break;
+		case 'msie':
+		case 'edge':
+			accessKeyModifiers = 'alt';
+			break;
+		default:
+			accessKeyModifiers = profile.platform === 'mac' ? 'ctrl' : 'alt';
+			break;
+	}
+
+	if ( !nav ) {
+		// If not for a custom UA string, cache and re-use
+		cachedModifiers = accessKeyModifiers;
+	}
+	return accessKeyModifiers;
+}
+
+/**
+ * Get the access key label for an element.
+ *
+ * Will use native accessKeyLabel if available (currently only in Firefox 8+),
+ * falls back to #getAccessKeyModifiers.
+ *
+ * @private
+ * @param {HTMLElement} element Element to get the label for
+ * @return {string} Access key label
+ */
+function getAccessKeyLabel( element ) {
+	// abort early if no access key
+	if ( !element.accessKey ) {
+		return '';
+	}
+	// use accessKeyLabel if possible
+	// https://html.spec.whatwg.org/multipage/interaction.html#dom-accesskeylabel
+	if ( !testMode &amp;&amp; element.accessKeyLabel ) {
+		return element.accessKeyLabel;
+	}
+	return ( testMode ? 'test' : getAccessKeyModifiers() ) + '-' + element.accessKey;
+}
+
+/**
+ * Update the title for an element (on the element with the access key or it's label) to show
+ * the correct access key label.
+ *
+ * @private
+ * @param {HTMLElement} element Element with the accesskey
+ * @param {HTMLElement} titleElement Element with the title to update (may be the same as `element`)
+ */
+function updateTooltipOnElement( element, titleElement ) {
+	var oldTitle = titleElement.title;
+	if ( !oldTitle ) {
+		// don't add a title if the element didn't have one before
+		return;
+	}
+
+	var separatorMsg = mw.message( 'word-separator' ).plain();
+	var parts = ( separatorMsg + mw.message( 'brackets' ).plain() ).split( '$1' );
+	// eslint-disable-next-line security/detect-non-literal-regexp
+	var regexp = new RegExp( parts.map( mw.util.escapeRegExp ).join( '.*?' ) + '$' );
+	var newTitle = oldTitle.replace( regexp, '' );
+	var accessKeyLabel = getAccessKeyLabel( element );
+
+	if ( accessKeyLabel ) {
+		// Should be build the same as in Linker::titleAttrib
+		newTitle += separatorMsg + mw.message( 'brackets', accessKeyLabel ).plain();
+	}
+	if ( oldTitle !== newTitle ) {
+		titleElement.title = newTitle;
+	}
+}
+
+// HTML elements that can have an associated label
+// https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Form-associated_content
+var labelable = 'button, input, textarea, keygen, meter, output, progress, select';
+
+/**
+ * Update the title for an element to show the correct access key label.
+ *
+ * @private
+ * @param {HTMLElement} element Element with the accesskey
+ */
+function updateTooltip( element ) {
+	updateTooltipOnElement( element, element );
+
+	// update associated label if there is one
+	var $element = $( element );
+	if ( $element.is( labelable ) ) {
+		// Search it using 'for' attribute
+		var id = element.id.replace( /"/g, '\\"' );
+		if ( id ) {
+			var $label = $( 'label[for="' + id + '"]' );
+			if ( $label.length === 1 ) {
+				updateTooltipOnElement( element, $label[ 0 ] );
+			}
+		}
+
+		// Search it as parent, because the form control can also be inside the label element itself
+		var $labelParent = $element.parents( 'label' );
+		if ( $labelParent.length === 1 ) {
+			updateTooltipOnElement( element, $labelParent[ 0 ] );
+		}
+	}
+}
+
+/**
+ * Update the titles for all elements in a jQuery selection.
+ *
+ * @class updateTooltipAccessKeys
+ * @memberof jQuery.fn
+ * @return {jQuery}
+ * @example
+ *   // Converts tooltip "[z]" to associated browser shortcut key e.g. "[ctrl-option-z]"
+ *   var $a = $('&lt;a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">&lt;span>Main page&lt;/span>&lt;/a>');
+ *   $a.updateTooltipAccessKeys();
+ * @chainable
+ */
+$.fn.updateTooltipAccessKeys = function () {
+	return this.each( function () {
+		updateTooltip( this );
+	} );
+};
+
+$.fn.updateTooltipAccessKeys.getAccessKeyLabel = getAccessKeyLabel;
+
+/**
+ * getAccessKeyPrefix
+ *
+ * @method updateTooltipAccessKeys_getAccessKeyPrefix
+ * @param {Object} [nav] An object with a 'userAgent' and 'platform' property.
+ * @return {string}
+ */
+$.fn.updateTooltipAccessKeys.getAccessKeyPrefix = function ( nav ) {
+	return getAccessKeyModifiers( nav ) + '-';
+};
+
+/**
+ * Switch test mode on and off.
+ *
+ * @method updateTooltipAccessKeys_setTestMode
+ * @param {boolean} mode New mode
+ */
+$.fn.updateTooltipAccessKeys.setTestMode = function ( mode ) {
+	testMode = mode;
+};
+
+/**
+ * @class jQuery
+ * @mixins jQuery.plugin.accessKeyLabel
+ */
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+				</main>
+			</div>
+		</div>
+	</div>
+	<footer id="footer" class="footer">
+		<div class="content-box">
+			<ul class="footer__list">
+				<li><a href="">Contribute</a></li>
+			</ul>
+			<p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Wed Nov 29 2023 17:01:35 GMT-0800 (Pacific Standard Time)</p>
+			<p><a href="https://wikimediafoundation.org/" class="lnk--wikimedia-project">A Wikimedia Foundation project</a></p>
+		</div>
+	</footer>
+
+<script>
+var arr = function(aa) { return Array.prototype.slice.call(aa); };
+arr(document.querySelectorAll("nav > ol > li a:not([href])")).map(function(el) {
+  var li = el;
+  while (li && li.tagName !== 'LI') { li = li.parentNode; }
+  el.addEventListener('click', function(event) {
+    if (li.classList.contains('is-on')) {
+      li.classList.remove('is-on');
+      return;
+    }
+    arr(document.querySelectorAll("nav li.nav__item.is-on")).map(function(el2) {
+      el2.classList.remove('is-on');
+    });
+    li.classList.add('is-on');
+  });
+});
+</script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/open-member.js"> </script>
+<script src="scripts/sticky-sidebar.js"> </script>
+<script type="text/javascript">
+var sidebar = new StickySidebar('.col--start', {
+  containerSelector: '.content-box',
+  innerWrapperSelector: 'nav--main',
+  topSpacing: 100,
+  bottomSpacing: 20
+});
+document.getElementsByClassName('col--start')[0].addEventListener( 'click', function(e) {
+  sidebar.updateSticky();
+});
+</script>
+</body>
+</html>

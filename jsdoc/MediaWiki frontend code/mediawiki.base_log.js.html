@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: mediawiki.base/log.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: mediawiki.base/log.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// This file extends the mw.log skeleton defined in startup/mediawiki.js.
+// Code that is not needed by mw.loader is placed here.
+
+/* eslint-disable no-console */
+
+/**
+ * @namespace mw.log
+ */
+
+/**
+ * Create a function that returns true for the first call from any particular call stack.
+ *
+ * @private
+ * @return {Function}
+ * @return {boolean|undefined} return.return True if the caller was not seen before.
+ */
+function stackSet() {
+	// Optimisation: Don't create or compute anything for the common case
+	// where deprecations are not triggered.
+	var stacks;
+
+	return function isFirst() {
+		if ( !stacks ) {
+			stacks = new Set();
+		}
+		var stack = new Error().stack;
+		if ( !stacks.has( stack ) ) {
+			stacks.add( stack );
+			return true;
+		}
+	};
+}
+
+/**
+ * Write a message to the browser console's error channel.
+ *
+ * Most browsers also print a stacktrace when calling this method if the
+ * argument is an Error object.
+ *
+ * @since 1.26
+ * @param {...Mixed} msg Messages to output to console
+ */
+mw.log.error = Function.prototype.bind.call( console.error, console );
+
+/**
+ * Create a function that logs a deprecation warning when called.
+ *
+ * Usage:
+ *
+ *     var deprecatedNoB = mw.log.makeDeprecated( 'hello_without_b', 'Use of hello without b is deprecated.' );
+ *
+ *     function hello( a, b ) {
+ *       if ( b === undefined ) {
+ *         deprecatedNoB();
+ *         b = 0;
+ *       }
+ *       return a + b;
+ *     }
+ *
+ *     hello( 1 );
+ *
+ * @memberof mw.log
+ * @since 1.38
+ * @param {string|null} key Name of the feature for deprecation tracker,
+ *  or null for a console-only deprecation.
+ * @param {string} msg Deprecation warning.
+ * @return {Function}
+ */
+mw.log.makeDeprecated = function ( key, msg ) {
+	var isFirst = stackSet();
+	return function maybeLog() {
+		if ( isFirst() ) {
+			if ( key ) {
+				mw.track( 'mw.deprecate', key );
+			}
+			mw.log.warn( msg );
+		}
+	};
+};
+
+/**
+ * Create a property on a host object that, when accessed, will log
+ * a deprecation warning to the console.
+ *
+ * Usage:
+ *
+ *    mw.log.deprecate( window, 'myGlobalFn', myGlobalFn );
+ *
+ *    mw.log.deprecate( Thing, 'old', old, 'Use Other.thing instead', 'Thing.old'  );
+ *
+ *
+ * @param {Object} obj Host object of deprecated property
+ * @param {string} key Name of property to create in `obj`
+ * @param {Mixed} val The value this property should return when accessed
+ * @param {string} [msg] Optional extra text to add to the deprecation warning
+ * @param {string} [logName] Name of the feature for deprecation tracker.
+ *  Tracking is disabled by default, except for global variables on `window`.
+ */
+mw.log.deprecate = function ( obj, key, val, msg, logName ) {
+	var maybeLog = mw.log.makeDeprecated(
+		logName || ( obj === window ? key : null ),
+		'Use of "' + ( logName || key ) + '" is deprecated.' + ( msg ? ' ' + msg : '' )
+	);
+	Object.defineProperty( obj, key, {
+		configurable: true,
+		enumerable: true,
+		get: function () {
+			maybeLog();
+			return val;
+		},
+		set: function ( newVal ) {
+			maybeLog();
+			val = newVal;
+		}
+	} );
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul><h3>Namespaces</h3><ul><li><a href="jQuery.plugin.html">jQuery.plugin</a></li><li><a href="mw.html">mw</a></li><li><a href="mw.errorLogger.html">mw.errorLogger</a></li><li><a href="mw.hook.html">mw.hook</a></li><li><a href="mw.html.html">mw.html</a></li><li><a href="mw.loader.html">mw.loader</a></li><li><a href="mw.html#.log">mw.log</a></li><li><a href="mw.util.html">mw.util</a></li><li><a href="window.html">window</a></li></ul><h3>Classes</h3><ul><li><a href="Message.html">Message</a></li><li><a href="mw.html.Raw.html">mw.html.Raw</a></li><li><a href="mw.html#.Map">mw.Map</a></li></ul><h3>Events</h3><ul><li><a href="global.html#event:error_caught">error_caught</a></li><li><a href="global.html#event:global_error">global_error</a></li><li><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Nov 30 2023 17:25:38 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

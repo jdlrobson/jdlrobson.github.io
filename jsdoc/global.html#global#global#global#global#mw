@@ -1,0 +1,8094 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html lang="en" class="js-off lte-ie8"><![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="js-off ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="js-off">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Class: mw: JSDoc</title>
+    <script>
+document.documentElement.className = document.documentElement.className.replace(/\bjs-off\b/,'js-on'); // no BEM notation thx to IE
+    </script>
+    <!--[if lt IE 9]>
+      <script>window.html5={'shivCSS':false};</script>
+      <script src="wmf/js/vendor/ie/html5shiv-3.7.3.min.js"></script>
+      <script src="wmf/js/vendor/ie/respond-1.4.2.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="wmf/css/build/wmui-style-guide.min.css">
+    <link rel="stylesheet" href="styles/jsdoc-wmf-theme.css">
+    <link rel="stylesheet" href="styles/search.css">
+    <link rel="stylesheet" href="styles/method-filters.css">
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link rel="preload" href="wmf/fonts/Charter_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="wmf/fonts/Lato_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <script src="scripts/fonts-loader.js" async=""></script>
+</head>
+
+<body class="page--home">
+	<header id="header" class="header" role="banner">
+		<div class="content-box">
+			<a href="#content" class="is-aural is-focusable">Jump to content</a>
+			<a href="#nav--main" class="is-aural is-focusable">Jump to navigation</a>
+			<h1 class="site__title"><a href="./"><span class="site__logo"></span>MediaWiki frontend code/ Class: mw</a></h1>
+			<label class="btn--nav-main" for="trigger--nav-main" aria-hidden="true" title="Show main menu">
+				<i></i> <span>Menu</span>
+			</label>
+      <div id="search-container">
+  <input type="search" id="lunr-search" placeholder="Search">
+  <ul id="search-results"></ul>
+</div>
+<script src="lunr-data.js"></script>
+<script src="scripts/lunr.js"></script>
+<script src="scripts/lunrSearch.js"></script>
+
+		</div>
+	</header>
+	<div class="page">
+		<div class="content-box">
+			<div class="col col--start">
+				<input type="checkbox" id="trigger--nav-main" class="trigger--nav-main">
+				<nav id="nav--main" class="nav nav--main" role="navigation">
+					<ol><li class="nav__item"><a href="index.html">Home</a></li><li class="nav__item"><a>Modules</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul></li><li class="nav__item is-on"><a>Classes</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="https://api.jquery.com/jQuery/">jQuery</a></li><li class="nav__sub-item"><a href="jQuery.fn.updateTooltipAccessKeys.html">jQuery.fn.updateTooltipAccessKeys</a></li><li class="nav__sub-item"><a href="Message.html">Message</a></li><li class="nav__sub-item is-on"><a href="global.html#global#global#global#global#mw">mw</a></li><li class="nav__sub-item"><a href="mw.errorLogger.html">mw.errorLogger</a></li><li class="nav__sub-item"><a href="mw.hook.html">mw.hook</a></li><li class="nav__sub-item"><a href="mw.html.html">mw.html</a></li><li class="nav__sub-item"><a href="mw.html.Raw.html">mw.html.Raw</a></li><li class="nav__sub-item"><a href="global.html#global#global#global#global#mw#.inspect">mw.inspect</a></li><li class="nav__sub-item"><a href="mw.user.html">mw.user</a></li></ul></li><li class="nav__item"><a>Events</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="global.html#event:error_caught">error_caught</a></li><li class="nav__sub-item"><a href="global.html#event:global_error">global_error</a></li><li class="nav__sub-item"><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul></li></ol>
+				</nav>
+			</div>
+			<div class="col col--end">
+				<main id="content" class="content" role="main">
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>mw<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+        
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-mw"
+  checked/>
+<label for="toggle-mw"></label>
+
+    <h4 class="name" id="mw"><span class="type-signature"></span>new mw<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_log.js.html">mediawiki.base/log.js</a>, <a href="mediawiki.base_log.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="mw.errorLogger.html">errorLogger</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.hook.html">hook</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.html.html">html</a></dt>
+            <dd></dd>
+        
+            <dt><a href="global.html#global#global#global#global#mw#.inspect">inspect</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.user.html">user</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.libs"
+  />
+<label for="toggle-.libs"></label>
+
+<h4 class="name" id=".libs"><span class="type-signature">(static) </span>libs<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Empty object for third-party libraries, for cases where you don't
+want to add a new global, or the global is bad and needs containment
+or wrapping.</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line221">line 221</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Get the names of all registered ResourceLoader modules.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line728">line 728</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Execute a function after one or more modules are ready.</p>
+<p>Use this method if you need to dynamically control which modules are loaded
+and/or when they loaded (instead of declaring them as dependencies directly
+on your module.)</p>
+<p>This uses the same loader as for regular module dependencies. This means
+ResourceLoader will not re-download or re-execute a module for the second
+time if something else already needed it. And the same browser HTTP cache,
+and localStorage are checked before considering to fetch from the network.
+And any on-going requests from other dependencies or using() calls are also
+automatically re-used.</p>
+<p>Example of inline dependency on OOjs:</p>
+<pre><code>mw.loader.using( 'oojs', function () {
+    OO.compare( [ 1 ], [ 1 ] );
+} );
+</code></pre>
+<p>Example of inline dependency obtained via <code>require()</code>:</p>
+<pre><code>mw.loader.using( [ 'mediawiki.util' ], function ( require ) {
+    var util = require( 'mediawiki.util' );
+} );
+</code></pre>
+<p>Since MediaWiki 1.23 this returns a promise.</p>
+<p>Since MediaWiki 1.28 the promise is resolved with a <code>require</code> function.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line738">line 738</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Load a script by URL.</p>
+<p>Example:</p>
+<pre><code>mw.loader.getScript(
+    'https://example.org/x-1.0.0.js'
+)
+    .then( function () {
+        // Script succeeded. You can use X now.
+    }, function ( e ) {
+        // Script failed. X is not avaiable
+        mw.log.error( e.message ); // =&gt; &quot;Failed to load script&quot;
+    } );
+} );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line808">line 808</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static, constant) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Client for ResourceLoader server end point.</p>
+<p>This client is in charge of maintaining the module registry and state
+machine, initiating network (batch) requests for loading modules, as
+well as dependency resolution and execution of source code.</p>
+<p>For more information, refer to
+<a href="https:%5C/%5C/www.mediawiki.org/wiki/ResourceLoader/Features">https://www.mediawiki.org/wiki/ResourceLoader/Features</a></p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1324">line 1324</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.requestIdleCallback"
+  />
+<label for="toggle-.requestIdleCallback"></label>
+
+<h4 class="name" id=".requestIdleCallback"><span class="type-signature">(static) </span>requestIdleCallback<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Schedule a deferred task to run in the background.</p>
+<p>This allows code to perform tasks in the main thread without impacting
+time-critical operations such as animations and response to input events.</p>
+<p>Basic logic is as follows:</p>
+<ul>
+<li>User input event should be acknowledged within 100ms per [RAIL].</li>
+<li>Idle work should be grouped in blocks of upto 50ms so that enough time
+remains for the event handler to execute and any rendering to take place.</li>
+<li>Whenever a native event happens (e.g. user input), the deadline for any
+running idle callback drops to 0.</li>
+<li>As long as the deadline is non-zero, other callbacks pending may be
+executed in the same idle period.</li>
+</ul>
+<p>See also:</p>
+<ul>
+<li><a href="https:%5C/%5C/developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback">https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback</a></li>
+<li><a href="https:%5C/%5C/w3c.github.io/requestidlecallback/">https://w3c.github.io/requestidlecallback/</a></li>
+<li><a href="https:%5C/%5C/developers.google.com/web/updates/2015/08/using-requestidlecallback">https://developers.google.com/web/updates/2015/08/using-requestidlecallback</a>
+[RAIL]: https://developers.google.com/web/fundamentals/performance/rail</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.requestIdleCallback.js.html">startup/mediawiki.requestIdleCallback.js</a>, <a href="startup_mediawiki.requestIdleCallback.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.format"
+  />
+<label for="toggle-.format"></label>
+
+    <h4 class="name" id=".format"><span class="type-signature">(static) </span>format<span class="signature">(formatString, &hellip;parameters)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Format a string. Replace $1, $2 ... $N with positional arguments.</p>
+<p>Used by Message#parser().</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>formatString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Format string</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.25</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line291">line 291</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Formatted string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.inspect"
+  />
+<label for="toggle-.inspect"></label>
+
+    <h4 class="name" id=".inspect"><span class="type-signature">(static) </span>inspect<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Loads runReports after loading the associated mediawiki.inspect module.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line231">line 231</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.message"
+  />
+<label for="toggle-.message"></label>
+
+    <h4 class="name" id=".message"><span class="type-signature">(static) </span>message<span class="signature">(key, &hellip;parameters)</span><span class="type-signature"> &rarr; {}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get a message object.</p>
+<p>Shortcut for <code>new mw.Message( mw.messages, key, parameters )</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Key of message to get</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line313">line 313</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.msg"
+  />
+<label for="toggle-.msg"></label>
+
+    <h4 class="name" id=".msg"><span class="type-signature">(static) </span>msg<span class="signature">(key, &hellip;parameters)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get a message string using the (default) 'text' format.</p>
+<p>Shortcut for <code>mw.message( key, parameters... ).text()</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Key of message to get</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line328">line 328</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.notify"
+  />
+<label for="toggle-.notify"></label>
+
+    <h4 class="name" id=".notify"><span class="type-signature">(static) </span>notify<span class="signature">(message, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://api.jquery.com/Types/#Promise">jQuery.Promise</a>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>.&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>>
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://api.jquery.com/jQuery/">jQuery</a>
+</span>
+|
+
+<span class="param-type">
+	 
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>See mw.notification#defaults for the defaults.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line340">line 340</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://api.jquery.com/Types/#Promise">jQuery.Promise</a>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.track"
+  />
+<label for="toggle-.track"></label>
+
+    <h4 class="name" id=".track"><span class="type-signature">(static) </span>track<span class="signature">(topic, data<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Track an analytic event.</p>
+<p>This method provides a generic means for MediaWiki JavaScript code to capture state
+information for analysis. Each logged event specifies a string topic name that describes
+the kind of event that it is. Topic names consist of dot-separated path components,
+arranged from most general to most specific. Each path component should have a clear and
+well-defined purpose.</p>
+<p>Data handlers are registered via <code>mw.trackSubscribe</code>, and receive the full set of
+events that match their subscription, including buffered events that fired before the handler
+was subscribed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Topic name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+|
+
+<span class="param-type">
+	 number
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Data describing the event.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line367">line 367</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.trackSubscribe"
+  />
+<label for="toggle-.trackSubscribe"></label>
+
+    <h4 class="name" id=".trackSubscribe"><span class="type-signature">(static) </span>trackSubscribe<span class="signature">(topic, callback)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Register a handler for subset of analytic events, specified by topic.</p>
+<p>Handlers will be called once for each tracked event, including for any buffered events that
+fired before the handler was subscribed. The callback is passed a <code>topic</code> string, and optional
+<code>data</code> event object. The <code>this</code> value for the callback is a plain object with <code>topic</code> and
+<code>data</code> properties set to those same values.</p>
+<p>Example to monitor all topics for debugging:</p>
+<pre><code>mw.trackSubscribe( '', console.log );
+</code></pre>
+<p>Example to subscribe to any of <code>foo.*</code>, e.g. both <code>foo.bar</code> and <code>foo.quux</code>:</p>
+<pre><code>mw.trackSubscribe( 'foo.', console.log );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Handle events whose name starts with this string prefix</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Handler to call for each matching tracked event</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line393">line 393</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.trackUnsubscribe"
+  />
+<label for="toggle-.trackUnsubscribe"></label>
+
+    <h4 class="name" id=".trackUnsubscribe"><span class="type-signature">(static) </span>trackUnsubscribe<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Stop handling events for a particular handler</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line413">line 413</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-log"
+  />
+<label for="toggle-log"></label>
+
+    <h4 class="name" id="log"><span class="type-signature"></span>log<span class="signature">(&hellip;msg)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Write a verbose message to the browser's console in debug mode.</p>
+<p>This method is mainly intended for verbose logging. It is a no-op in production mode.
+In ResourceLoader debug mode, it will use the browser's console.</p>
+<p>See <a href="mw.log.html"><code>mw.log</code></a> for other logging methods.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Messages to output to console.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.js.html">startup/mediawiki.js</a>, <a href="startup_mediawiki.js.html#line155">line 155</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>mw<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+        
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-mw"
+  checked/>
+<label for="toggle-mw"></label>
+
+    <h4 class="name" id="mw"><span class="type-signature"></span>new mw<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line209">line 209</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="mw.errorLogger.html">errorLogger</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.hook.html">hook</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.html.html">html</a></dt>
+            <dd></dd>
+        
+            <dt><a href="global.html#global#global#global#global#mw#.inspect">inspect</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.user.html">user</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.libs"
+  />
+<label for="toggle-.libs"></label>
+
+<h4 class="name" id=".libs"><span class="type-signature">(static) </span>libs<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Empty object for third-party libraries, for cases where you don't
+want to add a new global, or the global is bad and needs containment
+or wrapping.</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line221">line 221</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Get the names of all registered ResourceLoader modules.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line728">line 728</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Execute a function after one or more modules are ready.</p>
+<p>Use this method if you need to dynamically control which modules are loaded
+and/or when they loaded (instead of declaring them as dependencies directly
+on your module.)</p>
+<p>This uses the same loader as for regular module dependencies. This means
+ResourceLoader will not re-download or re-execute a module for the second
+time if something else already needed it. And the same browser HTTP cache,
+and localStorage are checked before considering to fetch from the network.
+And any on-going requests from other dependencies or using() calls are also
+automatically re-used.</p>
+<p>Example of inline dependency on OOjs:</p>
+<pre><code>mw.loader.using( 'oojs', function () {
+    OO.compare( [ 1 ], [ 1 ] );
+} );
+</code></pre>
+<p>Example of inline dependency obtained via <code>require()</code>:</p>
+<pre><code>mw.loader.using( [ 'mediawiki.util' ], function ( require ) {
+    var util = require( 'mediawiki.util' );
+} );
+</code></pre>
+<p>Since MediaWiki 1.23 this returns a promise.</p>
+<p>Since MediaWiki 1.28 the promise is resolved with a <code>require</code> function.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line738">line 738</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Load a script by URL.</p>
+<p>Example:</p>
+<pre><code>mw.loader.getScript(
+    'https://example.org/x-1.0.0.js'
+)
+    .then( function () {
+        // Script succeeded. You can use X now.
+    }, function ( e ) {
+        // Script failed. X is not avaiable
+        mw.log.error( e.message ); // =&gt; &quot;Failed to load script&quot;
+    } );
+} );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line808">line 808</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static, constant) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Client for ResourceLoader server end point.</p>
+<p>This client is in charge of maintaining the module registry and state
+machine, initiating network (batch) requests for loading modules, as
+well as dependency resolution and execution of source code.</p>
+<p>For more information, refer to
+<a href="https:%5C/%5C/www.mediawiki.org/wiki/ResourceLoader/Features">https://www.mediawiki.org/wiki/ResourceLoader/Features</a></p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1324">line 1324</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.requestIdleCallback"
+  />
+<label for="toggle-.requestIdleCallback"></label>
+
+<h4 class="name" id=".requestIdleCallback"><span class="type-signature">(static) </span>requestIdleCallback<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Schedule a deferred task to run in the background.</p>
+<p>This allows code to perform tasks in the main thread without impacting
+time-critical operations such as animations and response to input events.</p>
+<p>Basic logic is as follows:</p>
+<ul>
+<li>User input event should be acknowledged within 100ms per [RAIL].</li>
+<li>Idle work should be grouped in blocks of upto 50ms so that enough time
+remains for the event handler to execute and any rendering to take place.</li>
+<li>Whenever a native event happens (e.g. user input), the deadline for any
+running idle callback drops to 0.</li>
+<li>As long as the deadline is non-zero, other callbacks pending may be
+executed in the same idle period.</li>
+</ul>
+<p>See also:</p>
+<ul>
+<li><a href="https:%5C/%5C/developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback">https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback</a></li>
+<li><a href="https:%5C/%5C/w3c.github.io/requestidlecallback/">https://w3c.github.io/requestidlecallback/</a></li>
+<li><a href="https:%5C/%5C/developers.google.com/web/updates/2015/08/using-requestidlecallback">https://developers.google.com/web/updates/2015/08/using-requestidlecallback</a>
+[RAIL]: https://developers.google.com/web/fundamentals/performance/rail</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.requestIdleCallback.js.html">startup/mediawiki.requestIdleCallback.js</a>, <a href="startup_mediawiki.requestIdleCallback.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.format"
+  />
+<label for="toggle-.format"></label>
+
+    <h4 class="name" id=".format"><span class="type-signature">(static) </span>format<span class="signature">(formatString, &hellip;parameters)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Format a string. Replace $1, $2 ... $N with positional arguments.</p>
+<p>Used by Message#parser().</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>formatString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Format string</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.25</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line291">line 291</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Formatted string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.inspect"
+  />
+<label for="toggle-.inspect"></label>
+
+    <h4 class="name" id=".inspect"><span class="type-signature">(static) </span>inspect<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Loads runReports after loading the associated mediawiki.inspect module.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line231">line 231</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.message"
+  />
+<label for="toggle-.message"></label>
+
+    <h4 class="name" id=".message"><span class="type-signature">(static) </span>message<span class="signature">(key, &hellip;parameters)</span><span class="type-signature"> &rarr; {}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get a message object.</p>
+<p>Shortcut for <code>new mw.Message( mw.messages, key, parameters )</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Key of message to get</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line313">line 313</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.msg"
+  />
+<label for="toggle-.msg"></label>
+
+    <h4 class="name" id=".msg"><span class="type-signature">(static) </span>msg<span class="signature">(key, &hellip;parameters)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get a message string using the (default) 'text' format.</p>
+<p>Shortcut for <code>mw.message( key, parameters... ).text()</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Key of message to get</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line328">line 328</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.notify"
+  />
+<label for="toggle-.notify"></label>
+
+    <h4 class="name" id=".notify"><span class="type-signature">(static) </span>notify<span class="signature">(message, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://api.jquery.com/Types/#Promise">jQuery.Promise</a>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>.&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>>
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://api.jquery.com/jQuery/">jQuery</a>
+</span>
+|
+
+<span class="param-type">
+	 
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>See mw.notification#defaults for the defaults.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line340">line 340</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://api.jquery.com/Types/#Promise">jQuery.Promise</a>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.track"
+  />
+<label for="toggle-.track"></label>
+
+    <h4 class="name" id=".track"><span class="type-signature">(static) </span>track<span class="signature">(topic, data<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Track an analytic event.</p>
+<p>This method provides a generic means for MediaWiki JavaScript code to capture state
+information for analysis. Each logged event specifies a string topic name that describes
+the kind of event that it is. Topic names consist of dot-separated path components,
+arranged from most general to most specific. Each path component should have a clear and
+well-defined purpose.</p>
+<p>Data handlers are registered via <code>mw.trackSubscribe</code>, and receive the full set of
+events that match their subscription, including buffered events that fired before the handler
+was subscribed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Topic name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+|
+
+<span class="param-type">
+	 number
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Data describing the event.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line367">line 367</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.trackSubscribe"
+  />
+<label for="toggle-.trackSubscribe"></label>
+
+    <h4 class="name" id=".trackSubscribe"><span class="type-signature">(static) </span>trackSubscribe<span class="signature">(topic, callback)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Register a handler for subset of analytic events, specified by topic.</p>
+<p>Handlers will be called once for each tracked event, including for any buffered events that
+fired before the handler was subscribed. The callback is passed a <code>topic</code> string, and optional
+<code>data</code> event object. The <code>this</code> value for the callback is a plain object with <code>topic</code> and
+<code>data</code> properties set to those same values.</p>
+<p>Example to monitor all topics for debugging:</p>
+<pre><code>mw.trackSubscribe( '', console.log );
+</code></pre>
+<p>Example to subscribe to any of <code>foo.*</code>, e.g. both <code>foo.bar</code> and <code>foo.quux</code>:</p>
+<pre><code>mw.trackSubscribe( 'foo.', console.log );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Handle events whose name starts with this string prefix</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Handler to call for each matching tracked event</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line393">line 393</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.trackUnsubscribe"
+  />
+<label for="toggle-.trackUnsubscribe"></label>
+
+    <h4 class="name" id=".trackUnsubscribe"><span class="type-signature">(static) </span>trackUnsubscribe<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Stop handling events for a particular handler</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line413">line 413</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-log"
+  />
+<label for="toggle-log"></label>
+
+    <h4 class="name" id="log"><span class="type-signature"></span>log<span class="signature">(&hellip;msg)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Write a verbose message to the browser's console in debug mode.</p>
+<p>This method is mainly intended for verbose logging. It is a no-op in production mode.
+In ResourceLoader debug mode, it will use the browser's console.</p>
+<p>See <a href="mw.log.html"><code>mw.log</code></a> for other logging methods.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Messages to output to console.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.js.html">startup/mediawiki.js</a>, <a href="startup_mediawiki.js.html#line155">line 155</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>mw<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+        
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-mw"
+  checked/>
+<label for="toggle-mw"></label>
+
+    <h4 class="name" id="mw"><span class="type-signature"></span>new mw<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.js.html">startup/mediawiki.js</a>, <a href="startup_mediawiki.js.html#line173">line 173</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="mw.errorLogger.html">errorLogger</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.hook.html">hook</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.html.html">html</a></dt>
+            <dd></dd>
+        
+            <dt><a href="global.html#global#global#global#global#mw#.inspect">inspect</a></dt>
+            <dd></dd>
+        
+            <dt><a href="mw.user.html">user</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.libs"
+  />
+<label for="toggle-.libs"></label>
+
+<h4 class="name" id=".libs"><span class="type-signature">(static) </span>libs<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Empty object for third-party libraries, for cases where you don't
+want to add a new global, or the global is bad and needs containment
+or wrapping.</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line221">line 221</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Get the names of all registered ResourceLoader modules.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line728">line 728</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Execute a function after one or more modules are ready.</p>
+<p>Use this method if you need to dynamically control which modules are loaded
+and/or when they loaded (instead of declaring them as dependencies directly
+on your module.)</p>
+<p>This uses the same loader as for regular module dependencies. This means
+ResourceLoader will not re-download or re-execute a module for the second
+time if something else already needed it. And the same browser HTTP cache,
+and localStorage are checked before considering to fetch from the network.
+And any on-going requests from other dependencies or using() calls are also
+automatically re-used.</p>
+<p>Example of inline dependency on OOjs:</p>
+<pre><code>mw.loader.using( 'oojs', function () {
+    OO.compare( [ 1 ], [ 1 ] );
+} );
+</code></pre>
+<p>Example of inline dependency obtained via <code>require()</code>:</p>
+<pre><code>mw.loader.using( [ 'mediawiki.util' ], function ( require ) {
+    var util = require( 'mediawiki.util' );
+} );
+</code></pre>
+<p>Since MediaWiki 1.23 this returns a promise.</p>
+<p>Since MediaWiki 1.28 the promise is resolved with a <code>require</code> function.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line738">line 738</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Load a script by URL.</p>
+<p>Example:</p>
+<pre><code>mw.loader.getScript(
+    'https://example.org/x-1.0.0.js'
+)
+    .then( function () {
+        // Script succeeded. You can use X now.
+    }, function ( e ) {
+        // Script failed. X is not avaiable
+        mw.log.error( e.message ); // =&gt; &quot;Failed to load script&quot;
+    } );
+} );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line808">line 808</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.loader"
+  />
+<label for="toggle-.loader"></label>
+
+<h4 class="name" id=".loader"><span class="type-signature">(static, constant) </span>loader<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Client for ResourceLoader server end point.</p>
+<p>This client is in charge of maintaining the module registry and state
+machine, initiating network (batch) requests for loading modules, as
+well as dependency resolution and execution of source code.</p>
+<p>For more information, refer to
+<a href="https:%5C/%5C/www.mediawiki.org/wiki/ResourceLoader/Features">https://www.mediawiki.org/wiki/ResourceLoader/Features</a></p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.loader.js.html">startup/mediawiki.loader.js</a>, <a href="startup_mediawiki.loader.js.html#line1324">line 1324</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.requestIdleCallback"
+  />
+<label for="toggle-.requestIdleCallback"></label>
+
+<h4 class="name" id=".requestIdleCallback"><span class="type-signature">(static) </span>requestIdleCallback<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Schedule a deferred task to run in the background.</p>
+<p>This allows code to perform tasks in the main thread without impacting
+time-critical operations such as animations and response to input events.</p>
+<p>Basic logic is as follows:</p>
+<ul>
+<li>User input event should be acknowledged within 100ms per [RAIL].</li>
+<li>Idle work should be grouped in blocks of upto 50ms so that enough time
+remains for the event handler to execute and any rendering to take place.</li>
+<li>Whenever a native event happens (e.g. user input), the deadline for any
+running idle callback drops to 0.</li>
+<li>As long as the deadline is non-zero, other callbacks pending may be
+executed in the same idle period.</li>
+</ul>
+<p>See also:</p>
+<ul>
+<li><a href="https:%5C/%5C/developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback">https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback</a></li>
+<li><a href="https:%5C/%5C/w3c.github.io/requestidlecallback/">https://w3c.github.io/requestidlecallback/</a></li>
+<li><a href="https:%5C/%5C/developers.google.com/web/updates/2015/08/using-requestidlecallback">https://developers.google.com/web/updates/2015/08/using-requestidlecallback</a>
+[RAIL]: https://developers.google.com/web/fundamentals/performance/rail</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.requestIdleCallback.js.html">startup/mediawiki.requestIdleCallback.js</a>, <a href="startup_mediawiki.requestIdleCallback.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.format"
+  />
+<label for="toggle-.format"></label>
+
+    <h4 class="name" id=".format"><span class="type-signature">(static) </span>format<span class="signature">(formatString, &hellip;parameters)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Format a string. Replace $1, $2 ... $N with positional arguments.</p>
+<p>Used by Message#parser().</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>formatString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Format string</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.25</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line291">line 291</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Formatted string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.inspect"
+  />
+<label for="toggle-.inspect"></label>
+
+    <h4 class="name" id=".inspect"><span class="type-signature">(static) </span>inspect<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Loads runReports after loading the associated mediawiki.inspect module.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line231">line 231</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.message"
+  />
+<label for="toggle-.message"></label>
+
+    <h4 class="name" id=".message"><span class="type-signature">(static) </span>message<span class="signature">(key, &hellip;parameters)</span><span class="type-signature"> &rarr; {}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get a message object.</p>
+<p>Shortcut for <code>new mw.Message( mw.messages, key, parameters )</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Key of message to get</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line313">line 313</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.msg"
+  />
+<label for="toggle-.msg"></label>
+
+    <h4 class="name" id=".msg"><span class="type-signature">(static) </span>msg<span class="signature">(key, &hellip;parameters)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Get a message string using the (default) 'text' format.</p>
+<p>Shortcut for <code>mw.message( key, parameters... ).text()</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Key of message to get</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Values for $N replacements</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line328">line 328</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.notify"
+  />
+<label for="toggle-.notify"></label>
+
+    <h4 class="name" id=".notify"><span class="type-signature">(static) </span>notify<span class="signature">(message, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://api.jquery.com/Types/#Promise">jQuery.Promise</a>}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>.&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>>
+</span>
+|
+
+<span class="param-type">
+	 <a href="https://api.jquery.com/jQuery/">jQuery</a>
+</span>
+|
+
+<span class="param-type">
+	 
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>See mw.notification#defaults for the defaults.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line340">line 340</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 <a href="https://api.jquery.com/Types/#Promise">jQuery.Promise</a>
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.track"
+  />
+<label for="toggle-.track"></label>
+
+    <h4 class="name" id=".track"><span class="type-signature">(static) </span>track<span class="signature">(topic, data<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Track an analytic event.</p>
+<p>This method provides a generic means for MediaWiki JavaScript code to capture state
+information for analysis. Each logged event specifies a string topic name that describes
+the kind of event that it is. Topic names consist of dot-separated path components,
+arranged from most general to most specific. Each path component should have a clear and
+well-defined purpose.</p>
+<p>Data handlers are registered via <code>mw.trackSubscribe</code>, and receive the full set of
+events that match their subscription, including buffered events that fired before the handler
+was subscribed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Topic name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+|
+
+<span class="param-type">
+	 number
+</span>
+|
+
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Data describing the event.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line367">line 367</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.trackSubscribe"
+  />
+<label for="toggle-.trackSubscribe"></label>
+
+    <h4 class="name" id=".trackSubscribe"><span class="type-signature">(static) </span>trackSubscribe<span class="signature">(topic, callback)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Register a handler for subset of analytic events, specified by topic.</p>
+<p>Handlers will be called once for each tracked event, including for any buffered events that
+fired before the handler was subscribed. The callback is passed a <code>topic</code> string, and optional
+<code>data</code> event object. The <code>this</code> value for the callback is a plain object with <code>topic</code> and
+<code>data</code> properties set to those same values.</p>
+<p>Example to monitor all topics for debugging:</p>
+<pre><code>mw.trackSubscribe( '', console.log );
+</code></pre>
+<p>Example to subscribe to any of <code>foo.*</code>, e.g. both <code>foo.bar</code> and <code>foo.quux</code>:</p>
+<pre><code>mw.trackSubscribe( 'foo.', console.log );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Handle events whose name starts with this string prefix</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Handler to call for each matching tracked event</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line393">line 393</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.trackUnsubscribe"
+  />
+<label for="toggle-.trackUnsubscribe"></label>
+
+    <h4 class="name" id=".trackUnsubscribe"><span class="type-signature">(static) </span>trackUnsubscribe<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Stop handling events for a particular handler</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 function
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line413">line 413</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-log"
+  />
+<label for="toggle-log"></label>
+
+    <h4 class="name" id="log"><span class="type-signature"></span>log<span class="signature">(&hellip;msg)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Write a verbose message to the browser's console in debug mode.</p>
+<p>This method is mainly intended for verbose logging. It is a no-op in production mode.
+In ResourceLoader debug mode, it will use the browser's console.</p>
+<p>See <a href="mw.log.html"><code>mw.log</code></a> for other logging methods.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Messages to output to console.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="startup_mediawiki.js.html">startup/mediawiki.js</a>, <a href="startup_mediawiki.js.html#line155">line 155</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</main>
+			</div>
+		</div>
+	</div>
+	<footer id="footer" class="footer">
+		<div class="content-box">
+			<ul class="footer__list">
+				<li><a href="">Contribute</a></li>
+			</ul>
+			<p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Wed Nov 29 2023 16:42:21 GMT-0800 (Pacific Standard Time)</p>
+			<p><a href="https://wikimediafoundation.org/" class="lnk--wikimedia-project">A Wikimedia Foundation project</a></p>
+		</div>
+	</footer>
+
+<script>
+var arr = function(aa) { return Array.prototype.slice.call(aa); };
+arr(document.querySelectorAll("nav > ol > li a:not([href])")).map(function(el) {
+  var li = el;
+  while (li && li.tagName !== 'LI') { li = li.parentNode; }
+  el.addEventListener('click', function(event) {
+    if (li.classList.contains('is-on')) {
+      li.classList.remove('is-on');
+      return;
+    }
+    arr(document.querySelectorAll("nav li.nav__item.is-on")).map(function(el2) {
+      el2.classList.remove('is-on');
+    });
+    li.classList.add('is-on');
+  });
+});
+</script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/open-member.js"> </script>
+<script src="scripts/sticky-sidebar.js"> </script>
+<script type="text/javascript">
+var sidebar = new StickySidebar('.col--start', {
+  containerSelector: '.content-box',
+  innerWrapperSelector: 'nav--main',
+  topSpacing: 100,
+  bottomSpacing: 20
+});
+document.getElementsByClassName('col--start')[0].addEventListener( 'click', function(e) {
+  sidebar.updateSticky();
+});
+</script>
+</body>
+</html>
