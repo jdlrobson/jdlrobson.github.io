@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html lang="en" class="js-off lte-ie8"><![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="js-off ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="js-off">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Namespace: log: JSDoc</title>
+    <script>
+document.documentElement.className = document.documentElement.className.replace(/\bjs-off\b/,'js-on'); // no BEM notation thx to IE
+    </script>
+    <!--[if lt IE 9]>
+      <script>window.html5={'shivCSS':false};</script>
+      <script src="wmf/js/vendor/ie/html5shiv-3.7.3.min.js"></script>
+      <script src="wmf/js/vendor/ie/respond-1.4.2.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="wmf/css/build/wmui-style-guide.min.css">
+    <link rel="stylesheet" href="styles/jsdoc-wmf-theme.css">
+    <link rel="stylesheet" href="styles/search.css">
+    <link rel="stylesheet" href="styles/method-filters.css">
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link rel="preload" href="wmf/fonts/Charter_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="wmf/fonts/Lato_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <script src="scripts/fonts-loader.js" async=""></script>
+</head>
+
+<body class="page--home">
+	<header id="header" class="header" role="banner">
+		<div class="content-box">
+			<a href="#content" class="is-aural is-focusable">Jump to content</a>
+			<a href="#nav--main" class="is-aural is-focusable">Jump to navigation</a>
+			<h1 class="site__title"><a href="./"><span class="site__logo"></span>MediaWiki frontend code/ Namespace: log</a></h1>
+			<label class="btn--nav-main" for="trigger--nav-main" aria-hidden="true" title="Show main menu">
+				<i></i> <span>Menu</span>
+			</label>
+      <div id="search-container">
+  <input type="search" id="lunr-search" placeholder="Search">
+  <ul id="search-results"></ul>
+</div>
+<script src="lunr-data.js"></script>
+<script src="scripts/lunr.js"></script>
+<script src="scripts/lunrSearch.js"></script>
+
+		</div>
+	</header>
+	<div class="page">
+		<div class="content-box">
+			<div class="col col--start">
+				<input type="checkbox" id="trigger--nav-main" class="trigger--nav-main">
+				<nav id="nav--main" class="nav nav--main" role="navigation">
+					<ol><li class="nav__item"><a href="index.html">Home</a></li><li class="nav__item"><a>Modules</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul></li><li class="nav__item is-on"><a>Namespaces</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="jQuery.plugin.html">jQuery.plugin</a></li><li class="nav__sub-item"><a href="mw.html">mw</a></li><li class="nav__sub-item"><a href="mw.errorLogger.html">mw.errorLogger</a></li><li class="nav__sub-item"><a href="mw.hook.html">mw.hook</a></li><li class="nav__sub-item"><a href="mw.html.html">mw.html</a></li><li class="nav__sub-item"><a href="mw.loader.html">mw.loader</a></li><li class="nav__sub-item is-on"><a href="mw.html#.log">mw.log</a></li><li class="nav__sub-item"><a href="mw.notification.html">mw.notification</a></li><li class="nav__sub-item"><a href="mw.util.html">mw.util</a></li><li class="nav__sub-item"><a href="window.html">window</a></li></ul></li><li class="nav__item"><a>Classes</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="Message.html">Message</a></li><li class="nav__sub-item"><a href="mw.html.Raw.html">mw.html.Raw</a></li><li class="nav__sub-item"><a href="MwMap.html">MwMap</a></li><li class="nav__sub-item"><a href="Notification.html">Notification</a></li></ul></li><li class="nav__item"><a>Events</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="global.html#event:error_caught">error_caught</a></li><li class="nav__sub-item"><a href="global.html#event:global_error">global_error</a></li><li class="nav__sub-item"><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul></li></ol>
+				</nav>
+			</div>
+			<div class="col col--end">
+				<main id="content" class="content" role="main">
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="mw.html">mw</a>.</span>log</h2>
+        
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_log.js.html">mediawiki.base/log.js</a>, <a href="mediawiki.base_log.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<div>
+
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.error"
+  />
+<label for="toggle-.error"></label>
+
+<h4 class="name" id=".error"><span class="type-signature">(static) </span>error<span class="type-signature"></span></h4>
+
+<div class="summary">
+
+...
+
+</div>
+
+<div class="long">
+
+<div class="description">
+    <p>Write a message to the browser console's error channel.</p>
+<p>Most browsers also print a stacktrace when calling this method if the
+argument is an Error object.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.26</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_log.js.html">mediawiki.base/log.js</a>, <a href="mediawiki.base_log.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.deprecate"
+  />
+<label for="toggle-.deprecate"></label>
+
+    <h4 class="name" id=".deprecate"><span class="type-signature">(static) </span>deprecate<span class="signature">(obj, key, val, msg<span class="signature-attributes">opt</span>, logName<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Create a property on a host object that, when accessed, will log
+a deprecation warning to the console.</p>
+<p>Usage:</p>
+<p>mw.log.deprecate( window, 'myGlobalFn', myGlobalFn );</p>
+<p>mw.log.deprecate( Thing, 'old', old, 'Use Other.thing instead', 'Thing.old'  );</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Host object of deprecated property</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Name of property to create in <code>obj</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Mixed 
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value this property should return when accessed</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional extra text to add to the deprecation warning</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>logName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Name of the feature for deprecation tracker.
+Tracking is disabled by default, except for global variables on <code>window</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_log.js.html">mediawiki.base/log.js</a>, <a href="mediawiki.base_log.js.html#line99">line 99</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.makeDeprecated"
+  />
+<label for="toggle-.makeDeprecated"></label>
+
+    <h4 class="name" id=".makeDeprecated"><span class="type-signature">(static) </span>makeDeprecated<span class="signature">(key, msg)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Create a function that logs a deprecation warning when called.</p>
+<p>Usage:</p>
+<pre><code>var deprecatedNoB = mw.log.makeDeprecated( 'hello_without_b', 'Use of hello without b is deprecated.' );
+
+function hello( a, b ) {
+  if ( b === undefined ) {
+    deprecatedNoB();
+    b = 0;
+  }
+  return a + b;
+}
+
+hello( 1 );
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of the feature for deprecation tracker,
+or null for a console-only deprecation.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Deprecation warning.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.38</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_log.js.html">mediawiki.base/log.js</a>, <a href="mediawiki.base_log.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 function
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</main>
+			</div>
+		</div>
+	</div>
+	<footer id="footer" class="footer">
+		<div class="content-box">
+			<ul class="footer__list">
+				<li><a href="">Contribute</a></li>
+			</ul>
+			<p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Thu Nov 30 2023 17:50:08 GMT-0800 (Pacific Standard Time)</p>
+			<p><a href="https://wikimediafoundation.org/" class="lnk--wikimedia-project">A Wikimedia Foundation project</a></p>
+		</div>
+	</footer>
+
+<script>
+var arr = function(aa) { return Array.prototype.slice.call(aa); };
+arr(document.querySelectorAll("nav > ol > li a:not([href])")).map(function(el) {
+  var li = el;
+  while (li && li.tagName !== 'LI') { li = li.parentNode; }
+  el.addEventListener('click', function(event) {
+    if (li.classList.contains('is-on')) {
+      li.classList.remove('is-on');
+      return;
+    }
+    arr(document.querySelectorAll("nav li.nav__item.is-on")).map(function(el2) {
+      el2.classList.remove('is-on');
+    });
+    li.classList.add('is-on');
+  });
+});
+</script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/open-member.js"> </script>
+<script src="scripts/sticky-sidebar.js"> </script>
+<script type="text/javascript">
+var sidebar = new StickySidebar('.col--start', {
+  containerSelector: '.content-box',
+  innerWrapperSelector: 'nav--main',
+  topSpacing: 100,
+  bottomSpacing: 20
+});
+document.getElementsByClassName('col--start')[0].addEventListener( 'click', function(e) {
+  sidebar.updateSticky();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html lang="en" class="js-off lte-ie8"><![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="js-off ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="js-off">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Namespace: hook: JSDoc</title>
+    <script>
+document.documentElement.className = document.documentElement.className.replace(/\bjs-off\b/,'js-on'); // no BEM notation thx to IE
+    </script>
+    <!--[if lt IE 9]>
+      <script>window.html5={'shivCSS':false};</script>
+      <script src="wmf/js/vendor/ie/html5shiv-3.7.3.min.js"></script>
+      <script src="wmf/js/vendor/ie/respond-1.4.2.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="wmf/css/build/wmui-style-guide.min.css">
+    <link rel="stylesheet" href="styles/jsdoc-wmf-theme.css">
+    <link rel="stylesheet" href="styles/search.css">
+    <link rel="stylesheet" href="styles/method-filters.css">
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link rel="preload" href="wmf/fonts/Charter_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="wmf/fonts/Lato_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <script src="scripts/fonts-loader.js" async=""></script>
+</head>
+
+<body class="page--home">
+	<header id="header" class="header" role="banner">
+		<div class="content-box">
+			<a href="#content" class="is-aural is-focusable">Jump to content</a>
+			<a href="#nav--main" class="is-aural is-focusable">Jump to navigation</a>
+			<h1 class="site__title"><a href="./"><span class="site__logo"></span>MediaWiki frontend code/ Namespace: hook</a></h1>
+			<label class="btn--nav-main" for="trigger--nav-main" aria-hidden="true" title="Show main menu">
+				<i></i> <span>Menu</span>
+			</label>
+      <div id="search-container">
+  <input type="search" id="lunr-search" placeholder="Search">
+  <ul id="search-results"></ul>
+</div>
+<script src="lunr-data.js"></script>
+<script src="scripts/lunr.js"></script>
+<script src="scripts/lunrSearch.js"></script>
+
+		</div>
+	</header>
+	<div class="page">
+		<div class="content-box">
+			<div class="col col--start">
+				<input type="checkbox" id="trigger--nav-main" class="trigger--nav-main">
+				<nav id="nav--main" class="nav nav--main" role="navigation">
+					<ol><li class="nav__item"><a href="index.html">Home</a></li><li class="nav__item"><a>Modules</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul></li><li class="nav__item is-on"><a>Namespaces</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="jQuery.plugin.html">jQuery.plugin</a></li><li class="nav__sub-item"><a href="mw.html">mw</a></li><li class="nav__sub-item"><a href="mw.errorLogger.html">mw.errorLogger</a></li><li class="nav__sub-item is-on"><a href="mw.hook.html">mw.hook</a></li><li class="nav__sub-item"><a href="mw.html.html">mw.html</a></li><li class="nav__sub-item"><a href="mw.loader.html">mw.loader</a></li><li class="nav__sub-item"><a href="mw.html#.log">mw.log</a></li><li class="nav__sub-item"><a href="mw.notification.html">mw.notification</a></li><li class="nav__sub-item"><a href="mw.util.html">mw.util</a></li><li class="nav__sub-item"><a href="window.html">window</a></li></ul></li><li class="nav__item"><a>Classes</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="Message.html">Message</a></li><li class="nav__sub-item"><a href="mw.html.Raw.html">mw.html.Raw</a></li><li class="nav__sub-item"><a href="MwMap.html">MwMap</a></li><li class="nav__sub-item"><a href="Notification.html">Notification</a></li></ul></li><li class="nav__item"><a>Events</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="global.html#event:error_caught">error_caught</a></li><li class="nav__sub-item"><a href="global.html#event:global_error">global_error</a></li><li class="nav__sub-item"><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul></li></ol>
+				</nav>
+			</div>
+			<div class="col col--end">
+				<main id="content" class="content" role="main">
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="mw.html">mw</a>.</span>hook</h2>
+        
+            <div class="class-description"><p>Registry and firing of events.</p>
+<p>MediaWiki has various interface components that are extended, enhanced
+or manipulated in some other way by extensions, gadgets and even
+in core itself.</p>
+<p>This framework helps streamlining the timing of when these other
+code paths fire their plugins (instead of using document-ready,
+which can and should be limited to firing only once).</p>
+<p>Features like navigating to other wiki pages, previewing an edit
+and editing itself – without a refresh – can then retrigger these
+hooks accordingly to ensure everything still works as expected.</p>
+<p>Example usage:</p>
+<pre><code>mw.hook( 'wikipage.content' ).add( fn ).remove( fn );
+mw.hook( 'wikipage.content' ).fire( $content );
+</code></pre>
+<p>Handlers can be added and fired for arbitrary event names at any time. The same
+event can be fired multiple times. The last run of an event is memorized
+(similar to <code>$(document).ready</code> and <code>$.Deferred().done</code>).
+This means if an event is fired, and a handler added afterwards, the added
+function will be fired right away with the last given event data.</p>
+<p>Like Deferreds and Promises, the mw.hook object is both detachable and chainable.
+Thus allowing flexible use and optimal maintainability and authority control.
+You can pass around the <code>add</code> and/or <code>fire</code> method to another piece of code
+without it having to know the event name (or <code>mw.hook</code> for that matter).</p>
+<pre><code>var h = mw.hook( 'bar.ready' );
+new mw.Foo( .. ).fetch( { callback: h.fire } );
+</code></pre>
+<p>Note: Events are documented with an underscore instead of a dot in the event
+name due to jsduck not supporting dots in that position.</p></div>
+        
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line439">line 439</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="mw.html">mw</a>.</span>hook</h2>
+        
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Create an instance of <a href="Hook.html"><code>Hook</code></a>.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line480">line 480</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+    <pre class="prettyprint"><code>const hook = mw.hook( 'name' );
+  hook.add( () => alert( 'Hook was fired' ) );
+  hook.fire();</code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</main>
+			</div>
+		</div>
+	</div>
+	<footer id="footer" class="footer">
+		<div class="content-box">
+			<ul class="footer__list">
+				<li><a href="">Contribute</a></li>
+			</ul>
+			<p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Thu Nov 30 2023 17:50:07 GMT-0800 (Pacific Standard Time)</p>
+			<p><a href="https://wikimediafoundation.org/" class="lnk--wikimedia-project">A Wikimedia Foundation project</a></p>
+		</div>
+	</footer>
+
+<script>
+var arr = function(aa) { return Array.prototype.slice.call(aa); };
+arr(document.querySelectorAll("nav > ol > li a:not([href])")).map(function(el) {
+  var li = el;
+  while (li && li.tagName !== 'LI') { li = li.parentNode; }
+  el.addEventListener('click', function(event) {
+    if (li.classList.contains('is-on')) {
+      li.classList.remove('is-on');
+      return;
+    }
+    arr(document.querySelectorAll("nav li.nav__item.is-on")).map(function(el2) {
+      el2.classList.remove('is-on');
+    });
+    li.classList.add('is-on');
+  });
+});
+</script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/open-member.js"> </script>
+<script src="scripts/sticky-sidebar.js"> </script>
+<script type="text/javascript">
+var sidebar = new StickySidebar('.col--start', {
+  containerSelector: '.content-box',
+  innerWrapperSelector: 'nav--main',
+  topSpacing: 100,
+  bottomSpacing: 20
+});
+document.getElementsByClassName('col--start')[0].addEventListener( 'click', function(e) {
+  sidebar.updateSticky();
+});
+</script>
+</body>
+</html>

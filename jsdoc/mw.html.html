@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html lang="en" class="js-off lte-ie8"><![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="js-off ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="js-off">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Namespace: html: JSDoc</title>
+    <script>
+document.documentElement.className = document.documentElement.className.replace(/\bjs-off\b/,'js-on'); // no BEM notation thx to IE
+    </script>
+    <!--[if lt IE 9]>
+      <script>window.html5={'shivCSS':false};</script>
+      <script src="wmf/js/vendor/ie/html5shiv-3.7.3.min.js"></script>
+      <script src="wmf/js/vendor/ie/respond-1.4.2.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="wmf/css/build/wmui-style-guide.min.css">
+    <link rel="stylesheet" href="styles/jsdoc-wmf-theme.css">
+    <link rel="stylesheet" href="styles/search.css">
+    <link rel="stylesheet" href="styles/method-filters.css">
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link rel="preload" href="wmf/fonts/Charter_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="wmf/fonts/Lato_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <script src="scripts/fonts-loader.js" async=""></script>
+</head>
+
+<body class="page--home">
+	<header id="header" class="header" role="banner">
+		<div class="content-box">
+			<a href="#content" class="is-aural is-focusable">Jump to content</a>
+			<a href="#nav--main" class="is-aural is-focusable">Jump to navigation</a>
+			<h1 class="site__title"><a href="./"><span class="site__logo"></span>MediaWiki frontend code/ Namespace: html</a></h1>
+			<label class="btn--nav-main" for="trigger--nav-main" aria-hidden="true" title="Show main menu">
+				<i></i> <span>Menu</span>
+			</label>
+      <div id="search-container">
+  <input type="search" id="lunr-search" placeholder="Search">
+  <ul id="search-results"></ul>
+</div>
+<script src="lunr-data.js"></script>
+<script src="scripts/lunr.js"></script>
+<script src="scripts/lunrSearch.js"></script>
+
+		</div>
+	</header>
+	<div class="page">
+		<div class="content-box">
+			<div class="col col--start">
+				<input type="checkbox" id="trigger--nav-main" class="trigger--nav-main">
+				<nav id="nav--main" class="nav nav--main" role="navigation">
+					<ol><li class="nav__item"><a href="index.html">Home</a></li><li class="nav__item"><a>Modules</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="mediawiki.module_util.html">mediawiki.util</a></li></ul></li><li class="nav__item is-on"><a>Namespaces</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="jQuery.plugin.html">jQuery.plugin</a></li><li class="nav__sub-item"><a href="mw.html">mw</a></li><li class="nav__sub-item"><a href="mw.errorLogger.html">mw.errorLogger</a></li><li class="nav__sub-item"><a href="mw.hook.html">mw.hook</a></li><li class="nav__sub-item is-on"><a href="mw.html.html">mw.html</a></li><li class="nav__sub-item"><a href="mw.loader.html">mw.loader</a></li><li class="nav__sub-item"><a href="mw.html#.log">mw.log</a></li><li class="nav__sub-item"><a href="mw.notification.html">mw.notification</a></li><li class="nav__sub-item"><a href="mw.util.html">mw.util</a></li><li class="nav__sub-item"><a href="window.html">window</a></li></ul></li><li class="nav__item"><a>Classes</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="Message.html">Message</a></li><li class="nav__sub-item"><a href="mw.html.Raw.html">mw.html.Raw</a></li><li class="nav__sub-item"><a href="MwMap.html">MwMap</a></li><li class="nav__sub-item"><a href="Notification.html">Notification</a></li></ul></li><li class="nav__item"><a>Events</a><ul class="nav__sub-items"><li class="nav__sub-item"><a href="global.html#event:error_caught">error_caught</a></li><li class="nav__sub-item"><a href="global.html#event:global_error">global_error</a></li><li class="nav__sub-item"><a href="global.html#event:resourceloader_exception">resourceloader_exception</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortlet">util_addPortlet</a></li><li class="nav__sub-item"><a href="mediawiki.module_util.html#~event:util_addPortletLink">util_addPortletLink</a></li></ul></li></ol>
+				</nav>
+			</div>
+			<div class="col col--end">
+				<main id="content" class="content" role="main">
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="mw.html">mw</a>.</span>html</h2>
+        
+            <div class="class-description"><p>Utility functions for aiding the construction of HTML.</p></div>
+        
+    
+</header>
+
+<article>
+  <div class="method-filters">
+  Show:
+  <label>
+    <input type="checkbox" id="private-check"/>
+      Private
+  </label>
+
+  <label>
+    <input type="checkbox" id="protected-check">
+      Protected
+  </label>
+
+  <label>
+    <input type="checkbox" id="inherited-check" />
+      Inherited
+  </label>
+
+  <label>
+    <input type="checkbox" id="deprecated-check" />
+      Deprecated
+  </label>
+</div>
+
+<script src="scripts/method-filters.js"></script>
+
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>HTML construction helper functions</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line562">line 562</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+    <pre class="prettyprint"><code>var Html, output;
+
+    Html = mw.html;
+    output = Html.element( 'div', {}, new Html.Raw(
+        Html.element( 'img', { src: '&lt;' } )
+    ) );
+    mw.log( output ); // &lt;div>&lt;img src="&amp;lt;"/>&lt;/div></code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="mw.html.Raw.html">Raw</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.element"
+  />
+<label for="toggle-.element"></label>
+
+    <h4 class="name" id=".element"><span class="type-signature">(static) </span>element<span class="signature">(name, attrs<span class="signature-attributes">opt</span>, contents<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Create an HTML element string, with safe escaping.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The tag name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attrs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 Object
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>An object with members mapping element names to values</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+|
+
+<span class="param-type">
+	 <a href="mw.html.Raw.html">mw.html.Raw</a>
+</span>
+|
+
+<span class="param-type">
+	 <code>null</code>
+</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last"><p>The contents of the element.</p>
+<ul>
+<li>string: Text to be escaped.</li>
+<li>null: The element is treated as void with short closing form, e.g. <code>&lt;br/&gt;</code>.</li>
+<li>this.Raw: The raw value is directly included.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line622">line 622</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>HTML</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+            
+<div class="method--static">
+
+    
+
+    
+    
+<input
+  class="toggle-box"
+  type="checkbox"
+  id="toggle-.escape"
+  />
+<label for="toggle-.escape"></label>
+
+    <h4 class="name" id=".escape"><span class="type-signature">(static) </span>escape<span class="signature">(s)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+<div class="summary">
+    
+    ...
+    
+</div>
+
+
+<div class="long">
+
+<div class="description">
+    <p>Escape a string for HTML.</p>
+<p>Converts special characters to HTML entities.</p>
+<pre><code>mw.html.escape( '&lt; &gt; \' &amp; &quot;' );
+// Returns &amp;lt; &amp;gt; &amp;#039; &amp;amp; &amp;quot;
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>s</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+	 string
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string to escape</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mediawiki.base_mediawiki.base.js.html">mediawiki.base/mediawiki.base.js</a>, <a href="mediawiki.base_mediawiki.base.js.html#line606">line 606</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>HTML</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">
+	 string
+</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+</div>
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</main>
+			</div>
+		</div>
+	</div>
+	<footer id="footer" class="footer">
+		<div class="content-box">
+			<ul class="footer__list">
+				<li><a href="">Contribute</a></li>
+			</ul>
+			<p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Thu Nov 30 2023 17:50:07 GMT-0800 (Pacific Standard Time)</p>
+			<p><a href="https://wikimediafoundation.org/" class="lnk--wikimedia-project">A Wikimedia Foundation project</a></p>
+		</div>
+	</footer>
+
+<script>
+var arr = function(aa) { return Array.prototype.slice.call(aa); };
+arr(document.querySelectorAll("nav > ol > li a:not([href])")).map(function(el) {
+  var li = el;
+  while (li && li.tagName !== 'LI') { li = li.parentNode; }
+  el.addEventListener('click', function(event) {
+    if (li.classList.contains('is-on')) {
+      li.classList.remove('is-on');
+      return;
+    }
+    arr(document.querySelectorAll("nav li.nav__item.is-on")).map(function(el2) {
+      el2.classList.remove('is-on');
+    });
+    li.classList.add('is-on');
+  });
+});
+</script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/open-member.js"> </script>
+<script src="scripts/sticky-sidebar.js"> </script>
+<script type="text/javascript">
+var sidebar = new StickySidebar('.col--start', {
+  containerSelector: '.content-box',
+  innerWrapperSelector: 'nav--main',
+  topSpacing: 100,
+  bottomSpacing: 20
+});
+document.getElementsByClassName('col--start')[0].addEventListener( 'click', function(e) {
+  sidebar.updateSticky();
+});
+</script>
+</body>
+</html>
